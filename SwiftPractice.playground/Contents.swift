@@ -197,5 +197,142 @@ func day2(){
      // 배열의 count == 대표적인 연산 프로퍼티 .. 그래서 메서드() 빈 괄호가 안 붙었구나 ㄷㄷ
     
 }
+
+
+                    /* 22.01.03*/
+func day3(){
+    /*       ************************ didSet , willSet ************************     */
+    struct userWeight{
+        var name :String = ""
+        var weight :Int {
+            willSet(newWeight){     //값을 대입하면, 대입되기 전 willSet옵저버가 실행된다. 이때 매개상수(newWeight에 프로퍼티 값이 우선 대입된다.
+                print("당신의 몸무게는 \(newWeight)kg 입니다.") // willSet이 끝난후에 프로퍼티에 값이 대입된다.
+                    //weight = weight - 30;      대입될 프로퍼티의 값을 수정할 수는 없다.
+            }
+            didSet(oldWeight){
+                if(weight < oldWeight){
+                    print("축하드립니다. 체중이 \(weight - oldWeight)kg 빠지셨군요^^")
+                }else{
+                    print("살이 좀 찌셨군요?\n적절한 운동은 다이어트에 도움이 됩니다.")
+                }
+            }
+        }
+    }
+    var hap = userWeight(name: "happy", weight: 75)
+    hap.weight=80
+    
+    /*       ************************ 타입 프로퍼티 ************************     */
+        //struct = "static"키워드를 통해 저장 , 연산 프로퍼티를 타입 프로퍼티로 만들 수 있다.
+    
+        //class  = "static"키워드를 통해서 위와 같이 타입 프로퍼티 만들 수 있고,
+        //추가적으로 "class" 키워드를 통해 연산 프로퍼티를 타입 프로퍼티로 만들 수 있다. 이때 자식 객체에서 재정의가 가능하다.
+            //타입 프로퍼티는 클래스명.타입프로퍼티 를 통해 호출 가능하다(인스턴스 생성x == 가능)
+    
+    struct zoo {
+        static var cZoo: Int {
+            return 10;
+        }
+    }
+    var kow  = zoo();
+    print(zoo.cZoo)             //타입 프로퍼티는 인스턴스에 속하지 않는 값이다.
+    //print(kow.cZoo) ; error   //타입 프로퍼티는 반드시 클래스명, 구조체명  dot 타입 프로퍼티 의 방식을 통해 호출해야한다.
+    
+    /* ************************ struct에 프로퍼티 값 변경(mutating키워드) ************************ */
+    struct Point {
+        var x = 0.0;    var y = 0.0;
+        mutating func moveTo(_ x : Double, _ y : Double){
+            self.x += x;
+            self.y += y;  //mutating 키워드를 사용하지 않으면 구조체에서 프로퍼티 값을 변경할 수 없음.
+        }
+    }
+    var point = Point();
+    point.moveTo(17, 14)
+    print("(x,y) = (\(point.x),\(point.y))\n")
+    
+    
+    /*       ************************ 클래스 메서드 , 프로퍼티 재정의 ************************     */
+    class Vehicle{
+        var currentSpeed = 0.0 ;
+        var description :String {
+            return "시간당 \(self.currentSpeed)의 속도로 이동하고 있습니다."
+        }
+        func makeNoise(){print("no Sound")}
+    }
+    
+    class Car :Vehicle {
+        var gear :Int=0
+        var engineLv :Int=0
+         
+        //부모 프로퍼티를 오버라이딩 할 경우 override 키워드를 붙여야 한다.
+        override var currentSpeed: Double { // 저장 프로퍼티를 오버라이딩 할 경우.( 연산 프로퍼티를 통해 오버라이딩 할 수 있음)
+            get{ //연산 프로퍼티 (get , set)
+                return Double(self.engineLv  * 100);
+            }
+            set{
+                print(" - 오버라이딩 된 자식 프로퍼티 currentSpeed 호출됨 이때의 값은 \(currentSpeed)")
+            } //저장->연산 프로퍼티로 오버라이딩 할 경우 get{} set{} 구문을 모두 사용해야한다.
+        }
+        
+        override var description: String {
+            get{
+                return "Car : engineLv = \(self.engineLv), currentSpeed = \(self.currentSpeed)"
+            }
+            set{
+                print(" - 오버라이딩된 자식 프로퍼티 description 호출됨. 이때 이름은 \(newValue) ");
+            }
+        }
+        
+        //메서드를 오버라이딩 할 경우 반환타입, 매개변수 , 매개변수 개수 동일해야한다.
+        override func makeNoise() {
+            
+            print("\t\t\t\t부와아아앙 삐용 삐용 삐용 삐용~~!!!!!!") //함수 내용을 변경하여 오버라이딩을 하자!
+        }
+    }
+    let mycar = Car()
+    
+    mycar.engineLv = 5
+    mycar.currentSpeed = 5
+    mycar.description = "my class Car"
+    print(mycar.description)
+    mycar.makeNoise()
+    
+    //참고로 연산 프로퍼티 get과 didSet은 같이 쓰일 수 없다.
+    let castedCar : Vehicle = Car();
+    castedCar.makeNoise()
+    
+    class A {
+        
+        func classType () {
+            print(" A class 타입이 호출 되었습니다.");
+        }
+    }
+    class B :A{
+        override func classType() {
+            print(" B class 타입이 호출 되었습니다.")
+        }
+    }
+    class C : B{
+        override func classType() {
+            print(" C class 타입이 호출 되었습니다.")
+        }
+    }
+    
+    let typeC :B = C(); //업캐스팅
+    typeC.classType()
+    
+    let anyA = typeC as A;
+    anyA.classType(); //업캐스팅된 anyA이지만 오버라이딩을통해 재정의 된 함수가 있기에 그 함수를 호출한다.
+    if let anyC = anyA as? C{ //다운그래이드
+        print("다운캐스팅 형 변환이 성공적으로 되엇습니다.");
+    }
+    //클래스의 최상위 클래스는 AnyObject 클래스이다.
+    var list = [AnyObject](); //어떤 클래스 타입이든 다 배열의 원소로 받을 수 있다.
+    list.append(A())
+    list.append(B())
+    list.append(C())
+    list.append(Car())
+    
+}
 //day1()
-day2()
+//day2()
+day3()
