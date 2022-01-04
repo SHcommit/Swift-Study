@@ -352,7 +352,7 @@ func day4(){
     let kim = userID(name: "kim" , age: 10 )    //init 메서드 호출
     //let park = userID(name : "park" , age : 15 , ID : "9238") 구조체의 경우 가능하지만 클래스는 안됨
     kim.prtFunc()
-    //park.prtFunc()
+    //park.prtFunc();
     
     // init를 구현 후 해당 맴버변수에 맞는 생성자로 초기화 하거나, 구조체의 경우 추가적으로 멤버와이즈 초기화를 할 수 있다.
     /*
@@ -373,7 +373,6 @@ func day4(){
             return self.ceo     //자신이 속한 인스턴스의 프로퍼티를 (참조?)반환한다.
         }
     }
-    
 }
 //day1()
 //day2()
