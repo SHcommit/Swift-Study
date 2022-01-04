@@ -333,6 +333,49 @@ func day3(){
     list.append(Car())
     
 }
+                    /* 22.01.03*/
+func day4(){
+    /*       ************************ 생성자 init ************************     */
+    class userID{
+        var name :String
+        var age :Int
+        var ID : String = "X"
+        init(name : String,age : Int){
+            self.name = name;
+            self.age = age
+        }
+        func prtFunc(){
+            print("이름 : \(name) , 나이 : \(age) , 아이디 : \(ID) ")
+        }
+    }
+    //let jang = userID();  //기본 초기화 구문 x
+    let kim = userID(name: "kim" , age: 10 )    //init 메서드 호출
+    //let park = userID(name : "park" , age : 15 , ID : "9238") 구조체의 경우 가능하지만 클래스는 안됨
+    kim.prtFunc()
+    //park.prtFunc()
+    
+    // init를 구현 후 해당 맴버변수에 맞는 생성자로 초기화 하거나, 구조체의 경우 추가적으로 멤버와이즈 초기화를 할 수 있다.
+    /*
+        - 특이한 점은 struct에 init를 구현하지 않았는데도 불구하고 인스턴스를 생성할 때
+        - var kim userID(name : "kim" , age : 10)을 했을 때 초기화가 되었다. ???????
+        - 하지만 클래스의 경우 init를 구현하지 않으면 위에 경우처럼 초기화가 안됨
+     */
+    
+    struct Human{
+        var name :String?
+        var man : Bool = true;
+    }
+    
+    struct Company{
+        var ceo : Human? //human 구조체를 프로프로퍼티로 갖는다.!
+        var companyName :String?
+        func getCEO() -> Human?{ //구조체를 반환한다.
+            return self.ceo     //자신이 속한 인스턴스의 프로퍼티를 (참조?)반환한다.
+        }
+    }
+    
+}
 //day1()
 //day2()
-day3()
+//day3()
+day4()
