@@ -4,16 +4,21 @@
 //
 //  Created by 양승현 on 2022/01/08.
 //
-
+//AppleDelegate.swift
+/*
+    앱 전체의 실행 흐름을 컨트롤하는 객체
+ */
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    //20.01.09
+    //아래의 메서드는 앱이 처음 실행될 때 필요한 시스템 적 처리를 모두 끝내고,
+    //메인 화면을 표시하기 직전에 이 메서드가 호출됨.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        sleep(5)//c와는 다르게 input/1000초가 아니라 말 그대로 5 초임.
         return true
     }
 
