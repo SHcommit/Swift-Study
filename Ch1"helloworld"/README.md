@@ -15,7 +15,7 @@
 
 :white_medium_square: 이것이 ViewController가 해야할 일이다.
 
-:black_medium_square: 이 역활은 모두 UIViewController에 정의 되어있다.
+:black_medium_square: 이 역할은 모두 UIViewController에 정의 되어있다.
 
 :white_medium_square: 따라서 UIView 객체가 바로 windows에 얹혀지는 게 아니라 ViewController에 얹혀지고, ViewController가 window에 전달되어야 한다.
 
@@ -25,7 +25,7 @@
 	- MVC 패턴이란?  
 > window에 UIView를 보내기 전 뷰와 리소스 전체를 담당할 객체를 **ViewController**로 정하자!
 > 
-> 이제 한개의 프로젝트를 구성할 때 Model, View, Controller 세개의 구성요소를 갖도록 하자!
+> 이제 한 개의 프로젝트를 구성할 때 Model, View, Controller 세개의 구성요소를 갖도록 하자!
 > 
 > window에 뷰 객체를 바로 할당하지 말고, ViewController를 할당시켜 첨부된 뷰들만 화면에 추가하자!!
 
