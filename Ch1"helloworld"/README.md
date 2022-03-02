@@ -53,4 +53,23 @@
 >
 > 한 화면에서 다른화면으로 전환하기 위해 적상해야 하는 코드 또한 줄어들기 때문!!(segue 방식)
 
+---
 
+
+🔭 viewDidLoad()
+
+:white_medium_square: 뷰 로딩 완료 되었을 때 시스템에 의해 자동 호출됨. 
+
+🔭 AppDelegate.swift
+
+:white_medium_square: 앱 전체의 실행 흐름을 컨트롤하는 객체
+
+:black_medium_square: ex) 앱이 처음 실행될 때, 종료될 때, 백그라운드 상태로 돌아가거나, 포그라운드 상태로 활성화 될 때 호출되는 메서드 들로 구성됨.
+
+:white_medium_square: application(_:didFinishLaunchingWithOptions:) 
+
+> 이 메서드는 앱이 처음 실행될 때, 필요한 시스템 처리 끝낸 후 메인 화면(Main.storyboard) 표시 직전에 호출된다.
+
+### :bulb: **포그라운드 상태란?**
+
+> 포그라운드 == 배경. 화면에서 유저와 상호작용 하게되는 프로세스
