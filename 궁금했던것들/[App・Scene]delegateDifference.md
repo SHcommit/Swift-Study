@@ -3,11 +3,11 @@
 ### 안녕하세요👋
 ✨**Swift 공부를 할 때마다**✨ 항상 궁금했었습니다. 
 
-> (뭐지,, appDelegate는  앱 시작될 때 화면 LaunchScreen에 관련해서, 앱 데이터 정리 관련 다루긴 했지만 SceneDelegate.swift는 뭐지? - 🌱Swift공부 2달째.. - )
+> (뭐지,, appDelegate는  앱 시작될 때 화면 LaunchScreen에 관련해서, 앱 데이터 정리 관련 다루긴 했지만 SceneDelegate.swift...? - 🌱Swift공부 2달째.. - )
 
 🔭 MVP 패턴을 공부하다 UIWindow와 window의 차이가 궁금해졌고, AppDelegate.swift 와 SceneDelegate.swift가 궁금해서 공부를 했습니다.
 
-//사진 1
+![사진1](https://user-images.githubusercontent.com/96910404/156738750-6026c81a-4fc8-4d89-80ae-f567504906f4.jpeg)
 
 :white_medium_square: iOS 12버전일 때. (다중 화면 x) 
 >:black_medium_square: AppDelegate에서 process Lifecycle , UI Lifecycle 모두 다루었습니다.
