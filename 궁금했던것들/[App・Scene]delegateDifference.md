@@ -14,13 +14,13 @@
 >
 >:white_medium_square: App Delegate는 앱의 프로세스 상태, UI상태( Not running, Active, Inactive, Background, Suspended)를 알고 있어야 했다.
 
-//사진 2
+![사진2](https://user-images.githubusercontent.com/96910404/156739104-c6c83137-cace-4285-9b0f-759f8866de3e.jpeg)
 
 :black_medium_square: iOS 13 버전(tablet 다중 화면 지원 O)
 > :white_medium_square: 다중화면일 경우 여러개의 Scene 과 UI를 갖기에 체계적으로 UI Life cycle를 관리할 새로운 Scene Delegate가  만들어졌다.
 > 
 > :black_medium_square: 이때 기존에 App Delegate에서 관리했던 willEnterForeground(실행된 앱이 화면에 표시될 것인가?)등 UI Life cycle을 Scene Delegate에서 다루게 된다.
 
-//사진 3
+![사진3](https://user-images.githubusercontent.com/96910404/156739234-45906fe5-d718-4c7a-9d2e-02288d229005.jpeg)
 
-[자세하게 설명한 icksw님 블로그]https://icksw.tistory.com/137 
+[자세하게 설명한 icksw님 블로그]https://icksw.tistory.com/137 (감사합니다.)
