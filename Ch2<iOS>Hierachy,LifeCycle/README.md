@@ -1,4 +1,4 @@
-##  mvc패턴, window와 Root ViewController관계, 코코아 터치 프레임워크 
+##  mvc패턴, window와 Root ViewController관계, 코코아 터치 프레임워크 
 
 안녕하세요👋
  
@@ -6,7 +6,8 @@
 ### 🔭 MVC 패턴
 	chapter 1에 이어 다시 한 번 MVC패턴을 공부했습니다.
 	
-//사진 iOS에서의 MVC 구조
+![ios_mvcPattern](https://user-images.githubusercontent.com/96910404/156876650-ffd166f4-e960-451b-9434-1c38d5890360.png)
+(iOS에서의 MVC 구조)
 
 :white_medium_square: Model 
 
@@ -21,9 +22,9 @@
 > action(사용자의 입력)을 받아 Model에게 알려주거나, 입력 처리를 하고, 뷰로 결과 전달
 > Model에서의 데이터 변화를 인식하고, View에 전달!! 혹은 데이터 처리를 함.
 
-//사진 2
+![draw](https://user-images.githubusercontent.com/96910404/156876648-8d0cc5b5-29ff-4e30-b2cd-2b343adc6728.jpeg)
 
-MVC 패턴과 Window, (Controller 에 있는) View Controller에 대해서 한번 그려봤습니다.
+MVC 패턴과 Window, (Controller 에 있는) Root View Controller..
 
  ---
  
