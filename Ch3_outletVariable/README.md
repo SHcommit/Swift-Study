@@ -48,4 +48,5 @@ https://github.com/SHcommit/SwiftStudy_No2/blob/master/%EA%B6%81%EA%B8%88%ED%96%
 > 
 > > 동적인 상태를 처리하는 메서드!!
  
+ 
  // chapter 3에서는 아울렛 변수를 다양하게 선언하는 방법에 대해 알 수 있다.
