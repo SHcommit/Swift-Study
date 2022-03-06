@@ -94,3 +94,7 @@
 :black_medium_square: 강한참조로 연결된 A에 대해서 nil 처리를 할 경우
 
 :white_medium_square: 더이상 A B 간에 강한 참조가 없어져 B 또한 nil처리가 된다!!
+
+정말 자세한 예시는
+
+https://docs.swift.org/swift-book/LanguageGuide/AutomaticReferenceCounting.html
