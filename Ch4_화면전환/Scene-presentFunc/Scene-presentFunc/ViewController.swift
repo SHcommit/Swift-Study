@@ -16,7 +16,11 @@ class ViewController: UIViewController {
 
 
     @IBAction func nextBtn(_ sender: Any) {
-        let uvc = self.storyboard!.instantiateViewController(withIdentifier: "SecondVC")
+        //SecondVC를 인스턴스화
+        guard let uvc = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") else {
+            return
+        }
+        //화면 전환 효과
         uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(uvc, animated: true)
     }
