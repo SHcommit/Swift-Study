@@ -13,7 +13,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func MoveByNavy(_ sender: Any) {
+        guard let uvc = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") else {
+            return
+        }
+        self.navigationController?.pushViewController(uvc, animated: true)
+    }
+    
 }
 
