@@ -26,6 +26,8 @@
 
 MVC 패턴과 Window, (Controller 에 있는) Root View Controller..
 
+:black_medium_square: iOS에서는 하나의 뷰 컨트롤러 아래의 한개의 루트뷰!를 관리하는 것이 MVC패턴의 기본 원리이다. 하지만 두개의 루트뷰를 쓴다면? It isn't mvp pattern
+
  ---
  
 ### 🔭  window란?
