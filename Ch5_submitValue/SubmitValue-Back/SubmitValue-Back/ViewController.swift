@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     var paramEmail : String?
     var paramUpdate : Bool?
     var paramInterval : Int?
+    
     override func viewWillAppear(_ animated: Bool) {
         if let email = paramEmail{
             resultEmail.text = email
@@ -34,5 +35,13 @@ class ViewController: UIViewController {
             resultInterval.text = "\(interval) 초 마다 갱신함"
         }
     }
+   
+    @IBAction func onRegist(_ sender: Any) {
+        let SecondVC = self.storyboard!.instantiateViewController(withIdentifier: "SecondVC")
+        
+        SecondVC.modalTransitionStyle = .coverVertical
+        
+        present(SecondVC,animated: true)
+    }
+    
 }
-
