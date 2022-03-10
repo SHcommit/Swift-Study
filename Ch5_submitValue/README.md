@@ -53,7 +53,7 @@
 - Manual Segue를 통한 값 전달 방법!!
 > 화면과 화면을 이어주는 Segue == ManualSegue
 
-//사진1
+<img width="942" alt="사진1" src="https://user-images.githubusercontent.com/96910404/157625861-0cdc229c-c993-444f-9b14-f188a70f4927.png">
 
 :white_medium_square: 도크바 첫번째 아이콘 ctrl클릭 -> 원하는 VC에 드래그
 
