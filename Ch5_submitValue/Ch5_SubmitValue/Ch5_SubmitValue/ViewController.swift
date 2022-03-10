@@ -42,6 +42,22 @@ class ViewController: UIViewController {
         self.intervalText.text = "\(value) 분 마다"
     }
     
+    @IBAction func onSubmit(_ sender: Any) {
+        var nextVC = "SecondVC"
+        guard let SecondVC = self.storyboard?.instantiateViewController(withIdentifier:nextVC) as? SecondViewController else{
+            NSLog("스토리보드에서 \(nextVC)를 찾을 수 없습니다.")
+            return
+        }
+        SecondVC.paramEmail = tfEmail.text!
+                
+        SecondVC.paramUpdate = isUpdateSwitch.isOn ? true : false
+        
+        SecondVC.paramInterval = intervalStepper.isContinuous ? intervalStepper.value : intervalStepper.minimumValue
+        
+        SecondVC.modalTransitionStyle = .coverVertical
+        
+        present(SecondVC,animated: true)
+    }
     
 }
 
