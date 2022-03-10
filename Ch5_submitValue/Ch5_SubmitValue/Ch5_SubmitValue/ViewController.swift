@@ -58,6 +58,26 @@ class ViewController: UIViewController {
         
         present(SecondVC,animated: true)
     }
+    //메뉴얼 Segue를 통한 데이터 전송
+    @IBAction func onPerformSegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "ManualSegue", sender: self)
+    }
+    
+    //Segue는 세그웨이가 시작될 때 VC1, VC2 인스턴스가 만들어지기 때문에
+    //prepare(for:sender:)메소드를 통해 데이터를 전송해야한다.
+    //prepare(for:sender:)는 onPerformSegue가 실행되기 전에 호출해주는 메서드이다.
+    //여기서 목적지 인스턴스(VC2)를 얻어 값을 전달해주자!!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        
+        guard let SecondVC = dest as? SecondViewController else{
+            return
+        }
+        
+        SecondVC.paramEmail = tfEmail.text!
+        SecondVC.paramUpdate = isUpdateSwitch.isOn
+        SecondVC.paramInterval = intervalStepper.value
+    }
     
 }
 
