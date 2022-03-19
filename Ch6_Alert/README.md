@@ -128,7 +128,7 @@
 
 *  이는 노피티케이션 센터에 알림 요청 객체가 추가되어, 추후 노피티케이션 센터는 iOS 스케줄링에 값 등록하고, 알림을 정해진시간에 발송시켜준다.
 
-<a href = ""> 로컬 알림 설정 구현 클릭! </a>
+<a href = "https://github.com/SHcommit/SwiftStudy_No2/blob/master/Ch6_Alert/MSG-Notification/MSG-Notification/AppDelegate.swift"> 로컬 알림 설정 구현 클릭! </a>
 
 ---
 
@@ -151,5 +151,6 @@
 > 
 ### 🔭 로컬 알림 예
 
-<>
+<a href= "https://github.com/SHcommit/SwiftStudy_No2/blob/master/Ch6_Alert/MSG-Notification/MSG-Notification/ViewController.swift"> 데이트피커를 통한 로컬 알림 !! </a>
+
 //추후 dispatchQeuue.main.async에 대해서 공부해보자!
