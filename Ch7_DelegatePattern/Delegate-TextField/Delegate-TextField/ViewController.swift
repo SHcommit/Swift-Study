@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController ,UITextFieldDelegate{
 
     @IBOutlet var tf: UITextField!
     
@@ -28,10 +28,14 @@ class ViewController: UIViewController {
          ***
          **
          * 1. 텍스트 필드 사용자 정의 할 것.
+         * 2. Delegate 패턴 사용할 것.
          */
         customTextField()
         //텍스트 필드 최초 응답자로 지정
         self.tf.becomeFirstResponder()
+        //뷰 컨트롤러(이 클래스에 대한 Scene)가 텍스트 필드의 델리게이트 객체로 지정됨.
+        //
+        self.tf.delegate = self
     }
     
     private func customTextField(){
@@ -65,5 +69,43 @@ class ViewController: UIViewController {
         self.tf.layer.borderWidth = 2.0
     }
     
+    private func customOverrideFunc(){
+        /**
+         * 텍스트 필드TextField(== tf) 편집 시작된 후 호출
+         * tf 내용 삭제될 때 호출
+         * tf 내용 변경될 때 호출
+         * tf 리턴키 눌러졌을 때 호출
+         * tf 필드 편집 종료될 때 호출
+         */
+        func textFieldDidBeginEditing(_ textField: UITextField){
+            NSLog("텍스트 필드 편집 Begin");
+        }
+        func textFieldShouldClear(_ textField: UITextField)-> Bool{
+            NSLog("텍스트 필드 내용 삭제")
+            return true
+        }
+        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string : String) -> Bool{
+            NSLog("텍스트 필드의 내용이 \(string)으로 변경")
+            if Int(string) == nil{
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+            //할당 해제
+            textField.resignFirstResponder()
+            NSLog("tf 리턴키 눌러졌습니다.")
+            return true
+        }
+        func textFieldShouldEndEditing(_ textField: UITextField) -> Bool{
+            NSLog("tf 편집 종료")
+            return true
+        }
+        func textFieldDidEndEditing(_ textField: UITextField){
+            NSLog("텍스트 필드 편집 종료됨")
+        }
+    }
 }
 
