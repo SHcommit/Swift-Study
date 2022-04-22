@@ -43,7 +43,7 @@
 
 ---
 
-### 🔭 First Responder(최초 응답자)
+### 🔭 First Responder(최초 응답자)
 > 최초 응답자 설정
 > 
 >> .becomeFirstResponder()
