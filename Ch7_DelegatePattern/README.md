@@ -67,6 +67,15 @@
 
 ### 🔭 이미지 피커(ImagePicker)
 
+<img height="500" width="230" alt="ch7_imgPicker_1" src="https://user-images.githubusercontent.com/96910404/164752172-9a809370-c024-46de-b348-70cc0b6705dd.png" align="left">
+<img height="500" width="230" alt="ch7_imgPicker_2" src="https://user-images.githubusercontent.com/96910404/164752182-71348e03-2b79-4a2a-a66b-1e1f1faa9da3.png" align="left">
+<img height="500" width="230" alt="ch7_imgPicker_3" src="https://user-images.githubusercontent.com/96910404/164752196-42ded6af-85ab-4e76-a09f-7133fe4ec057.png" align="left">
+<img height="500" width="230" alt="ch7_imgPicker_4" src="https://user-images.githubusercontent.com/96910404/164752202-32ca9f8a-be9c-4360-9b56-7a84b0c45497.png" align="left">
+
+> _
+
+> 버튼 누를 경우 ImagePicker를 통해 내장된 사진 라이브러리에서 사진을 클릭 후 수락 한 경우에 이미지가 Scene에 로드됩니다.
+
 > UIImagePickerController()
 
 :white_medium_square: 카메라 쵤영 후 사진 불러오기, 앨범에서 이미지 선택하기 등 이미지를 선택할 때 사용되는 컨트롤러
