@@ -62,3 +62,22 @@
 > **self**.tf.**becomeFirstResponder()**
 
 :black_medium_square: 최초 응답자 == Focus
+
+---
+
+### 🔭 이미지 피커(ImagePicker)
+
+> UIImagePickerController()
+
+:white_medium_square: 카메라 쵤영 후 사진 불러오기, 앨범에서 이미지 선택하기 등 이미지를 선택할 때 사용되는 컨트롤러
+
+:black_medium_square: 단순하게 Image를 가져올 수 있다.
+> ex) 카메라에서 이미지 추출하는 과정 구현X
+
+:white_medium_square: UIViewController를 상속받아 화면 전체를 덮음
+> present 로 화면 전환을 통해 이미지를 가져오는 것이기에 이전화면으로 돌아갈려면 dismiss필수
+
+:black_medium_square: 이미지 피커 이후에 실행된 특정 VC(알람, 사진) 원활하게 실행되기 위해선,
+> self.presentingViewController?.dismiss(animated:completion:)
+
+>두번째 매개변수에 클로저로 이후에 실행될 VC 정의하면 된다.
