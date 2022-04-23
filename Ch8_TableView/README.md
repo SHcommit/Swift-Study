@@ -1,5 +1,7 @@
 ## 테이블뷰👋
 
+<img width="632" alt="스크린샷 2022-04-23 오후 1 25 30" src="https://user-images.githubusercontent.com/96910404/164877826-e3aa946a-6a30-441a-977a-2c0145824650.png">
+
 🌱 선택도(Cardinality)
 > 특정 카테고리 선택시 나온 결과값 개수 적을수록 선택도가 높다!
 > 
@@ -21,6 +23,8 @@
 > Section은 테이블 뷰 셀들을 묶는 Group의 개념이다.
 
 ### 🔭프로토타입 셀(Prototype Cell)
+
+<img width="371" alt="스크린샷 2022-04-23 오후 1 26 00" src="https://user-images.githubusercontent.com/96910404/164877855-f3b84f8d-c31a-453f-954b-e8fbc207a0d5.png">
 
 > 테이블 뷰 셀을 원하는 대로 쉽게 디자인할 수 있도록 해주는 객체!
 > 
