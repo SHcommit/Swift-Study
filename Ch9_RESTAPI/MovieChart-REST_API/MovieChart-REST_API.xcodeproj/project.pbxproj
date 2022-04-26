@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156E15D32817A95A009A5162 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E15D22817A95A009A5162 /* ListViewController.swift */; };
 		158D95542817A89700D0E831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D95532817A89700D0E831 /* AppDelegate.swift */; };
 		158D95562817A89700D0E831 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158D95552817A89700D0E831 /* SceneDelegate.swift */; };
 		158D955B2817A89700D0E831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158D95592817A89700D0E831 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		156E15D22817A95A009A5162 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		158D95502817A89700D0E831 /* MovieChart-REST_API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovieChart-REST_API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		158D95532817A89700D0E831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		158D95552817A89700D0E831 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				158D95532817A89700D0E831 /* AppDelegate.swift */,
 				158D95552817A89700D0E831 /* SceneDelegate.swift */,
 				158D95592817A89700D0E831 /* Main.storyboard */,
+				156E15D22817A95A009A5162 /* ListViewController.swift */,
 				158D955C2817A89900D0E831 /* Assets.xcassets */,
 				158D955E2817A89900D0E831 /* LaunchScreen.storyboard */,
 				158D95612817A89900D0E831 /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				158D95542817A89700D0E831 /* AppDelegate.swift in Sources */,
 				158D95562817A89700D0E831 /* SceneDelegate.swift in Sources */,
+				156E15D32817A95A009A5162 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
