@@ -12,7 +12,9 @@
 		156878492818141C00B82FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156878472818141C00B82FDF /* Main.storyboard */; };
 		1568784B2818141D00B82FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1568784A2818141D00B82FDF /* Assets.xcassets */; };
 		1568784E2818141D00B82FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1568784C2818141D00B82FDF /* LaunchScreen.storyboard */; };
-		15687856281814D100B82FDF /* myTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15687855281814D100B82FDF /* myTableViewController.swift */; };
+		15687856281814D100B82FDF /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15687855281814D100B82FDF /* MyTableViewController.swift */; };
+		156878582818313C00B82FDF /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156878572818313C00B82FDF /* MovieVO.swift */; };
+		1568785A2818371000B82FDF /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156878592818371000B82FDF /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +25,9 @@
 		1568784A2818141D00B82FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1568784D2818141D00B82FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1568784F2818141D00B82FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15687855281814D100B82FDF /* myTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTableViewController.swift; sourceTree = "<group>"; };
+		15687855281814D100B82FDF /* MyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
+		156878572818313C00B82FDF /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
+		156878592818371000B82FDF /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +60,15 @@
 		156878402818141C00B82FDF /* MovieList_tableView */ = {
 			isa = PBXGroup;
 			children = (
+				156878592818371000B82FDF /* MovieTableViewCell.swift */,
 				156878412818141C00B82FDF /* AppDelegate.swift */,
 				156878432818141C00B82FDF /* SceneDelegate.swift */,
+				15687855281814D100B82FDF /* MyTableViewController.swift */,
+				156878572818313C00B82FDF /* MovieVO.swift */,
 				156878472818141C00B82FDF /* Main.storyboard */,
 				1568784A2818141D00B82FDF /* Assets.xcassets */,
 				1568784C2818141D00B82FDF /* LaunchScreen.storyboard */,
 				1568784F2818141D00B82FDF /* Info.plist */,
-				15687855281814D100B82FDF /* myTableViewController.swift */,
 			);
 			path = MovieList_tableView;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1568785A2818371000B82FDF /* MovieTableViewCell.swift in Sources */,
 				156878422818141C00B82FDF /* AppDelegate.swift in Sources */,
-				15687856281814D100B82FDF /* myTableViewController.swift in Sources */,
+				156878582818313C00B82FDF /* MovieVO.swift in Sources */,
+				15687856281814D100B82FDF /* MyTableViewController.swift in Sources */,
 				156878442818141C00B82FDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
