@@ -10,6 +10,17 @@ import UIKit
 class ListViewController : UITableViewController{
     
     lazy var list :[MovieVO] = { [MovieVO]() }()
+    var page = 1
+    @IBAction func buttonMore(_ sender: Any) {
+        self.page += 1
+        let apiData = callRESTAPI()
+        dataParsing(RESTAPI: apiData)
+        //테이블 뷰 다시 읽어오기
+        self.tableView.reloadData()
+    }
+    
+    
+    
     
     override func viewDidLoad() {
         /**
@@ -83,10 +94,13 @@ class ListViewController : UITableViewController{
                 mvo.thumbnail   = r["thumbnailImage"] as? String
                 mvo.detail      = r["linkUrl"] as? String
                 mvo.rating      = ((r["ratingAverage"] as! NSString).doubleValue)
-                
+                let totalCount = (hoppin["totalCount"]as? NSStrong)!.integerValue
+                if self.list.count >= totalCount{
+                    self.buttonMore.isHidden = true
+                }
                 self.list.append(mvo)
             }
-        } catch{  }
+        } catch{ NSLog("parse error") }
     }
 }
 extension ListViewController{
