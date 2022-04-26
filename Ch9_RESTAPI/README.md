@@ -6,6 +6,10 @@
 > HTTP 바탕으로 데이터를 주고 받음.
 
 🌱파싱(Parsing) : 데이터를 형식에 맞게 분석하는 과정
+> JSONSerializatoin 객체 안에 .jsonObject(with:options:) 메서드가있다.
+> > 이를 통해서 데이터를 파싱한다.  자세한 방법은 
+> >
+> ><a href="https://github.com/SHcommit/SwiftStudy_No2/blob/master/Ch9_RESTAPI/MovieChart-RESTAPI/MovieChart-RESTAPI/ListViewController.swift">이 곳</a>에서 dataParsing(RESTAPI:) func를 보자!!
 
 🌱 Mutable 수정, 삭제 할수 있다!
 
