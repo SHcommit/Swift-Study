@@ -4,4 +4,13 @@
 
 import UIKit
 
-
+class MovieCell : UITableViewCell{
+    
+    @IBOutlet var title: UILabel!
+    
+    @IBOutlet var thumbnail: UIImageView!
+    
+    @IBOutlet var decs: UILabel!
+    
+    @IBOutlet var rating: UILabel!
+}
