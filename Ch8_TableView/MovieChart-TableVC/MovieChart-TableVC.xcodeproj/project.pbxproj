@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1557CF592817C45E00C420A8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1557CF582817C45E00C420A8 /* Info.plist */; };
 		1560DB412813BBCB006B80CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560DB402813BBCB006B80CD /* AppDelegate.swift */; };
 		1560DB432813BBCB006B80CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560DB422813BBCB006B80CD /* SceneDelegate.swift */; };
 		1560DB482813BBCB006B80CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1560DB462813BBCB006B80CD /* Main.storyboard */; };
@@ -21,13 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1557CF582817C45E00C420A8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1560DB3D2813BBCB006B80CD /* MovieChart-TableVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovieChart-TableVC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1560DB402813BBCB006B80CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1560DB422813BBCB006B80CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1560DB472813BBCB006B80CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1560DB492813BBCD006B80CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1560DB4C2813BBCD006B80CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1560DB4E2813BBCD006B80CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1560DB542813BC82006B80CD /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		1560DB562813C445006B80CD /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
 		15CC598128145BB600438144 /* darknight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darknight.jpg; sourceTree = "<group>"; };
@@ -75,7 +76,7 @@
 				1560DB542813BC82006B80CD /* ListViewController.swift */,
 				1560DB492813BBCD006B80CD /* Assets.xcassets */,
 				1560DB4B2813BBCD006B80CD /* LaunchScreen.storyboard */,
-				1560DB4E2813BBCD006B80CD /* Info.plist */,
+				1557CF582817C45E00C420A8 /* Info.plist */,
 			);
 			path = "MovieChart-TableVC";
 			sourceTree = "<group>";
@@ -154,6 +155,7 @@
 				1560DB4A2813BBCD006B80CD /* Assets.xcassets in Resources */,
 				1560DB482813BBCB006B80CD /* Main.storyboard in Resources */,
 				15CC598528145BB600438144 /* secret.jpg in Resources */,
+				1557CF592817C45E00C420A8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
