@@ -22,6 +22,7 @@ class ListViewController : UITableViewController{
          */
         let apiData = callRESTAPI()
         dataParsing(RESTAPI: apiData)
+        tableView.rowHeight = 130
         
     }
     
@@ -68,7 +69,7 @@ class ListViewController : UITableViewController{
         do {
             let apiDictionary = try JSONSerialization.jsonObject(with: apiData, options: []) as! NSDictionary
             
-            let hoppin = apiDictionary["hoppins"] as! NSDictionary
+            let hoppin = apiDictionary["hoppin"] as! NSDictionary
             let movies = hoppin["movies"] as! NSDictionary
             let movie = movies["movie"] as! NSArray
             
@@ -77,14 +78,35 @@ class ListViewController : UITableViewController{
                 
                 let mvo = MovieVO()
                 
-                mvo.title = r["title"] as! String
+                mvo.title       = r["title"] as! String
                 mvo.description = r["genreNames"] as! String
-                mvo.thumbnail   = r["thumbnail"] as? String
+                mvo.thumbnail   = r["thumbnailImage"] as? String
                 mvo.detail      = r["linkUrl"] as? String
                 mvo.rating      = ((r["ratingAverage"] as! NSString).doubleValue)
                 
                 self.list.append(mvo)
             }
         } catch{  }
+    }
+}
+extension ListViewController{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.list.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let row = self.list[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell") as! MovieCell
+        
+        cell.title?.text  = row.title
+        cell.decs?.text   = row.description
+        cell.rating?.text = "\(row.rating!)"
+        
+        let url = URL(string: row.thumbnail!)
+        let imageData = try! Data(contentsOf: url!)
+        cell.thumbnail.image = UIImage(data: imageData)
+
+        return cell
     }
 }
