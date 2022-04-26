@@ -26,7 +26,18 @@ class MyTableViewController : UITableViewController {
         
     }
     
-    
+    private func getThumbnailImage(_ index: Int) -> UIImage{
+        
+        let mvo = self.list[index]
+        
+        if let savedImage = mvo.thumbnaliImage {
+            return savedImage
+        }else{
+            mvo.thumbnaliImage = UIImage(data: try! Data(contentsOf: URL(string: mvo.thumbnail!)!))
+        
+            return mvo.thumbnaliImage!
+        }
+    }
     private func callRESTAPI() -> Data {
         let url = "http://swiftapi.rubypaper.co.kr:2029/hoppin/movies?version=1&page=1&count=10&genreId=&order=releasedateasc"
         let apiURL = URL(string: url)!
@@ -62,6 +73,8 @@ class MyTableViewController : UITableViewController {
             mVO.title       = r["title"] as! String
             mVO.detail      = r["linkUrl"] as! String
             
+            
+            
             list.append(mVO)
         }
     }
@@ -83,7 +96,11 @@ extension MyTableViewController{
         customCell.rating?.text     = "\(movieInfo.rating!)"
         customCell.desc?.text = movieInfo.description
         
-        customCell.thumbnail.image = UIImage(data: try! Data(contentsOf: URL(string: movieInfo.thumbnail!)!))
+        customCell.thumbnail.image = getThumbnailImage(indexPath.row)
+        //비동기 방식 처리~~
+        DispatchQueue.main.async{
+            customCell.thumbnail.image = movieInfo.thumbnaliImage
+        }
         
         return customCell
         

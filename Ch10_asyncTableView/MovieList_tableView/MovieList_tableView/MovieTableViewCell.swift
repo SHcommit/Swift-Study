@@ -18,5 +18,6 @@ class MovieTableViewCell : UITableViewCell{
     //영화 상세 묘사
     @IBOutlet var desc: UILabel!
     
+    
 }
 

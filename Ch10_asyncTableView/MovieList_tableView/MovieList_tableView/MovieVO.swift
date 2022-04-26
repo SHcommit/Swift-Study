@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MovieVO {
     /**
@@ -20,4 +21,12 @@ class MovieVO {
     var description: String?
     var detail : String?
     var rating : Double?
+    
+    /*
+     * async 처리를 위한 객체.
+       네트워크를 통해 내려받은 이미지 정보 또한
+       이 객체를 저장하는 MyTableViewController.list에 추가함으로
+       반복적으로 매번 이미지를 내려받아 객체로 저장하는 방식을 회피할 수 있다.
+     */
+    var thumbnaliImage : UIImage?
 }
