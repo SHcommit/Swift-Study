@@ -4,13 +4,15 @@
 //
 //  Created by 양승현 on 2022/04/26.
 //
-
+import Foundation
 import UIKit
 
 class ListViewController : UITableViewController{
     
     lazy var list :[MovieVO] = { [MovieVO]() }()
+    
     var page = 1
+    
     @IBAction func buttonMore(_ sender: Any) {
         self.page += 1
         let apiData = callRESTAPI()
@@ -19,6 +21,7 @@ class ListViewController : UITableViewController{
         self.tableView.reloadData()
     }
     
+    @IBOutlet var moreIBOutlet: UIButton!
     
     
     
@@ -94,9 +97,9 @@ class ListViewController : UITableViewController{
                 mvo.thumbnail   = r["thumbnailImage"] as? String
                 mvo.detail      = r["linkUrl"] as? String
                 mvo.rating      = ((r["ratingAverage"] as! NSString).doubleValue)
-                let totalCount = (hoppin["totalCount"]as? NSStrong)!.integerValue
+                let totalCount = (hoppin["totalCount"]as? NSString)!.integerValue
                 if self.list.count >= totalCount{
-                    self.buttonMore.isHidden = true
+                    self.moreIBOutlet.isHidden = true
                 }
                 self.list.append(mvo)
             }
