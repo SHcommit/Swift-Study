@@ -58,7 +58,7 @@ extension TheaterTableViewController{
         }
     }
 }
-//MARK: - tableView 구현
+//MARK: - tableView , segue 구현
 extension TheaterTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.list.count
@@ -73,4 +73,24 @@ extension TheaterTableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue_map" {
+            let path = self.tableView.indexPath(for: sender as! UITableViewCell)
+            let data = self.list[path!.row]
+            
+            /*
+             * 안드로이드 시점에서는 인텐트를 통해 전달했는데,
+             *
+             * Swift는 segue를 통해 특정 segue identifier 를 찾고,
+             * indexPath . row를 특정 클릭된 테이블 셀 행찾고,
+             * segue.destination 의 형변환을 통해 도착지 VC 인스턴스 얻어서
+             * 해당 맴버변수에 값을 전달한다!!
+             */
+            let dest = segue.destination as? TheaterViewController
+            dest!.param = data
+        }
+    }
 }
+
+

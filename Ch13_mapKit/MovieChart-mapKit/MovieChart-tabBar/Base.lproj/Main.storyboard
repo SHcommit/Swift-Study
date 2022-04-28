@@ -135,6 +135,7 @@
                                     <outlet property="addr" destination="s85-q2-7lr" id="uNI-lJ-amg"/>
                                     <outlet property="name" destination="UbV-kS-UFi" id="n0o-OB-sBs"/>
                                     <outlet property="tel" destination="mNB-cJ-ZiI" id="MMC-S8-NL2"/>
+                                    <segue destination="N7H-aC-2fi" kind="show" identifier="segue_map" id="AxT-OX-TKN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -148,6 +149,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0Q-F5-yJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660.8695652173915" y="804.61956521739137"/>
+        </scene>
+        <!--상영관명-->
+        <scene sceneID="kjZ-7w-NhN">
+            <objects>
+                <viewController id="N7H-aC-2fi" customClass="TheaterViewController" customModule="MovieChart_tabBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N9h-f3-LJJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WHr-cc-q0W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cbD-Fv-eAU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="상영관명" id="8ex-zO-rX9"/>
+                    <connections>
+                        <outlet property="map" destination="WHr-cc-q0W" id="QeA-yY-S4I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNX-Yh-xEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2453.6231884057975" y="804.61956521739137"/>
         </scene>
         <!--영화관-->
         <scene sceneID="bnQ-aw-dTl">
@@ -221,6 +247,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wFC-W2-NJd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="019-Ca-rSw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
