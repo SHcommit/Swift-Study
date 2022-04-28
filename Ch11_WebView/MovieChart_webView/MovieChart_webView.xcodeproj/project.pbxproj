@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15A984A8281A3E3300662F5F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A984A7281A3E3300662F5F /* DetailViewController.swift */; };
+		15A984AA281A507200662F5F /* Foo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A984A9281A507200662F5F /* Foo.swift */; };
 		15AB7CF828199D1700B57759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AB7CF728199D1700B57759 /* AppDelegate.swift */; };
 		15AB7CFA28199D1700B57759 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AB7CF928199D1700B57759 /* SceneDelegate.swift */; };
 		15AB7CFF28199D1700B57759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15AB7CFD28199D1700B57759 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15A984A7281A3E3300662F5F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		15A984A9281A507200662F5F /* Foo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foo.swift; sourceTree = "<group>"; };
 		15AB7CF428199D1700B57759 /* MovieChart_webView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChart_webView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AB7CF728199D1700B57759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15AB7CF928199D1700B57759 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		15AB7CF628199D1700B57759 /* MovieChart_webView */ = {
 			isa = PBXGroup;
 			children = (
+				15A984A7281A3E3300662F5F /* DetailViewController.swift */,
+				15A984A9281A507200662F5F /* Foo.swift */,
 				15AB7CF728199D1700B57759 /* AppDelegate.swift */,
 				15AB7CF928199D1700B57759 /* SceneDelegate.swift */,
 				15AB7CFD28199D1700B57759 /* Main.storyboard */,
@@ -144,9 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A984AA281A507200662F5F /* Foo.swift in Sources */,
 				15AB7CF828199D1700B57759 /* AppDelegate.swift in Sources */,
 				15AB7D102819A41D00B57759 /* CustomTabieViewCell.swift in Sources */,
 				15AB7D0E28199EC500B57759 /* MovieVO.swift in Sources */,
+				15A984A8281A3E3300662F5F /* DetailViewController.swift in Sources */,
 				15AB7D0C28199E4D00B57759 /* MyTableViewController.swift in Sources */,
 				15AB7CFA28199D1700B57759 /* SceneDelegate.swift in Sources */,
 			);
