@@ -12,6 +12,10 @@
 		1510C26B281A70EF00D0B555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1510C269281A70EF00D0B555 /* Main.storyboard */; };
 		1510C26D281A70F000D0B555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1510C26C281A70F000D0B555 /* Assets.xcassets */; };
 		1510C270281A70F000D0B555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1510C26E281A70F000D0B555 /* LaunchScreen.storyboard */; };
+		1510C278281A752100D0B555 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1510C277281A752100D0B555 /* MovieTableViewController.swift */; };
+		152FE616281A756E00362B55 /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FE615281A756E00362B55 /* MovieVO.swift */; };
+		152FE618281A7BBE00362B55 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FE617281A7BBE00362B55 /* MovieTableViewCell.swift */; };
+		152FE61A281A899500362B55 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FE619281A899500362B55 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		1510C26C281A70F000D0B555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1510C26F281A70F000D0B555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1510C271281A70F000D0B555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1510C277281A752100D0B555 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
+		152FE615281A756E00362B55 /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
+		152FE617281A7BBE00362B55 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		152FE619281A899500362B55 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +62,13 @@
 		1510C262281A70EF00D0B555 /* MovieChart-tabBar */ = {
 			isa = PBXGroup;
 			children = (
+				152FE619281A899500362B55 /* DetailViewController.swift */,
 				1510C263281A70EF00D0B555 /* AppDelegate.swift */,
 				1510C265281A70EF00D0B555 /* SceneDelegate.swift */,
 				1510C269281A70EF00D0B555 /* Main.storyboard */,
+				152FE615281A756E00362B55 /* MovieVO.swift */,
+				1510C277281A752100D0B555 /* MovieTableViewController.swift */,
+				152FE617281A7BBE00362B55 /* MovieTableViewCell.swift */,
 				1510C26C281A70F000D0B555 /* Assets.xcassets */,
 				1510C26E281A70F000D0B555 /* LaunchScreen.storyboard */,
 				1510C271281A70F000D0B555 /* Info.plist */,
@@ -135,8 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152FE618281A7BBE00362B55 /* MovieTableViewCell.swift in Sources */,
 				1510C264281A70EF00D0B555 /* AppDelegate.swift in Sources */,
+				152FE616281A756E00362B55 /* MovieVO.swift in Sources */,
+				152FE61A281A899500362B55 /* DetailViewController.swift in Sources */,
 				1510C266281A70EF00D0B555 /* SceneDelegate.swift in Sources */,
+				1510C278281A752100D0B555 /* MovieTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
