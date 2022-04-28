@@ -16,6 +16,10 @@
 		152FE616281A756E00362B55 /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FE615281A756E00362B55 /* MovieVO.swift */; };
 		152FE618281A7BBE00362B55 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FE617281A7BBE00362B55 /* MovieTableViewCell.swift */; };
 		152FE61A281A899500362B55 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FE619281A899500362B55 /* DetailViewController.swift */; };
+		152FE61E281A957D00362B55 /* Listbullets.png in Resources */ = {isa = PBXBuildFile; fileRef = 152FE61C281A957D00362B55 /* Listbullets.png */; };
+		152FE61F281A957D00362B55 /* Trailer.png in Resources */ = {isa = PBXBuildFile; fileRef = 152FE61D281A957D00362B55 /* Trailer.png */; };
+		152FE621281A97F400362B55 /* TheaterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FE620281A97F400362B55 /* TheaterTableViewCell.swift */; };
+		152FE623281A984D00362B55 /* TheaterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FE622281A984D00362B55 /* TheaterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		152FE615281A756E00362B55 /* MovieVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
 		152FE617281A7BBE00362B55 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		152FE619281A899500362B55 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		152FE61C281A957D00362B55 /* Listbullets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Listbullets.png; sourceTree = "<group>"; };
+		152FE61D281A957D00362B55 /* Trailer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trailer.png; sourceTree = "<group>"; };
+		152FE620281A97F400362B55 /* TheaterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterTableViewCell.swift; sourceTree = "<group>"; };
+		152FE622281A984D00362B55 /* TheaterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +70,13 @@
 		1510C262281A70EF00D0B555 /* MovieChart-tabBar */ = {
 			isa = PBXGroup;
 			children = (
+				152FE61B281A957D00362B55 /* Resource */,
 				152FE619281A899500362B55 /* DetailViewController.swift */,
 				1510C263281A70EF00D0B555 /* AppDelegate.swift */,
 				1510C265281A70EF00D0B555 /* SceneDelegate.swift */,
 				1510C269281A70EF00D0B555 /* Main.storyboard */,
+				152FE622281A984D00362B55 /* TheaterTableViewController.swift */,
+				152FE620281A97F400362B55 /* TheaterTableViewCell.swift */,
 				152FE615281A756E00362B55 /* MovieVO.swift */,
 				1510C277281A752100D0B555 /* MovieTableViewController.swift */,
 				152FE617281A7BBE00362B55 /* MovieTableViewCell.swift */,
@@ -74,6 +85,15 @@
 				1510C271281A70F000D0B555 /* Info.plist */,
 			);
 			path = "MovieChart-tabBar";
+			sourceTree = "<group>";
+		};
+		152FE61B281A957D00362B55 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				152FE61C281A957D00362B55 /* Listbullets.png */,
+				152FE61D281A957D00362B55 /* Trailer.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +154,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152FE61F281A957D00362B55 /* Trailer.png in Resources */,
 				1510C270281A70F000D0B555 /* LaunchScreen.storyboard in Resources */,
+				152FE61E281A957D00362B55 /* Listbullets.png in Resources */,
 				1510C26D281A70F000D0B555 /* Assets.xcassets in Resources */,
 				1510C26B281A70EF00D0B555 /* Main.storyboard in Resources */,
 			);
@@ -153,6 +175,8 @@
 				152FE61A281A899500362B55 /* DetailViewController.swift in Sources */,
 				1510C266281A70EF00D0B555 /* SceneDelegate.swift in Sources */,
 				1510C278281A752100D0B555 /* MovieTableViewController.swift in Sources */,
+				152FE623281A984D00362B55 /* TheaterTableViewController.swift in Sources */,
+				152FE621281A97F400362B55 /* TheaterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
