@@ -129,10 +129,10 @@ extension MyTableViewController{
         customCell.rating?.text     = "\(movieInfo.rating!)"
         customCell.desc?.text = movieInfo.description
         
-        customCell.thumbnail.image = getThumbnailImage(indexPath.row)
+        
         //비동기 방식 처리~~
         DispatchQueue.main.async{
-            customCell.thumbnail.image = movieInfo.thumbnaliImage
+            customCell.thumbnail.image = self.getThumbnailImage(indexPath.row)
         }
         
         return customCell
