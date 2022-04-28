@@ -30,3 +30,11 @@
 :black_medium_square: SFSafariViewController 구현
 > 인 앱에서 사파리 기능 지원!!
 >> 사파리는 뷰 컨트롤러 객체로 취급되서 present로 화면 전환!
+
+<img width="1512" alt="스크린샷 2022-04-28 오후 2 11 46" src="https://user-images.githubusercontent.com/96910404/165686925-ef9931ce-1a28-4db1-a8f0-ee6b2b5617a1.png">
+
+기존 movie List에서
+
+특정 cell 클릭시 mvo.detail의 url로 이동
+
+<img width="826" alt="스크린샷 2022-04-28 오후 2 12 02" src="https://user-images.githubusercontent.com/96910404/165686913-916d914a-de12-4044-a64c-614bc5b318c3.png">
