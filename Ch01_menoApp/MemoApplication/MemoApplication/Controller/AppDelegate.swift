@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    // MARK: 메모 데이터 list 정의
+    var memoList = [MemoData]()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
