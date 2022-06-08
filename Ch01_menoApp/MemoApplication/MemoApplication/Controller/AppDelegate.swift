@@ -7,7 +7,6 @@
 
 import UIKit
 import CoreData
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: 메모 데이터 list 정의

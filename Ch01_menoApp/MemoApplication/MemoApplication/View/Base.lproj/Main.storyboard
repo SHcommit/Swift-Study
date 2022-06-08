@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="142-KC-BJz">
-                            <rect key="frame" x="0.0" y="227.33333206176763" width="414" height="479.00000000000006"/>
+                            <rect key="frame" x="0.0" y="227.33333206176752" width="414" height="479.00000000000006"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
@@ -70,6 +70,11 @@
                                         <constraint firstItem="o2l-0a-pNK" firstAttribute="leading" secondItem="b9k-Pv-64F" secondAttribute="leadingMargin" id="xaj-oM-yA3"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="o2l-0a-pNK" id="Pqr-M8-7wa"/>
+                                    <outlet property="regdate" destination="80C-oE-Pj9" id="bcY-Ac-bGq"/>
+                                    <outlet property="subject" destination="DR3-31-T1T" id="rdN-gg-ZnF"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" rowHeight="80" id="w3i-3F-Mg7" customClass="MemoCell" customModule="MemoApplication" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="124.66666603088379" width="414" height="80"/>
@@ -128,6 +133,12 @@
                                         <constraint firstItem="aLb-XI-vsY" firstAttribute="leading" secondItem="J99-mN-ix8" secondAttribute="trailing" constant="7" id="zcf-Q4-8i6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="aLb-XI-vsY" id="Cfw-T5-aV7"/>
+                                    <outlet property="img" destination="J99-mN-ix8" id="cUo-E1-vyO"/>
+                                    <outlet property="regdate" destination="hSp-f3-mGz" id="Bya-OU-l1I"/>
+                                    <outlet property="subject" destination="wyS-jZ-uy8" id="nSJ-hK-uLe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -153,7 +164,7 @@
         <!--상세 화면-->
         <scene sceneID="mkh-ke-DgW">
             <objects>
-                <viewController title="상세 화면" id="z8L-c4-b0W" customClass="MemoReadVC" customModule="MemoApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoRead" title="상세 화면" id="z8L-c4-b0W" customClass="MemoReadVC" customModule="MemoApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xfd-m0-Odw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,6 +206,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="clW-zd-ato"/>
+                    <connections>
+                        <outlet property="contents" destination="rS0-U5-law" id="rub-2S-IG5"/>
+                        <outlet property="image" destination="qQ5-vG-hhl" id="6oE-sc-rdN"/>
+                        <outlet property="subject" destination="U6O-Lr-pHA" id="hjK-mv-e17"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQS-h5-qm8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,19 +224,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="07z-6w-JUD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="hahaa" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="07z-6w-JUD">
                                 <rect key="frame" x="20" y="64" width="374" height="250"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="h9p-M7-OiV"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="42e-Rg-Czp">
-                                <rect key="frame" x="20" y="329" width="250" height="250"/>
+                                <rect key="frame" x="20" y="354" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" placeholder="YES" id="8Ak-s8-9jS"/>
                                     <constraint firstAttribute="width" constant="250" id="S8t-Bt-zBK"/>
@@ -232,8 +247,8 @@
                         <constraints>
                             <constraint firstItem="42e-Rg-Czp" firstAttribute="leading" secondItem="cub-Op-KO8" secondAttribute="leading" constant="20" id="0bO-5d-hZR"/>
                             <constraint firstItem="07z-6w-JUD" firstAttribute="top" secondItem="cub-Op-KO8" secondAttribute="top" constant="20" id="3a2-d4-2mK"/>
-                            <constraint firstItem="42e-Rg-Czp" firstAttribute="top" secondItem="07z-6w-JUD" secondAttribute="bottom" constant="15" id="O3Y-0D-vkr"/>
                             <constraint firstItem="07z-6w-JUD" firstAttribute="leading" secondItem="cub-Op-KO8" secondAttribute="leading" constant="20" id="Zwz-Xf-oas"/>
+                            <constraint firstItem="42e-Rg-Czp" firstAttribute="top" secondItem="07z-6w-JUD" secondAttribute="bottom" constant="40" placeholder="YES" id="kJC-oV-L8z"/>
                             <constraint firstItem="cub-Op-KO8" firstAttribute="trailing" secondItem="07z-6w-JUD" secondAttribute="trailing" constant="20" id="mpu-co-17P"/>
                         </constraints>
                     </view>

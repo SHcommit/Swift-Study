@@ -59,8 +59,17 @@ class MemoListVC: UITableViewController {
         return cell
     }
 
+    /**
+     * 특정 Cell 터치 이벤트 발생하면
+     * 스토리보드에서 해당 interfaceBuilder를 찾아서 객체화 한다.
+     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        let rowData = (UIApplication.shared.delegate as! AppDelegate).memoList[indexPath.row]
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoRead") as? MemoReadVC else{
+            return
+        }
+        vc.data = rowData
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     /*
     override func numberOfSections(in tableView: UITableView) -> Int {
