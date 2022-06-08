@@ -53,7 +53,8 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
      *  1. 이미지 피커 인스턴스 생성
      *  2. 인스턴스의 delegate를 현재 VC로 설정
      *  3. .allowsEditing 이미지 편집 허용
-     *  4. 화면 전환
+     *  4. 사용자의 입력 마다 발생하는 textViewDidChange()를 통해 제목 변경(최대 15길이)
+     *  5. 화면 전환
      */
     @IBAction func pick(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -78,7 +79,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func textViewDidChange(_ textView: UITextView) {
         let contents = textView.text as NSString
         let length   = ( (contents.length > 15) ? 15 : contents.length)
-        self.subject = contents.substring(with: NSRange(location:0, length:15))
+        self.subject = contents.substring(with: NSRange(location:0, length:length))
         self.navigationItem.title = self.subject
     }
     
