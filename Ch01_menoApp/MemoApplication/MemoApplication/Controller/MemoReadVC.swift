@@ -6,15 +6,37 @@
 //
 
 import UIKit
-
+/**
+ * TODO:
+ * 특정 tableViewCell 이벤트가 발생했을 때
+ *  해당 데이터의 값을 위젯으로 보여주는 작업을 한다.
+ */
 class MemoReadVC: UIViewController {
-
+    //MARK: - variable
+    var data : MemoData?
+    @IBOutlet weak var subject: UILabel!
+    @IBOutlet weak var contents: UILabel!
+    @IBOutlet weak var image : UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        appendData()
+        appendTitle()
     }
     
+    func appendData(){
+        self.subject.text  = data?.title
+        self.contents.text = data?.contents
+        self.image.image   = data?.image
+    }
+    
+    func appendTitle(){
+        let formatter        = DateFormatter()
+        formatter.dateFormat = "dd일 HH:mm분에 작성됨"
+        let dateString       = formatter.string(from: (data?.regdate)!)
+        
+        self.navigationItem.title = dateString
+    }
 
     /*
     // MARK: - Navigation
