@@ -65,9 +65,6 @@ extension ViewController{
     {
         if let btn = sender as? UIButton
         {
-//            present({ () -> UIAlertController in
-//                 UIAlertController(title: nil, message: "버튼 클릭", preferredStyle: .alert).addAction(UIAlertAction(title: "돌아가기", style: .default))
-//            }(), animated: true)
             present({
                 let alert = UIAlertController(title: nil, message: "버튼 클릭", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "돌아가기", style: .default))
