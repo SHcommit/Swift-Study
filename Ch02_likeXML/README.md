@@ -15,3 +15,11 @@
 <img width="1435" alt="4" src="https://user-images.githubusercontent.com/96910404/172996599-76a7dfae-fd1e-470e-8ebb-b3d116cb788b.png">
 
 추후 버튼을 많이 만들게된다면 DTO 타입으로하는 클래스를 구현하면 좋겠다+_+
+
+---
+
+layer를 통해 shadow와 radius 적용
+
+<img width="429" alt="1" src="https://user-images.githubusercontent.com/96910404/173125223-a0618a61-3f88-4da1-be27-3163172d6b99.png">
+
+---
