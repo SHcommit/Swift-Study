@@ -2,16 +2,20 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    var btn  : UIButton = {UIButton()}()
-    var flag : Bool     = false
+    var subject : UILabel! = {UILabel()}()
+    var btn     : UIButton = {UIButton()}()
+    var flag    : Bool     = false
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // TODO : 버튼 인스턴스화 이후 이벤트 헨들러 부여
         addTestButton(button: &btn)
-        self.view.addSubview(btn)
         btn.addTarget(self, action: #selector(btnOnClick(_:)), for: .touchUpInside)
+        //버튼에 쉐도우 한번?
+        addShadowInButotn(button: &btn)
+        // UILabel
+        addHelloLabel(label: &subject)
     }
 }
 
@@ -36,11 +40,29 @@ extension ViewController{
      */
     func addTestButton(button : inout UIButton)
     {
-        button       = UIButton(type: .system)
-        button.frame = CGRect(x: 50, y: 100, width: 150, height: 30)
-        
+        button                    = UIButton(type: .system)
+        button.frame              = CGRect(x: 50, y: 100, width: 150, height: 30)
+        button.backgroundColor    = UIColor.cyan
+        button.layer.cornerRadius = CGFloat(3.0)
+        button.center             = CGPoint(x: self.view.frame.size.width/2, y: 100)
         button.setTitle("테스트 버튼", for: .normal)
-        button.center = CGPoint(x: self.view.frame.size.width/2, y: 100)
+        button.setTitleColor(UIColor.orange, for: .normal)
+        self.view.addSubview(button)
+    }
+    func addHelloLabel(label : inout UILabel)
+    {
+        label = UILabel()
+        label.text          = "hello! xml 좀 연습 해야겠어!!"
+        label.frame         = CGRect(x: 50, y: 100, width: 100, height: 30)
+        //Wrap content
+        label.sizeToFit()
+        label.textAlignment = .center
+        label.textColor     = UIColor.lightGray
+        label.center        = CGPoint(x: self.view.frame.width/2, y: 200)
+        
+        //음 쉐도우 한번 써볼까잇~
+        addShadowInLabel(label: &label)
+        self.view.addSubview(label)
     }
 }
 
@@ -70,4 +92,28 @@ extension ViewController{
         }
     }
     
+    @objc func sayHello(_ sender : Any)
+    {
+        self.subject.text = "GoodBye~, IB!"
+    }
+}
+
+//MARK: - contents design :)
+extension ViewController{
+    func addShadowInLabel(label la : inout UILabel)
+    {
+        la.layer.shadowOffset  = CGSize(width: 3, height: 3)
+        la.layer.shadowOpacity = 0.7
+        la.layer.shadowRadius  = 2
+        la.layer.shadowColor   = CGColor.init(srgbRed: 1, green: 0, blue: 0, alpha: 1)
+    }
+    func addShadowInButotn(button b : inout UIButton)
+    {
+        
+        b.layer.shadowOffset = CGSize(width: 0, height: 4)
+        b.layer.masksToBounds = false
+        b.layer.shadowRadius = 4
+        b.layer.shadowOpacity = 0.3
+        b.layer.shadowColor = UIColor.black.cgColor
+    }
 }
