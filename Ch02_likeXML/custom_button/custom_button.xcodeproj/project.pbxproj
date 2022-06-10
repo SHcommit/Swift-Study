@@ -56,15 +56,31 @@
 		15E766ED2852FCDE00EA19CC /* custom_button */ = {
 			isa = PBXGroup;
 			children = (
-				15E766EE2852FCDE00EA19CC /* AppDelegate.swift */,
-				15E766F02852FCDE00EA19CC /* SceneDelegate.swift */,
-				15E766F22852FCDE00EA19CC /* ViewController.swift */,
-				15E766F42852FCDE00EA19CC /* Main.storyboard */,
+				15E767032852FD6300EA19CC /* View */,
+				15E767022852FD4900EA19CC /* Controller */,
 				15E766F72852FCE000EA19CC /* Assets.xcassets */,
-				15E766F92852FCE000EA19CC /* LaunchScreen.storyboard */,
 				15E766FC2852FCE000EA19CC /* Info.plist */,
 			);
 			path = custom_button;
+			sourceTree = "<group>";
+		};
+		15E767022852FD4900EA19CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15E766F22852FCDE00EA19CC /* ViewController.swift */,
+				15E766EE2852FCDE00EA19CC /* AppDelegate.swift */,
+				15E766F02852FCDE00EA19CC /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		15E767032852FD6300EA19CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15E766F42852FCDE00EA19CC /* Main.storyboard */,
+				15E766F92852FCE000EA19CC /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
