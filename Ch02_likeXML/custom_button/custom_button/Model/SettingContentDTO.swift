@@ -25,25 +25,19 @@ class SettingContentDTO
     
     var autoUpdate    = UILabel()
     var updateSwitch  = UISwitch()
-    var updateVale    = UILabel()
+    var updateValue   = UILabel()
     
     var updateWeek    = UILabel()
     var weekStepper   = UIStepper()
     var weekValue     = UILabel()
     
-    init(){
-        setEmailUI(email: &email)
-        setInputEmailUI(emailTF: &inputEmail)
-        setAutoUpdateUI(autoUpdate: &autoUpdate)
-        setUpdateSwitchUI(updateSwitch: &updateSwitch)
-        setUpdateValueUI(updateVale: &updateVale)
-        setUpdateWeekUI(updateWeek: &updateWeek)
-        setWeekStepperUI(weekStepper: &weekStepper)
-        setWeekValueUI(weekValue: &weekValue)
+    init(view : inout UIView){
+        setContentsUI()
+        setContentsInstance(view: &view)
     }
 }
 
-//MARK: - get instance
+//MARK: - set contentsUI
 extension SettingContentDTO
 {
     func setEmailUI(email : inout UILabel)
@@ -80,9 +74,9 @@ extension SettingContentDTO
     func setUpdateValueUI(updateVale : inout UILabel)
     {
         updateVale           = UILabel()
-        updateVale.frame     = CGRect(x: 120, y: 150, width: 100, height: 30)
+        updateVale.frame     = CGRect(x: 250, y: 150, width: 100, height: 30)
         updateVale.font      = UIFont.systemFont(ofSize: 12)
-        updateVale.textColor = UIColor.red
+        updateVale.textColor = UIColor.orange
         updateVale.text      = "갱신함"
     }
     
@@ -109,5 +103,31 @@ extension SettingContentDTO
         weekValue.text      = "0분마다"
         weekValue.font      = UIFont.systemFont(ofSize: 12)
         weekValue.textColor = UIColor.red
+    }
+}
+
+//MARK: - set contents instance
+extension SettingContentDTO {
+    func setContentsUI(){
+        setEmailUI(email: &email)
+        setInputEmailUI(emailTF: &inputEmail)
+        setAutoUpdateUI(autoUpdate: &autoUpdate)
+        setUpdateSwitchUI(updateSwitch: &updateSwitch)
+        setUpdateValueUI(updateVale: &updateValue)
+        setUpdateWeekUI(updateWeek: &updateWeek)
+        setWeekStepperUI(weekStepper: &weekStepper)
+        setWeekValueUI(weekValue: &weekValue)
+    }
+    func setContentsInstance(view : inout UIView){
+        view.addSubview(email)
+        view.addSubview(inputEmail)
+        
+        view.addSubview(autoUpdate)
+        view.addSubview(updateSwitch)
+        view.addSubview(updateValue)
+        
+        view.addSubview(updateWeek)
+        view.addSubview(weekStepper)
+        view.addSubview(weekValue)
     }
 }
