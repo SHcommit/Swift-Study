@@ -32,21 +32,21 @@ class SettingContentDTO
     var weekValue     = UILabel()
     
     init(){
-        setEmail(email: &email)
-        setInputEmail(emailTF: &inputEmail)
-        setAutoUpdate(autoUpdate: &autoUpdate)
-        setUpdateSwitch(updateSwitch: &updateSwitch)
-        setUpdateValue(updateVale: &updateVale)
-        setUpdateWeek(updateWeek: &updateWeek)
-        setWeekStepper(weekStepper: &weekStepper)
-        setWeekValue(weekValue: &weekValue)
+        setEmailUI(email: &email)
+        setInputEmailUI(emailTF: &inputEmail)
+        setAutoUpdateUI(autoUpdate: &autoUpdate)
+        setUpdateSwitchUI(updateSwitch: &updateSwitch)
+        setUpdateValueUI(updateVale: &updateVale)
+        setUpdateWeekUI(updateWeek: &updateWeek)
+        setWeekStepperUI(weekStepper: &weekStepper)
+        setWeekValueUI(weekValue: &weekValue)
     }
 }
 
 //MARK: - get instance
 extension SettingContentDTO
 {
-    func setEmail(email : inout UILabel)
+    func setEmailUI(email : inout UILabel)
     {
         email               = UILabel()
         email.text          = "이메일"
@@ -54,7 +54,7 @@ extension SettingContentDTO
         email.textAlignment = .left
         email.font          = UIFont.systemFont(ofSize: 14)
     }
-    func setInputEmail(emailTF : inout UITextField)
+    func setInputEmailUI(emailTF : inout UITextField)
     {
         emailTF               = UITextField()
         emailTF.frame         = CGRect(x: 120, y: 100, width: 220, height: 30)
@@ -64,20 +64,20 @@ extension SettingContentDTO
         emailTF.textAlignment = NSTextAlignment.left
     }
     
-    func setAutoUpdate(autoUpdate : inout UILabel)
+    func setAutoUpdateUI(autoUpdate : inout UILabel)
     {
         autoUpdate       = UILabel()
         autoUpdate.frame = CGRect(x: 30, y: 150, width: 100, height: 30)
         autoUpdate.text  = "자동갱신"
         autoUpdate.font  = UIFont.systemFont(ofSize: 14)
     }
-    func setUpdateSwitch(updateSwitch : inout UISwitch)
+    func setUpdateSwitchUI(updateSwitch : inout UISwitch)
     {
         updateSwitch       = UISwitch()
         updateSwitch.frame = CGRect(x: 120, y: 150, width: 50, height: 30)
         updateSwitch.setOn(true, animated: true)
     }
-    func setUpdateValue(updateVale : inout UILabel)
+    func setUpdateValueUI(updateVale : inout UILabel)
     {
         updateVale           = UILabel()
         updateVale.frame     = CGRect(x: 120, y: 150, width: 100, height: 30)
@@ -86,14 +86,14 @@ extension SettingContentDTO
         updateVale.text      = "갱신함"
     }
     
-    func setUpdateWeek(updateWeek : inout UILabel)
+    func setUpdateWeekUI(updateWeek : inout UILabel)
     {
         updateWeek       = UILabel()
         updateWeek.frame = CGRect(x: 30, y: 200, width: 100, height: 30)
         updateWeek.text  = "갱신주기"
         updateWeek.font  = UIFont.systemFont(ofSize: 14)
     }
-    func setWeekStepper(weekStepper : inout UIStepper)
+    func setWeekStepperUI(weekStepper : inout UIStepper)
     {
         weekStepper              = UIStepper()
         weekStepper.frame        = CGRect(x: 120, y: 200, width: 50, height: 30)
@@ -102,7 +102,7 @@ extension SettingContentDTO
         weekStepper.stepValue    = 1
         weekStepper.value        = 0
     }
-    func setWeekValue(weekValue : inout UILabel)
+    func setWeekValueUI(weekValue : inout UILabel)
     {
         weekValue           = UILabel()
         weekValue.frame     = CGRect(x: 250, y: 200, width: 100, height: 30)
