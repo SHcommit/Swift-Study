@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1548163D285444F900568A20 /* SettingContentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1548163C285444F900568A20 /* SettingContentDTO.swift */; };
+		155FB1D4285442B60025A69E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155FB1D3285442B60025A69E /* SettingController.swift */; };
 		15E766EF2852FCDE00EA19CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E766EE2852FCDE00EA19CC /* AppDelegate.swift */; };
 		15E766F12852FCDE00EA19CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E766F02852FCDE00EA19CC /* SceneDelegate.swift */; };
 		15E766F32852FCDE00EA19CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E766F22852FCDE00EA19CC /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1548163C285444F900568A20 /* SettingContentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentDTO.swift; sourceTree = "<group>"; };
+		155FB1D3285442B60025A69E /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingController.swift; path = custom_button/Controller/SettingController.swift; sourceTree = SOURCE_ROOT; };
 		15E766EB2852FCDE00EA19CC /* custom_button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = custom_button.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E766EE2852FCDE00EA19CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E766F02852FCDE00EA19CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1548163B285444DD00568A20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1548163C285444F900568A20 /* SettingContentDTO.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		15E766E22852FCDE00EA19CC = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +68,7 @@
 		15E766ED2852FCDE00EA19CC /* custom_button */ = {
 			isa = PBXGroup;
 			children = (
+				1548163B285444DD00568A20 /* Model */,
 				15E767032852FD6300EA19CC /* View */,
 				15E767022852FD4900EA19CC /* Controller */,
 				15E766F72852FCE000EA19CC /* Assets.xcassets */,
@@ -67,6 +80,7 @@
 		15E767022852FD4900EA19CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				155FB1D3285442B60025A69E /* SettingController.swift */,
 				15E766F22852FCDE00EA19CC /* ViewController.swift */,
 				15E766EE2852FCDE00EA19CC /* AppDelegate.swift */,
 				15E766F02852FCDE00EA19CC /* SceneDelegate.swift */,
@@ -154,6 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				155FB1D4285442B60025A69E /* SettingController.swift in Sources */,
+				1548163D285444F900568A20 /* SettingContentDTO.swift in Sources */,
 				15E766F32852FCDE00EA19CC /* ViewController.swift in Sources */,
 				15E766EF2852FCDE00EA19CC /* AppDelegate.swift in Sources */,
 				15E766F12852FCDE00EA19CC /* SceneDelegate.swift in Sources */,

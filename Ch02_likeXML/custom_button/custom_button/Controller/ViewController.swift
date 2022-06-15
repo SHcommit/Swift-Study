@@ -10,6 +10,7 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         // TODO : 버튼 인스턴스화 이후 이벤트 헨들러 부여
+        self.storyboard?.instantiateViewController(identifier: "ViewController")
         addTestButton(button: &btn)
         btn.addTarget(self, action: #selector(btnOnClick(_:)), for: .touchUpInside)
         //버튼에 쉐도우 한번?

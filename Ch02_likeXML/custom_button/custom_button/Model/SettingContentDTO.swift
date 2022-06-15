@@ -56,6 +56,8 @@ extension SettingContentDTO
         emailTF.font          = UIFont.systemFont(ofSize: 13)
         emailTF.borderStyle   = .roundedRect
         emailTF.textAlignment = NSTextAlignment.left
+        
+        emailTF.autocapitalizationType = .none
     }
     
     func setAutoUpdateUI(autoUpdate : inout UILabel)
