@@ -7,13 +7,13 @@
 ---
 :white_medium_square: 모든 변수에 옵셔널 부여, 강제 옵셔널 해제 연산자 사용x
 
-:black_medium_square: 변수는 따로 Model을 통해 DTO클래스를 통해서 다루었다.
+:black_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button/Model">변수는 따로 Model을 통해 DTO클래스를 통해서 다루었다.</a>
 
-:white_medium_square: MVC 패턴을 사용했다.
+:white_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button">MVC 패턴을 사용했다. </a>
 
 :black_medium_square:  layz 키워드 사용하는것도 나쁘지 않네 init대신
 
-:white_medium_square: DTO와 VO in Model
+:white_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button/Model">DTO와 VO in Model </a>
 
  - getter만 있는 경우 DTO
  - - setter 존재 시 가변,  
@@ -21,9 +21,13 @@
 
 - set기능까지 있는 경우 VO + 로직 포함 단 read-only
 
-:black_medium_square: layer를 통해 shadow와 radius 적용
+:black_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/blob/master/Ch02_likeXML/custom_button/custom_button/Controller/ViewController.swift">layer를 통해 shadow와 radius 적용
+</a>
 
 <img width="150" alt="1" src="https://user-images.githubusercontent.com/96910404/173125223-a0618a61-3f88-4da1-be27-3163172d6b99.png">
+
+:white_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/blob/master/Ch02_likeXML/custom_button/custom_button/Controller/SettingController.swift">이벤트 헨들러와 화면 전환(present, navigationBar)</a>
+
 
 ---
 
@@ -44,7 +48,9 @@
 :black_medium_square: 그 밖에 새로 도전해본 기능들
 
 
-기존 코드
+기존 코드 // <a href="https://github.com/SHcommit/SwiftStudy_No3/blob/master/Ch02_likeXML/custom_button/custom_button/Controller/ViewController.swift">뷰 컨트롤러</a>
+
+
 <img width="300" float:left alt="1" src="https://user-images.githubusercontent.com/96910404/172996579-2c4d854d-0cfe-40b1-b66c-d35a394e17b5.png">
 
 이상태로 버튼 5개만 추가하면 viewDidLoad()가 겉잡을 수 없이 길어지기에 다른 방법을 도전해봤다.
@@ -60,7 +66,9 @@
 <img width="1435" alt="4" src="https://user-images.githubusercontent.com/96910404/172996599-76a7dfae-fd1e-470e-8ebb-b3d116cb788b.png">
 </div>
 
-추후 버튼을 많이 만들게된다면 DTO, VO 타입으로하는 클래스를 구현하면 좋겠다+_+
+추후 버튼을 많이 만들게된다면 DTO, VO 타입으로하는 클래스를 구현하면 좋겠다+_+ 
+
+> ViewController.swift 이외 추가 구현한 Scene들은 전부 MVC패턴을 사용했습니다.
 
 ---
 
