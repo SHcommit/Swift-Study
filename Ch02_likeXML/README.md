@@ -7,7 +7,7 @@
 ---
 :white_medium_square: 모든 변수에 옵셔널 부여, 강제 옵셔널 해제 연산자 사용x
 
-:black_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button/Model">변수는 따로 Model을 통해 DTO클래스를 통해서 다루었다.</a>
+:black_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button/Model">변수는 따로 Model에서 VO클래스를 통해서 다루었다.</a>
 
 :white_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML/custom_button/custom_button">MVC 패턴을 사용했다. </a>
 
@@ -36,7 +36,7 @@
  1. 클래스 내 선언한 옵셔널 타입의 변수를 함수의 매개변수에 넣을 때 그 매개변수가 참조값을 원한다면. 그때의 옵셔널 해제 방법  중 강제 해제 방법 이외의 방법이 있는가?
  2. view.addView()안에 클로저를 통한 임시 버튼과 present 메서드를 통한 화면 전환을 했다. 
 
-> readViewContentDTO 클래스에서 우선적으로 실행해봤는데 성공했다.
+> readViewContentVO 클래스에서 우선적으로 실행해봤는데 성공했다.
 > 
 > 이후 모든 코드의 변수 타입을 옵셔널 타입으로 바꾸고 옵셔널 여부 체크를 하도록 코드를 리펙토링했다.
  
