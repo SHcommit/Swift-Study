@@ -9,8 +9,10 @@ import UIKit
 
 class ThirdViewController : UIViewController
 {
-    init()
-    {
-        
+    var content : ThirdViewContents?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        content = ThirdViewContents(view: &self.view)
     }
 }

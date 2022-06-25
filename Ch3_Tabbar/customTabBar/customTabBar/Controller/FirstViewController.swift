@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class FirstViewController: UIViewController {
+    var content : FirstViewcontents?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        content = FirstViewcontents(view: &self.view)
+
     }
 
 

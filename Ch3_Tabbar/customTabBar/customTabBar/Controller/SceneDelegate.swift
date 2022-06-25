@@ -17,6 +17,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        //루트뷰에 있는 tabBar 컨트롤러 가져올 때
+        if let tbC = self.window?.rootViewController as? UITabBarController
+        {
+            if let tbItems = tbC.tabBar.items
+            {
+                tbItems[0].image = UIImage(named: "calendar")
+                tbItems[1].image = UIImage(named: "file-tree")
+                tbItems[2].image = UIImage(named: "photo")
+                
+                tbItems[0].title = "calendar"
+                tbItems[1].title = "file"
+                tbItems[2].title = "photo"
+            }
+            tbC.tabBar.tintColor = .systemPink
+            tbC.tabBar.unselectedItemTintColor = .gray
+            tbC.tabBar.backgroundImage = UIImage(named: "menubar-bg-mini")!
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
