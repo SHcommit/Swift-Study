@@ -56,15 +56,39 @@
 		15DF15D5286720540072A407 /* customTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				15DF15D6286720540072A407 /* AppDelegate.swift */,
-				15DF15D8286720540072A407 /* SceneDelegate.swift */,
-				15DF15DA286720540072A407 /* ViewController.swift */,
-				15DF15DC286720540072A407 /* Main.storyboard */,
+				15DF15EC286722330072A407 /* Controller */,
+				15DF15EB286722270072A407 /* View */,
+				15DF15EA286722090072A407 /* Model */,
 				15DF15DF286720550072A407 /* Assets.xcassets */,
-				15DF15E1286720550072A407 /* LaunchScreen.storyboard */,
 				15DF15E4286720550072A407 /* Info.plist */,
 			);
 			path = customTabBar;
+			sourceTree = "<group>";
+		};
+		15DF15EA286722090072A407 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15DF15EB286722270072A407 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15DF15E1286720550072A407 /* LaunchScreen.storyboard */,
+				15DF15DC286720540072A407 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15DF15EC286722330072A407 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15DF15DA286720540072A407 /* ViewController.swift */,
+				15DF15D8286720540072A407 /* SceneDelegate.swift */,
+				15DF15D6286720540072A407 /* AppDelegate.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
