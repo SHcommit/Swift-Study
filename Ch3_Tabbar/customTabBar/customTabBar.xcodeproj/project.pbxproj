@@ -31,6 +31,7 @@
 		15DF160F286741220072A407 /* designbump@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DF1602286741220072A407 /* designbump@2x.png */; };
 		15DF1610286741220072A407 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DF1603286741220072A407 /* checkmark@2x.png */; };
 		15DF1611286741220072A407 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DF1604286741220072A407 /* facebook@2x.png */; };
+		15E11BDF286E186B005771C6 /* menubar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E11BDE286E186B005771C6 /* menubar-bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		15DF1602286741220072A407 /* designbump@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "designbump@2x.png"; sourceTree = "<group>"; };
 		15DF1603286741220072A407 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
 		15DF1604286741220072A407 /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
+		15E11BDE286E186B005771C6 /* menubar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-bg.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				15DF15FC286741220072A407 /* photo.png */,
 				15DF15FD286741220072A407 /* connectivity-bar.png */,
 				15DF15FE286741220072A407 /* menubar-bg-mini.png */,
+				15E11BDE286E186B005771C6 /* menubar-bg.png */,
 				15DF15FF286741220072A407 /* rss@2x.png */,
 				15DF1600286741220072A407 /* calendar.png */,
 				15DF1601286741220072A407 /* menubar-bg.png */,
@@ -219,6 +222,7 @@
 				15DF160A286741220072A407 /* connectivity-bar.png in Resources */,
 				15DF1611286741220072A407 /* facebook@2x.png in Resources */,
 				15DF1606286741220072A407 /* file-tree.png in Resources */,
+				15E11BDF286E186B005771C6 /* menubar-bg.png in Resources */,
 				15DF160F286741220072A407 /* designbump@2x.png in Resources */,
 				15DF1607286741220072A407 /* twitter@2x.png in Resources */,
 				15DF15E0286720550072A407 /* Assets.xcassets in Resources */,

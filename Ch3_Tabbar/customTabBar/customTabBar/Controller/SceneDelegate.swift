@@ -23,17 +23,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         {
             if let tbItems = tbC.tabBar.items
             {
-                tbItems[0].image = UIImage(named: "calendar")
-                tbItems[1].image = UIImage(named: "file-tree")
-                tbItems[2].image = UIImage(named: "photo")
+                tbItems[0].image = UIImage(named: "designbump")?.withRenderingMode(.alwaysOriginal)
+                tbItems[1].image = UIImage(named: "rss")?.withRenderingMode(.alwaysOriginal)
+                
+                tbItems[2].image = UIImage(named: "facebook")?.withRenderingMode(.alwaysOriginal)
                 
                 tbItems[0].title = "calendar"
                 tbItems[1].title = "file"
                 tbItems[2].title = "photo"
+                NSLog("성공적으로 불러옴")
+                for tbItem in tbItems
+                {
+                    let img = UIImage(named: "checkmark")?.withRenderingMode(.alwaysOriginal)
+                    tbItem.selectedImage = img
+                    //매 item마다 설정하지 않고 appearance()를 통해 전체적으로 설정
+//                    tbItem.setTitleTextAttributes([.foregroundColor : UIColor.gray], for: .disabled)
+//                    tbItem.setTitleTextAttributes([.foregroundColor : UIColor.red],for : .selected)
+//                    tbItem.setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 15)], for: .normal)
+                }
+                
             }
-            tbC.tabBar.tintColor = .systemPink
+            
+            //외형 프록시
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundImage      = UIImage(named: "menubar-bg-mini")
+            tbC.tabBar.standardAppearance   = appearance
+            tbC.tabBar.scrollEdgeAppearance = tbC.tabBar.standardAppearance
+            
+            tbC.tabBar.tintColor               = .white
             tbC.tabBar.unselectedItemTintColor = .gray
-            tbC.tabBar.backgroundImage = UIImage(named: "menubar-bg-mini")!
+            let tbItemAppearance = UITabBarItem.appearance()
+            tbItemAppearance.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
+            tbItemAppearance.setTitleTextAttributes([.foregroundColor : UIColor.gray], for: .disabled)
+            tbItemAppearance.setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 15)], for: .normal)
         }
         
     }
