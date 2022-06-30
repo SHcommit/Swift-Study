@@ -32,6 +32,7 @@
 		15DF1610286741220072A407 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DF1603286741220072A407 /* checkmark@2x.png */; };
 		15DF1611286741220072A407 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 15DF1604286741220072A407 /* facebook@2x.png */; };
 		15E11BDF286E186B005771C6 /* menubar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 15E11BDE286E186B005771C6 /* menubar-bg.png */; };
+		15E11BE1286E241D005771C6 /* NewSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E11BE0286E241D005771C6 /* NewSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		15DF1603286741220072A407 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
 		15DF1604286741220072A407 /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
 		15E11BDE286E186B005771C6 /* menubar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar-bg.png"; sourceTree = "<group>"; };
+		15E11BE0286E241D005771C6 /* NewSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				15DF15ED286731CC0072A407 /* SecondViewController.swift */,
 				15DF15F128673AE90072A407 /* ThirdViewController.swift */,
 				15DF15D8286720540072A407 /* SceneDelegate.swift */,
+				15E11BE0286E241D005771C6 /* NewSceneDelegate.swift */,
 				15DF15D6286720540072A407 /* AppDelegate.swift */,
 			);
 			path = Controller;
@@ -249,6 +252,7 @@
 				15DF15F228673AE90072A407 /* ThirdViewController.swift in Sources */,
 				15DF15F628673EA40072A407 /* ThirdViewContents.swift in Sources */,
 				15DF15D9286720540072A407 /* SceneDelegate.swift in Sources */,
+				15E11BE1286E241D005771C6 /* NewSceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
