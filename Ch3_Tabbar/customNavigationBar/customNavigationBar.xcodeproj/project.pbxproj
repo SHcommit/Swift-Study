@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1501C89B28704A8200551845 /* swift_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1501C89828704A8200551845 /* swift_logo@3x.png */; };
+		1501C89C28704A8200551845 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1501C89928704A8200551845 /* more@2x.png */; };
+		1501C89D28704A8200551845 /* arrow-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1501C89A28704A8200551845 /* arrow-back@2x.png */; };
+		1501C89F28704ACF00551845 /* CustomNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1501C89E28704ACF00551845 /* CustomNavi.swift */; };
 		1561EA2C287044A600703B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561EA2B287044A600703B7D /* AppDelegate.swift */; };
 		1561EA2E287044A600703B7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561EA2D287044A600703B7D /* SceneDelegate.swift */; };
 		1561EA30287044A600703B7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561EA2F287044A600703B7D /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1501C89828704A8200551845 /* swift_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swift_logo@3x.png"; sourceTree = "<group>"; };
+		1501C89928704A8200551845 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		1501C89A28704A8200551845 /* arrow-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-back@2x.png"; sourceTree = "<group>"; };
+		1501C89E28704ACF00551845 /* CustomNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavi.swift; sourceTree = "<group>"; };
 		1561EA28287044A600703B7D /* customNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = customNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1561EA2B287044A600703B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1561EA2D287044A600703B7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1501C89728704A8200551845 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1501C89828704A8200551845 /* swift_logo@3x.png */,
+				1501C89928704A8200551845 /* more@2x.png */,
+				1501C89A28704A8200551845 /* arrow-back@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1561EA1F287044A600703B7D = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +86,7 @@
 		1561EA3F287044D900703B7D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1501C89E28704ACF00551845 /* CustomNavi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -75,6 +94,7 @@
 		1561EA40287044E300703B7D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1501C89728704A8200551845 /* Resources */,
 				1561EA31287044A600703B7D /* Main.storyboard */,
 				1561EA36287044A700703B7D /* LaunchScreen.storyboard */,
 			);
@@ -149,9 +169,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1501C89B28704A8200551845 /* swift_logo@3x.png in Resources */,
 				1561EA38287044A700703B7D /* LaunchScreen.storyboard in Resources */,
 				1561EA35287044A700703B7D /* Assets.xcassets in Resources */,
 				1561EA33287044A600703B7D /* Main.storyboard in Resources */,
+				1501C89C28704A8200551845 /* more@2x.png in Resources */,
+				1501C89D28704A8200551845 /* arrow-back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1501C89F28704ACF00551845 /* CustomNavi.swift in Sources */,
 				1561EA30287044A600703B7D /* ViewController.swift in Sources */,
 				1561EA2C287044A600703B7D /* AppDelegate.swift in Sources */,
 				1561EA2E287044A600703B7D /* SceneDelegate.swift in Sources */,
