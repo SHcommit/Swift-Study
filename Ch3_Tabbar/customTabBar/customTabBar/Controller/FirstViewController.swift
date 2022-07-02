@@ -13,9 +13,18 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         content = FirstViewcontents(view: &self.view)
-
+        
     }
 
-
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let tabBar = self.tabBarController?.tabBar
+        tabBar?.isHidden = tabBar?.isHidden == true ? false : true
+        
+        // .animate(withDuration: animations:)
+        UIView.animate(withDuration : TimeInterval(0.35))
+        {
+            tabBar?.alpha = (tabBar?.alpha == 0 ? 1 : 0)
+        }
+    }
 }
 
