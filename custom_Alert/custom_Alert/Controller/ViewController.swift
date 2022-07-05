@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         midAlertVO.centerAlert.callAlertButton.addTarget(self, action: #selector(customCenterAlert(_:)), for: .touchUpInside)
         
         //이미지 알림 구현
-        imageAlertVO.imageAlert.alert = imageAlertVO.imageAlert.defaultAlert(nil, nil, .alert)
+        imageAlertVO.imageAlert.alert = imageAlertVO.imageAlert.defaultAlert("평점은!?", nil, .alert)
         imageAlertVO.imageAlert.addButtonObject(&self.view, &imageAlertVO.imageAlert.callAlertButton, "imageAlert", UIColor.gray, 2)
         imageAlertVO.imageAlert.callAlertButton.addTarget(self, action: #selector(customImageAlert(_:)), for: .touchUpInside)
         
