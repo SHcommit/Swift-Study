@@ -17,7 +17,7 @@ class CustomMapAlertVO
 extension CustomMapAlertVO
 {
     //본격적인 커스터마이징
-    func customMapAlert(_ alert : inout UIAlertController)
+    func customMapAlertUI(_ alert : inout UIAlertController)
     {
         let centerVC      = UIViewController()
         let mapKitView    = MKMapView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

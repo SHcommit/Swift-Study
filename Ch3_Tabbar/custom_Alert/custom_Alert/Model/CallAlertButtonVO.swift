@@ -29,11 +29,22 @@ class callAlertButtonVO
         view.addSubview(button)
     }
     //초기 디폴트 알람
+    //액션시트와 alert 두가지 방식있어서 두개다 구현해봄 액션시트일땐 취소있으면 별로여서 확인만 했음
     func defaultAlert(_ title : String?, _ message : String?, _ preferredStyle : UIAlertController.Style ) -> UIAlertController
     {
         let alert = UIAlertController(title: title ?? nil, message: message ?? nil, preferredStyle: preferredStyle)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
-        alert.addAction(UIAlertAction(title: "Cancel", style:.cancel))
+        switch preferredStyle
+        {
+        case .alert :
+            alert.addAction(UIAlertAction(title: "Cancel", style:.cancel))
+            break;
+        case .actionSheet :
+            break;
+        default :
+            break;
+        }
+        
         return alert
     }
 }

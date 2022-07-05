@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1539FA0A2874455900FE0EB1 /* CustomMapAlertVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539FA092874455900FE0EB1 /* CustomMapAlertVO.swift */; };
 		1539FA0C287446F300FE0EB1 /* CallAlertButtonVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539FA0B287446F300FE0EB1 /* CallAlertButtonVO.swift */; };
+		1539FA0E2874825500FE0EB1 /* CustomCenterAlertVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539FA0D2874825500FE0EB1 /* CustomCenterAlertVO.swift */; };
+		1539FA102874890100FE0EB1 /* CustomImageAlertVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1539FA0F2874890100FE0EB1 /* CustomImageAlertVO.swift */; };
 		155393842871E34D005877A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155393832871E34D005877A9 /* AppDelegate.swift */; };
 		155393862871E34D005877A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155393852871E34D005877A9 /* SceneDelegate.swift */; };
 		155393882871E34D005877A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155393872871E34D005877A9 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		1539FA092874455900FE0EB1 /* CustomMapAlertVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapAlertVO.swift; sourceTree = "<group>"; };
 		1539FA0B287446F300FE0EB1 /* CallAlertButtonVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAlertButtonVO.swift; sourceTree = "<group>"; };
+		1539FA0D2874825500FE0EB1 /* CustomCenterAlertVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCenterAlertVO.swift; sourceTree = "<group>"; };
+		1539FA0F2874890100FE0EB1 /* CustomImageAlertVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageAlertVO.swift; sourceTree = "<group>"; };
 		155393802871E34D005877A9 /* custom_Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = custom_Alert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		155393832871E34D005877A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		155393852871E34D005877A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		1539FA05287443B300FE0EB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1539FA0D2874825500FE0EB1 /* CustomCenterAlertVO.swift */,
+				1539FA0F2874890100FE0EB1 /* CustomImageAlertVO.swift */,
 				159DE46A2872F20D006A9694 /* CustomTableAlertVO.swift */,
 				1539FA092874455900FE0EB1 /* CustomMapAlertVO.swift */,
 				1539FA0B287446F300FE0EB1 /* CallAlertButtonVO.swift */,
@@ -189,9 +195,11 @@
 			files = (
 				155393882871E34D005877A9 /* ViewController.swift in Sources */,
 				155393842871E34D005877A9 /* AppDelegate.swift in Sources */,
+				1539FA0E2874825500FE0EB1 /* CustomCenterAlertVO.swift in Sources */,
 				155393862871E34D005877A9 /* SceneDelegate.swift in Sources */,
 				1539FA0C287446F300FE0EB1 /* CallAlertButtonVO.swift in Sources */,
 				1539FA0A2874455900FE0EB1 /* CustomMapAlertVO.swift in Sources */,
+				1539FA102874890100FE0EB1 /* CustomImageAlertVO.swift in Sources */,
 				159DE46B2872F20D006A9694 /* CustomTableAlertVO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
