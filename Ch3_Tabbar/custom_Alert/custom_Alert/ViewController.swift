@@ -9,6 +9,9 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController {
+    var alertVO = CustomTableAlertVO()
+    
+    
     lazy var underAlertBtn : UIButton =
     {
         let alertBtn   = UIButton()
@@ -62,6 +65,9 @@ class ViewController: UIViewController {
         self.view.addSubview(underAlertBtn)
         self.view.addSubview(imageAlertBtn)
         
+        alertVO.addButtonObject(&self.view, &alertVO.tableButton, "테이블 버튼", 4)
+        alertVO.addTableAlert(&alertVO.tableButton, "5개의 옵션이 있어요", message: nil, .alert)
+        alertVO.tableButton.addTarget(self, action: #selector(customTableAlert(_:)), for: .touchUpInside)
     }
 }
 //MARK: - event Handler
@@ -95,6 +101,11 @@ extension ViewController
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         customAlertShowImageUI(&alert)
         self.present(alert, animated: true)
+    }
+    @objc func customTableAlert(_ sender : Any)
+    {
+        alertVO.customTableAlertUI(&alertVO.tableAlert)
+        self.present(alertVO.tableAlert, animated: true)
     }
 }
 
