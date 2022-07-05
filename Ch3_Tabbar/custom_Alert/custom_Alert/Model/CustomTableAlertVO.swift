@@ -13,25 +13,10 @@ import UIKit
  */
 class CustomTableAlertVO
 {
-    var tableButton : UIButton
-    var tableAlert  : UIAlertController
+    var tableAlert : callAlertButtonVO
     init()
     {
-        tableButton = UIButton()
-        tableAlert  = UIAlertController()
-
-    }
-    
-    func addButtonObject(_ view : inout UIView, _ button : inout UIButton, _ buttonName : String, _ index : Int)
-    {
-        button.frame    = CGRect(x: 0, y: 100, width: 100, height: 30)
-        button.setTitle(buttonName, for: .normal)
-        button.center.x = view.frame.width / 2
-        button.center.y = view.frame.height / 5 * CGFloat(index)
-        button.layer.cornerRadius = 3
-        button.layer.backgroundColor = UIColor.brown.cgColor
-        
-        view.addSubview(button)
+        tableAlert = callAlertButtonVO()
     }
 }
 
@@ -63,25 +48,15 @@ extension CustomTableAlertVO
 //MARK: - setAlertObject
 extension CustomTableAlertVO
 {
-    func addTableAlert(_ button : inout UIButton, _ title : String?, message : String?, _ preferredStyle : UIAlertController.Style)
+    func addTableAlert(_ title : String?, message : String?, _ preferredStyle : UIAlertController.Style)
     {
-        tableAlert = defaultAlert(title, message, preferredStyle)
+        tableAlert.alert = tableAlert.defaultAlert(title, message, preferredStyle)
     }
 }
 
 //MARK: - setAlertUI
 extension CustomTableAlertVO
 {
-    //초기 디폴트 알람
-    func defaultAlert(_ title : String?, _ message : String?, _ preferredStyle : UIAlertController.Style ) -> UIAlertController
-    {
-        let alert = UIAlertController(title: title ?? nil, message: message ?? nil, preferredStyle: preferredStyle)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        alert.addAction(UIAlertAction(title: "Cancel", style:.cancel))
-        
-        return alert
-    }
-    
     //커스텀 테이블 알람 근데 여기서 화면전환 까지는 안해도 될듯,,
     func customTableAlertUI(_ alert : inout UIAlertController)
     {
