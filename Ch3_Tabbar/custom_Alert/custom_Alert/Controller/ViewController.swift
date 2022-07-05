@@ -9,8 +9,8 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController {
-    var alertVO = CustomTableAlertVO()
-    
+    var tableAlertVO = CustomTableAlertVO()
+    var mapAlertVO   = CustomMapAlertVO()
     
     lazy var underAlertBtn : UIButton =
     {
@@ -65,12 +65,21 @@ class ViewController: UIViewController {
         self.view.addSubview(underAlertBtn)
         self.view.addSubview(imageAlertBtn)
         
-        alertVO.addButtonObject(&self.view, &alertVO.tableButton, "테이블 버튼", 4)
-        alertVO.addTableAlert(&alertVO.tableButton, "5개의 옵션이 있어요", message: nil, .alert)
-        alertVO.tableButton.addTarget(self, action: #selector(customTableAlert(_:)), for: .touchUpInside)
+
+        mapAlertVO.mapAlert.addButtonObject(&self.view, &mapAlertVO.mapAlert.callAlertButton, "mapAlert", UIColor.gray, 4)
+        mapAlertVO.mapAlert.alert =  mapAlertVO.mapAlert.defaultAlert("여기 국밥 꿀 맛집", nil, .alert)
+        mapAlertVO.mapAlert.callAlertButton.addTarget(self, action: #selector(customMapAlert(_:)), for: .touchUpInside)
+        
+        tableAlertVO.tableAlert.addButtonObject(&view, &tableAlertVO.tableAlert.callAlertButton, "table버튼", UIColor.blue, 5)
+        tableAlertVO.addTableAlert("5개의 옵션이 있어요", message: nil, .alert)
+        tableAlertVO.tableAlert.callAlertButton.addTarget(self, action: #selector(customTableAlert(_:)), for: .touchUpInside)
     }
 }
+
 //MARK: - event Handler
+/**
+ * 여기서 alert의 UI + present작업을 수행합니다.
+ */
 extension ViewController
 {
     @objc func defaultAlert(_ sender : Any)
@@ -102,11 +111,19 @@ extension ViewController
         customAlertShowImageUI(&alert)
         self.present(alert, animated: true)
     }
+    
+    @objc func customMapAlert(_ sender : Any)
+    {
+        mapAlertVO.customMapAlert(&mapAlertVO.mapAlert.alert)
+        self.present(mapAlertVO.mapAlert.alert, animated: true)
+    }
+    
     @objc func customTableAlert(_ sender : Any)
     {
-        alertVO.customTableAlertUI(&alertVO.tableAlert)
-        self.present(alertVO.tableAlert, animated: true)
+        tableAlertVO.customTableAlertUI(&tableAlertVO.tableAlert.alert)
+        self.present(tableAlertVO.tableAlert.alert, animated: true)
     }
+    
 }
 
 //MARK: - setUI
