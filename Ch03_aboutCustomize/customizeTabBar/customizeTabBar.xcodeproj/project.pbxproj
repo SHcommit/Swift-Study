@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		1559738B2879CA8C00D7E12B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559738A2879CA8C00D7E12B /* AppDelegate.swift */; };
 		1559738D2879CA8C00D7E12B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559738C2879CA8C00D7E12B /* SceneDelegate.swift */; };
-		1559738F2879CA8C00D7E12B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1559738E2879CA8C00D7E12B /* ViewController.swift */; };
 		155973922879CA8C00D7E12B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155973902879CA8C00D7E12B /* Main.storyboard */; };
 		155973942879CA8C00D7E12B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 155973932879CA8C00D7E12B /* Assets.xcassets */; };
 		155973972879CA8C00D7E12B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 155973952879CA8C00D7E12B /* LaunchScreen.storyboard */; };
 		15F481E52879CC26006A5069 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F481E42879CC26006A5069 /* CustomTabBarController.swift */; };
+		15FF69C4287B2B5900B8F0E0 /* FistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF69C3287B2B5900B8F0E0 /* FistViewController.swift */; };
+		15FF69C6287B2EE300B8F0E0 /* SecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF69C5287B2EE300B8F0E0 /* SecViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		155973872879CA8C00D7E12B /* customizeTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = customizeTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1559738A2879CA8C00D7E12B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1559738C2879CA8C00D7E12B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1559738E2879CA8C00D7E12B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		155973912879CA8C00D7E12B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		155973932879CA8C00D7E12B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		155973962879CA8C00D7E12B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		155973982879CA8C00D7E12B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15F481E42879CC26006A5069 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTabBarController.swift; path = customizeTabBar/Controller/CustomTabBarController.swift; sourceTree = SOURCE_ROOT; };
+		15FF69C3287B2B5900B8F0E0 /* FistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FistViewController.swift; sourceTree = "<group>"; };
+		15FF69C5287B2EE300B8F0E0 /* SecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +90,9 @@
 			children = (
 				1559738A2879CA8C00D7E12B /* AppDelegate.swift */,
 				1559738C2879CA8C00D7E12B /* SceneDelegate.swift */,
-				1559738E2879CA8C00D7E12B /* ViewController.swift */,
 				15F481E42879CC26006A5069 /* CustomTabBarController.swift */,
+				15FF69C3287B2B5900B8F0E0 /* FistViewController.swift */,
+				15FF69C5287B2EE300B8F0E0 /* SecViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,7 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1559738F2879CA8C00D7E12B /* ViewController.swift in Sources */,
+				15FF69C6287B2EE300B8F0E0 /* SecViewController.swift in Sources */,
+				15FF69C4287B2B5900B8F0E0 /* FistViewController.swift in Sources */,
 				1559738B2879CA8C00D7E12B /* AppDelegate.swift in Sources */,
 				15F481E52879CC26006A5069 /* CustomTabBarController.swift in Sources */,
 				1559738D2879CA8C00D7E12B /* SceneDelegate.swift in Sources */,

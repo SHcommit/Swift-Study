@@ -8,31 +8,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="W2J-ye-efE">
             <objects>
-                <viewController id="Iep-5O-cSg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VIEW02" id="Iep-5O-cSg" customClass="SecViewController" customModule="customizeTabBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c0t-Bo-OIn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="kEG-JC-uUE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="m8A-5m-KUs"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rg-1y-I7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="51" y="875"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="XBO-bL-hrH">
             <objects>
-                <viewController id="NrE-bX-HYi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VIEW03" id="NrE-bX-HYi" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nu7-6U-FZp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="fVn-NZ-aMh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="NEh-nN-TYb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLy-Y8-RnA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,7 +45,7 @@
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VIEW01" id="BYZ-38-t0r" customClass="FirstViewController" customModule="customizeTabBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,11 +70,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="IDC-Ql-Wf9"/>
+                        <segue destination="Iep-5O-cSg" kind="relationship" relationship="viewControllers" id="bSr-AL-8w2"/>
+                        <segue destination="NrE-bX-HYi" kind="relationship" relationship="viewControllers" id="mqs-UQ-lE6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4e-CX-d3m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="129"/>
+            <point key="canvasLocation" x="51" y="74"/>
         </scene>
     </scenes>
     <resources>
