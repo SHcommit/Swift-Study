@@ -13,6 +13,7 @@
 		15BE593A287B3703001587F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15BE5938287B3703001587F0 /* Main.storyboard */; };
 		15BE593C287B3704001587F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BE593B287B3704001587F0 /* Assets.xcassets */; };
 		15BE593F287B3704001587F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15BE593D287B3704001587F0 /* LaunchScreen.storyboard */; };
+		15BE594A287B3851001587F0 /* CSStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE5949287B3851001587F0 /* CSStepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		15BE593B287B3704001587F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15BE593E287B3704001587F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15BE5940287B3704001587F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15BE5949287B3851001587F0 /* CSStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CSStepper.swift; path = customStepper/Model/CSStepper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		15BE5946287B37F7001587F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15BE5949287B3851001587F0 /* CSStepper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -84,9 +87,9 @@
 		15BE5948287B380B001587F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				15BE5936287B3703001587F0 /* ViewController.swift */,
 				15BE5932287B3703001587F0 /* AppDelegate.swift */,
 				15BE5934287B3703001587F0 /* SceneDelegate.swift */,
+				15BE5936287B3703001587F0 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				15BE5937287B3703001587F0 /* ViewController.swift in Sources */,
 				15BE5933287B3703001587F0 /* AppDelegate.swift in Sources */,
 				15BE5935287B3703001587F0 /* SceneDelegate.swift in Sources */,
+				15BE594A287B3851001587F0 /* CSStepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
