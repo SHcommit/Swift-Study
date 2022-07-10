@@ -56,15 +56,39 @@
 		15BE5931287B3703001587F0 /* customStepper */ = {
 			isa = PBXGroup;
 			children = (
-				15BE5932287B3703001587F0 /* AppDelegate.swift */,
-				15BE5934287B3703001587F0 /* SceneDelegate.swift */,
-				15BE5936287B3703001587F0 /* ViewController.swift */,
-				15BE5938287B3703001587F0 /* Main.storyboard */,
+				15BE5948287B380B001587F0 /* Controller */,
+				15BE5947287B3806001587F0 /* View */,
+				15BE5946287B37F7001587F0 /* Model */,
 				15BE593B287B3704001587F0 /* Assets.xcassets */,
-				15BE593D287B3704001587F0 /* LaunchScreen.storyboard */,
 				15BE5940287B3704001587F0 /* Info.plist */,
 			);
 			path = customStepper;
+			sourceTree = "<group>";
+		};
+		15BE5946287B37F7001587F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15BE5947287B3806001587F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15BE593D287B3704001587F0 /* LaunchScreen.storyboard */,
+				15BE5938287B3703001587F0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15BE5948287B380B001587F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15BE5936287B3703001587F0 /* ViewController.swift */,
+				15BE5932287B3703001587F0 /* AppDelegate.swift */,
+				15BE5934287B3703001587F0 /* SceneDelegate.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
