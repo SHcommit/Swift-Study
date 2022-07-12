@@ -16,10 +16,12 @@ class warningAlert
             return NSLog("no create img instance")
         }
         let image = UIImageView(image: rawImg)
-        let (width,height ) = (rawImg.size.width, rawImg.size.height)
-        var content = UIView(frame: CGRect(x: 0, y: 0, width: width , height: height))
-        content.addSubview(image)
+        let (width,height) = (rawImg.size.width, rawImg.size.height)
         
+        var content = UIViewController()
+        content.view.addSubview(image)
+        content.preferredContentSize = CGSize(width: width, height: height + 10)
+        alert.setValue(content, forKey: "contentViewController")
     }
     func defaultAlert(_ title : String?, _ message : String?, _ preferredStyle : UIAlertController.Style ) -> UIAlertController
     {

@@ -17,9 +17,10 @@ import UIKit
 class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
     // MARK: - variable
-    var subject : String!
+    var subject      : String!
+    let WarningAlert = warningAlert("내용을 입력해주세요", nil, .alert)
     @IBOutlet weak var contents: UITextView!
-    @IBOutlet weak var preview: UIImageView!
+    @IBOutlet weak var preview : UIImageView!
     
     // MARK: - eventHandler
     /**
@@ -30,11 +31,9 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
      *  3. Navigation을 이용해 이전 화면으로 되돌아간다.
      */
     @IBAction func save(_ sender: Any) {
-        guard self.contents.text?.isEmpty == false else {
-            let alert = UIAlertController(title: nil , message: "내용 입력해주세요", preferredStyle:.alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert,animated: true)
+        guard self.contents.text?.isEmpty == true else {
+            
+            self.present(WarningAlert.alert,animated: true)
             return
         }
         
