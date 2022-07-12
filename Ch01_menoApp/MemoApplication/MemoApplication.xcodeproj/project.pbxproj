@@ -53,7 +53,6 @@
 				152D8740284DAF970079EE20 /* MemoReadVC.swift */,
 				152D873E284DAF7E0079EE20 /* MemoFormVC.swift */,
 				152D8745284DB0C70079EE20 /* MemoListVC.swift */,
-				152D8747284DB1500079EE20 /* MemoCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -71,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				152D874B284DB25E0079EE20 /* MemoData.swift */,
+				152D8747284DB1500079EE20 /* MemoCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

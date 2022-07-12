@@ -1,12 +1,15 @@
-//
-//  MemoListVC.swift
-//  MemoApplication
-//
-//  Created by 양승현 on 2022/06/06.
-//
-
 import UIKit
 
+/**
+ TODO : First Scene View Controller
+ 
+
+ # Notes: #
+ 1. 테이블 뷰 생성 ( AppDelegate에서 list.count 만큼 가져옴 )
+ 2. cellForRowAt로 Cell에 데이터 삽입
+ 3. didSelectRowAt로 특정 cell 클릭 시 pushView로 화면 전환 -> Detail show
+ 
+ */
 class MemoListVC: UITableViewController {
     var appDelegate : AppDelegate {
         UIApplication.shared.delegate as! AppDelegate
@@ -14,11 +17,6 @@ class MemoListVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated : Bool){
@@ -62,6 +60,7 @@ class MemoListVC: UITableViewController {
     /**
      * 특정 Cell 터치 이벤트 발생하면
      * 스토리보드에서 해당 interfaceBuilder를 찾아서 객체화 한다.
+     * 그리고 해당 VC의 프로퍼티한테 값 지정해준다~
      */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rowData = (UIApplication.shared.delegate as! AppDelegate).memoList[indexPath.row]
@@ -71,58 +70,6 @@ class MemoListVC: UITableViewController {
         vc.data = rowData
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    /*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        if appDelegate != nil {
-            return appDelegate!.memoList.count
-        }else{
-            return -1
-        }
-    }*/
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

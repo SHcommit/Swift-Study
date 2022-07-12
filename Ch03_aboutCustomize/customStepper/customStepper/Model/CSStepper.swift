@@ -5,7 +5,8 @@ import UIKit
  * UIStepper 상속 받지 않고
  * 깡으로 구현!
  */
-class CSStepper : UIView
+@IBDesignable
+class CSStepper : UIControl
 {
     
     //MARK: - property
@@ -62,31 +63,33 @@ extension CSStepper
         public var centerLabel = UILabel()
         
         @IBInspectable
-        public var leftTitle   = "⬇︎"
+        public var leftTitle   : String = "⬇︎"
         {
             didSet
             {
                 self.leftBtn.setTitle(leftTitle, for: .normal)
             }
         }
+        
         @IBInspectable
-        public var rightTitle  = "⬆︎"
+        public var rightTitle  : String = "⬆︎"
         {
             didSet
             {
                 self.rightBtn.setTitle(rightTitle, for: .normal)
             }
         }
+        
         @IBInspectable
-        public var bgColor     = UIColor.cyan
+        public var bgColor     : UIColor = UIColor.cyan
         {
             didSet
             {
                 self.centerLabel.backgroundColor = bgColor
             }
         }
-        
-        public var count       = 0
+        @IBInspectable
+        public var count       : Int = 0
         {
             didSet
             {
@@ -111,7 +114,7 @@ extension CSStepper
             //          So this is an integer that you can use to identify view objects in your application.
             self.leftBtn.tag = -1
             self.leftBtn.titleLabel?.font  = UIFont.boldSystemFont(ofSize: 20)
-            
+            self.leftBtn.setTitle(leftTitle, for: .normal)
             self.leftBtn.layer.borderWidth = borderWidth
             self.leftBtn.layer.borderColor = borderColor
         }
@@ -119,7 +122,7 @@ extension CSStepper
         {
             self.rightBtn.tag = 1
             self.rightBtn.titleLabel?.font  = UIFont.boldSystemFont(ofSize: 20)
-            
+            self.rightBtn.setTitle(rightTitle, for: .normal)
             self.rightBtn.layer.borderWidth = borderWidth
             self.rightBtn.layer.borderColor = borderColor
         }
@@ -128,9 +131,26 @@ extension CSStepper
             self.centerLabel.text              = String(count)
             self.centerLabel.font              = UIFont.systemFont(ofSize: 16)
             self.centerLabel.textAlignment     = .center
-            self.centerLabel.backgroundColor   = .cyan
+            self.centerLabel.backgroundColor   = bgColor
             self.centerLabel.layer.borderWidth = borderWidth
             self.centerLabel.layer.borderColor = borderColor
         }
+    }
+}
+extension CSStepper
+{
+    /*
+     VC의 이벤트 헨들러는 내가 해본건데
+     sender.tag를 통해서 특정 버튼의 값을 얻어올 수있구나.
+     그리고 난 즉시 스트링을변경했느데
+     count 에 didset로 바꿔도되는구나 ..
+     */
+    @objc func valueChange(_ sender : UIButton)
+    {
+        if stepper.count > 100 && stepper.count < 0
+        {
+            return
+        }
+        stepper.count += sender.tag
     }
 }

@@ -14,9 +14,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.view.addSubview(countStepper)
         
-        
+        /*
         countStepper.stepper.leftBtn.addTarget(self, action: #selector(leftButtonTouchUP(_:)), for: .touchUpInside)
         countStepper.stepper.rightBtn.addTarget(self, action: #selector(rightButtonTouchUP(_:)), for: .touchUpInside)
+         */
+        countStepper.stepper.leftBtn.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
+        countStepper.stepper.rightBtn.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
     }
     //MARK: - event Handler
     @objc func leftButtonTouchUP(_ sender : UIButton)
@@ -36,19 +39,4 @@ class ViewController: UIViewController {
         countStepper.stepper.centerLabel.text = String(countStepper.stepper.count)
     }
     
-    /*
-     위에는 내가 해본건데
-     sender.tag를 통해서 특정 버튼의 값을 얻어올 수있구나.
-     그리고 난 즉시 스트링을변경했느데
-     count 에 didset로 바꿔도되는구나 ..
-     */
-    @objc func valueChange(_ sender : UIButton)
-    {
-        if countStepper.stepper.count > 100 && countStepper.stepper.count < 0
-        {
-            return
-        }
-        countStepper.stepper.count += sender.tag
-    }
 }
-

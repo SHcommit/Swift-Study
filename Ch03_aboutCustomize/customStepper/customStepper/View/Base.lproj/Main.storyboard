@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2fa-vk-Ota" customClass="CSStepper" customModule="customStepper" customModuleProvider="target">
-                                <rect key="frame" x="200" y="115" width="215" height="49"/>
+                                <rect key="frame" x="145" y="185" width="215" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>

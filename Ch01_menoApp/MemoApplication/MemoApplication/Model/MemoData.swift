@@ -7,14 +7,16 @@
 
 import UIKit
 
+/**
+ TODO : 메모 데이터 in table Cell
+ 
+    - Param memoIndex : 데이터 식별 값
+    - Param title              : 메모 제목
+    - Param contents      : 메모 내용
+    - Param image          : 이미지
+    - Param regdate       : 작성일
+ */
 class MemoData {
-    /**
-     * @param memoIndex : 데이터 식별값
-     * @param title              : 메모 제목
-     * @param contents      : 메모 내용
-     * @param image          : 이미지
-     * @param regdate        : 작성일
-     */
     var memoIndex : Int?
     var title     : String?
     var contents  : String?
