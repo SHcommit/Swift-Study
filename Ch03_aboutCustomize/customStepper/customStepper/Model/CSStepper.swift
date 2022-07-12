@@ -60,7 +60,39 @@ extension CSStepper
         public var leftBtn     = UIButton(type: .system)
         public var rightBtn    = UIButton(type: .system)
         public var centerLabel = UILabel()
+        
+        @IBInspectable
+        public var leftTitle   = "⬇︎"
+        {
+            didSet
+            {
+                self.leftBtn.setTitle(leftTitle, for: .normal)
+            }
+        }
+        @IBInspectable
+        public var rightTitle  = "⬆︎"
+        {
+            didSet
+            {
+                self.rightBtn.setTitle(rightTitle, for: .normal)
+            }
+        }
+        @IBInspectable
+        public var bgColor     = UIColor.cyan
+        {
+            didSet
+            {
+                self.centerLabel.backgroundColor = bgColor
+            }
+        }
+        
         public var count       = 0
+        {
+            didSet
+            {
+                self.centerLabel.text = String(count)
+            }
+        }
         
         let borderWidth : CGFloat = 0.5
         let borderColor           = UIColor.blue.cgColor
@@ -78,7 +110,6 @@ extension CSStepper
             //tag : Identifying the View at Runtime
             //          So this is an integer that you can use to identify view objects in your application.
             self.leftBtn.tag = -1
-            self.leftBtn.setTitle("⬇︎", for: .normal)
             self.leftBtn.titleLabel?.font  = UIFont.boldSystemFont(ofSize: 20)
             
             self.leftBtn.layer.borderWidth = borderWidth
@@ -87,7 +118,6 @@ extension CSStepper
         private func setupRightBtn()
         {
             self.rightBtn.tag = 1
-            self.rightBtn.setTitle("⬆︎", for: .normal)
             self.rightBtn.titleLabel?.font  = UIFont.boldSystemFont(ofSize: 20)
             
             self.rightBtn.layer.borderWidth = borderWidth
