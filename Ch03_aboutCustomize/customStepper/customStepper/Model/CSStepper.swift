@@ -145,12 +145,12 @@ extension CSStepper
      그리고 난 즉시 스트링을변경했느데
      count 에 didset로 바꿔도되는구나 ..
      */
-    @objc func valueChange(_ sender : UIButton)
-    {
-        if stepper.count > 100 && stepper.count < 0
-        {
-            return
-        }
-        stepper.count += sender.tag
-    }
+//    @objc func valueChange(_ sender : UIButton)
+//    {
+//        if stepper.count > 100 && stepper.count < 0
+//        {
+//            return
+//        }
+//        mystepper.count += sender.tag
+//    }
 }

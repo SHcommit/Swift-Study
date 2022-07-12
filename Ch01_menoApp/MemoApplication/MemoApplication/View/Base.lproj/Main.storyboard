@@ -12,14 +12,25 @@
         <scene sceneID="A1F-JT-KQp">
             <objects>
                 <tableViewController id="3SG-kZ-vCk" customClass="MemoListVC" customModule="MemoApplication" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Za8-GF-f6a">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-GF-f6a">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="142-KC-BJz">
-                            <rect key="frame" x="0.0" y="227.33333206176763" width="428" height="479.00000000000006"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="29e-NI-BJF">
+                            <rect key="frame" x="0.0" y="227.33333206176758" width="428" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XT-ko-oT2" customClass="CSLogBtn" customModule="MemoApplication" customModuleProvider="target">
+                                    <rect key="frame" x="173" y="8" width="61" height="31"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="더보기"/>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="9XT-ko-oT2" firstAttribute="centerX" secondItem="29e-NI-BJF" secondAttribute="centerX" id="CGs-hv-Myz"/>
+                                <constraint firstItem="9XT-ko-oT2" firstAttribute="centerY" secondItem="29e-NI-BJF" secondAttribute="centerY" id="izi-0z-E6z"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="AKj-aU-oxC" customClass="MemoCell" customModule="MemoApplication" customModuleProvider="target">
@@ -158,8 +169,22 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcN-x0-F23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="142-KC-BJz" customClass="CSLogBtn" customModule="MemoApplication" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="428" height="610"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWS-Dc-LO8" customClass="CSLogBtn" customModule="MemoApplication" customModuleProvider="target">
+                            <rect key="frame" x="152" y="209" width="125" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="더보기"/>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="18V-vT-aoa"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="107.24637681159422" y="59.510869565217398"/>
+            <point key="canvasLocation" x="106.54205607476635" y="58.963282937365015"/>
         </scene>
         <!--상세 화면-->
         <scene sceneID="mkh-ke-DgW">
@@ -228,14 +253,15 @@
                                 <rect key="frame" x="20" y="108" width="388" height="250"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="h9p-M7-OiV"/>
+                                    <constraint firstAttribute="width" constant="388" id="BA4-fe-Kzr"/>
+                                    <constraint firstAttribute="height" constant="250" id="YiB-ZI-fTv"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="42e-Rg-Czp">
-                                <rect key="frame" x="20" y="398" width="250" height="250"/>
+                                <rect key="frame" x="20" y="416" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" placeholder="YES" id="8Ak-s8-9jS"/>
                                     <constraint firstAttribute="width" constant="250" id="S8t-Bt-zBK"/>
@@ -245,11 +271,13 @@
                         <viewLayoutGuide key="safeArea" id="cub-Op-KO8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="42e-Rg-Czp" firstAttribute="leading" secondItem="cub-Op-KO8" secondAttribute="leading" constant="20" id="0bO-5d-hZR"/>
-                            <constraint firstItem="07z-6w-JUD" firstAttribute="top" secondItem="cub-Op-KO8" secondAttribute="top" constant="20" id="3a2-d4-2mK"/>
-                            <constraint firstItem="07z-6w-JUD" firstAttribute="leading" secondItem="cub-Op-KO8" secondAttribute="leading" constant="20" id="Zwz-Xf-oas"/>
-                            <constraint firstItem="42e-Rg-Czp" firstAttribute="top" secondItem="07z-6w-JUD" secondAttribute="bottom" constant="40" placeholder="YES" id="kJC-oV-L8z"/>
-                            <constraint firstItem="cub-Op-KO8" firstAttribute="trailing" secondItem="07z-6w-JUD" secondAttribute="trailing" constant="20" id="mpu-co-17P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="42e-Rg-Czp" secondAttribute="trailing" constant="138" id="4Eq-0f-fK3"/>
+                            <constraint firstItem="42e-Rg-Czp" firstAttribute="top" secondItem="07z-6w-JUD" secondAttribute="bottom" constant="58" id="Igz-Ed-0fu"/>
+                            <constraint firstItem="07z-6w-JUD" firstAttribute="leading" secondItem="cub-Op-KO8" secondAttribute="leading" constant="20" id="Vq1-SI-p01"/>
+                            <constraint firstItem="cub-Op-KO8" firstAttribute="trailing" secondItem="07z-6w-JUD" secondAttribute="trailing" constant="20" id="XEI-BG-WWD"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="42e-Rg-Czp" secondAttribute="bottom" constant="226" id="ah9-dG-XjU"/>
+                            <constraint firstItem="07z-6w-JUD" firstAttribute="top" secondItem="cub-Op-KO8" secondAttribute="top" constant="20" id="bpc-h9-IW0"/>
+                            <constraint firstItem="42e-Rg-Czp" firstAttribute="leading" secondItem="cub-Op-KO8" secondAttribute="leading" constant="20" id="jkr-8J-2b9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="메모 작성" id="5hp-1G-ERz">
