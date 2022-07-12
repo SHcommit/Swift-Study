@@ -73,8 +73,22 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // Do any additional setup after loading the view.
         
         self.contents.delegate = self
+        let bgImage = UIImage(named:"memo-background.png")!
+        self.view.backgroundColor = UIColor(patternImage: bgImage)
+        
+        textUI()
+        
     }
-
+    override func touchesEnded(_ touches : Set<UITouch>, with event : UIEvent?)
+    {
+        let bar = self.navigationController?.navigationBar
+        let ts  = TimeInterval(0.3)
+        UIView.animate(withDuration: ts)
+        {
+            NSLog("\(bar?.alpha)")
+            bar?.alpha = (bar?.alpha == 0 ? 1 : 0)
+        }
+    }
 }
 
 //MARK: - func
@@ -97,5 +111,14 @@ extension MemoFormVC
         let length   = ( (contents.length > 15) ? 15 : contents.length)
         self.subject = contents.substring(with: NSRange(location:0, length:length))
         self.navigationItem.title = self.subject
+    }
+    func textUI()
+    {
+        self.contents.layer.borderWidth = 0
+        self.contents.layer.borderColor = UIColor.clear.cgColor
+        self.contents.backgroundColor   = UIColor.clear
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 9
+        self.contents.attributedText = NSAttributedString(string: " ", attributes: [.paragraphStyle : style])
     }
 }

@@ -12,6 +12,9 @@
 		152D8746284DB0C70079EE20 /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D8745284DB0C70079EE20 /* MemoListVC.swift */; };
 		152D8748284DB1500079EE20 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D8747284DB1500079EE20 /* MemoCell.swift */; };
 		152D874C284DB25E0079EE20 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D874B284DB25E0079EE20 /* MemoData.swift */; };
+		153B5EAF287DDA8B00DE4BC6 /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153B5EAD287DDA8B00DE4BC6 /* memo-background@2x.png */; };
+		153B5EB0287DDA8B00DE4BC6 /* warning-icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153B5EAE287DDA8B00DE4BC6 /* warning-icon-60@2x.png */; };
+		153B5EB2287DE06D00DE4BC6 /* WarningAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */; };
 		15C68478287D9A8000935EB4 /* CSLogBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C68477287D9A8000935EB4 /* CSLogBtn.swift */; };
 		15C6847E287DCE5A00935EB4 /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 15C6847D287DCE5A00935EB4 /* button-bg.png */; };
 		15D0CDA1284CE63800333FFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0CDA0284CE63800333FFF /* AppDelegate.swift */; };
@@ -27,9 +30,11 @@
 		152D8745284DB0C70079EE20 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
 		152D8747284DB1500079EE20 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		152D874B284DB25E0079EE20 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		153B5EAD287DDA8B00DE4BC6 /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
+		153B5EAE287DDA8B00DE4BC6 /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warning-icon-60@2x.png"; sourceTree = "<group>"; };
+		153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningAlert.swift; sourceTree = "<group>"; };
 		15C68477287D9A8000935EB4 /* CSLogBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogBtn.swift; sourceTree = "<group>"; };
 		15C6847D287DCE5A00935EB4 /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-bg.png"; path = "../../../../../../재은씨NO3/swift_practice/MyMemory-Chapter03/Resources/button-bg.png"; sourceTree = "<group>"; };
-		15C6847F287DD21B00935EB4 /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-bg.png"; sourceTree = "<group>"; };
 		15D0CD9D284CE63800333FFF /* MemoApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D0CDA0284CE63800333FFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15D0CDA2284CE63800333FFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,8 +82,18 @@
 				15C68476287D9A5600935EB4 /* MemoListScene */,
 				152D874B284DB25E0079EE20 /* MemoData.swift */,
 				152D8747284DB1500079EE20 /* MemoCell.swift */,
+				153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		153B5EAC287DDA7700DE4BC6 /* memoFormImg */ = {
+			isa = PBXGroup;
+			children = (
+				153B5EAD287DDA8B00DE4BC6 /* memo-background@2x.png */,
+				153B5EAE287DDA8B00DE4BC6 /* warning-icon-60@2x.png */,
+			);
+			path = memoFormImg;
 			sourceTree = "<group>";
 		};
 		15C68476287D9A5600935EB4 /* MemoListScene */ = {
@@ -92,7 +107,7 @@
 		15C68479287D9CB200935EB4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				15C6847F287DD21B00935EB4 /* button-bg.png */,
+				153B5EAC287DDA7700DE4BC6 /* memoFormImg */,
 				15C6847A287D9CBC00935EB4 /* CSLogBtn */,
 			);
 			path = Resources;
@@ -193,9 +208,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				153B5EAF287DDA8B00DE4BC6 /* memo-background@2x.png in Resources */,
 				15D0CDAD284CE63900333FFF /* LaunchScreen.storyboard in Resources */,
 				15D0CDAA284CE63900333FFF /* Assets.xcassets in Resources */,
 				15C6847E287DCE5A00935EB4 /* button-bg.png in Resources */,
+				153B5EB0287DDA8B00DE4BC6 /* warning-icon-60@2x.png in Resources */,
 				15D0CDA8284CE63800333FFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +226,7 @@
 			files = (
 				152D8741284DAF970079EE20 /* MemoReadVC.swift in Sources */,
 				152D8746284DB0C70079EE20 /* MemoListVC.swift in Sources */,
+				153B5EB2287DE06D00DE4BC6 /* WarningAlert.swift in Sources */,
 				15D0CDA1284CE63800333FFF /* AppDelegate.swift in Sources */,
 				152D874C284DB25E0079EE20 /* MemoData.swift in Sources */,
 				152D873F284DAF7E0079EE20 /* MemoFormVC.swift in Sources */,
