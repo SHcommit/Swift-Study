@@ -19,6 +19,9 @@
 		1580DE5B2882FC6A00D4AF53 /* icon01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1580DE552882FC6A00D4AF53 /* icon01.png */; };
 		1580DE5C2882FC6A00D4AF53 /* icon05.png in Resources */ = {isa = PBXBuildFile; fileRef = 1580DE562882FC6A00D4AF53 /* icon05.png */; };
 		1580DE5D2882FC6A00D4AF53 /* icon03.png in Resources */ = {isa = PBXBuildFile; fileRef = 1580DE572882FC6A00D4AF53 /* icon03.png */; };
+		1580DE5F2882FCB600D4AF53 /* RevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580DE5E2882FCB600D4AF53 /* RevealViewController.swift */; };
+		1580DE612882FCC600D4AF53 /* FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580DE602882FCC600D4AF53 /* FrontViewController.swift */; };
+		1580DE632882FCD200D4AF53 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580DE622882FCD200D4AF53 /* SideBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		1580DE552882FC6A00D4AF53 /* icon01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon01.png; sourceTree = "<group>"; };
 		1580DE562882FC6A00D4AF53 /* icon05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon05.png; sourceTree = "<group>"; };
 		1580DE572882FC6A00D4AF53 /* icon03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon03.png; sourceTree = "<group>"; };
+		1580DE5E2882FCB600D4AF53 /* RevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RevealViewController.swift; path = Ch4_customSideBar/Controller/RevealViewController.swift; sourceTree = SOURCE_ROOT; };
+		1580DE602882FCC600D4AF53 /* FrontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontViewController.swift; sourceTree = "<group>"; };
+		1580DE622882FCD200D4AF53 /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +105,10 @@
 			children = (
 				1580DE3A2882FC1500D4AF53 /* AppDelegate.swift */,
 				1580DE3C2882FC1500D4AF53 /* SceneDelegate.swift */,
+				1580DE5E2882FCB600D4AF53 /* RevealViewController.swift */,
 				1580DE3E2882FC1500D4AF53 /* ViewController.swift */,
+				1580DE602882FCC600D4AF53 /* FrontViewController.swift */,
+				1580DE622882FCD200D4AF53 /* SideBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,8 +204,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1580DE3F2882FC1500D4AF53 /* ViewController.swift in Sources */,
+				1580DE632882FCD200D4AF53 /* SideBarViewController.swift in Sources */,
 				1580DE3B2882FC1500D4AF53 /* AppDelegate.swift in Sources */,
+				1580DE612882FCC600D4AF53 /* FrontViewController.swift in Sources */,
 				1580DE3D2882FC1500D4AF53 /* SceneDelegate.swift in Sources */,
+				1580DE5F2882FCB600D4AF53 /* RevealViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
