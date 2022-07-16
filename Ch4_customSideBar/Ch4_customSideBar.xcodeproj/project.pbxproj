@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1580DE3B2882FC1500D4AF53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580DE3A2882FC1500D4AF53 /* AppDelegate.swift */; };
 		1580DE3D2882FC1500D4AF53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580DE3C2882FC1500D4AF53 /* SceneDelegate.swift */; };
-		1580DE3F2882FC1500D4AF53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580DE3E2882FC1500D4AF53 /* ViewController.swift */; };
 		1580DE422882FC1500D4AF53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1580DE402882FC1500D4AF53 /* Main.storyboard */; };
 		1580DE442882FC1500D4AF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1580DE432882FC1500D4AF53 /* Assets.xcassets */; };
 		1580DE472882FC1500D4AF53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1580DE452882FC1500D4AF53 /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 		1580DE372882FC1500D4AF53 /* Ch4_customSideBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ch4_customSideBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1580DE3A2882FC1500D4AF53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1580DE3C2882FC1500D4AF53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1580DE3E2882FC1500D4AF53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1580DE412882FC1500D4AF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1580DE432882FC1500D4AF53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1580DE462882FC1500D4AF53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				1580DE3A2882FC1500D4AF53 /* AppDelegate.swift */,
 				1580DE3C2882FC1500D4AF53 /* SceneDelegate.swift */,
 				1580DE5E2882FCB600D4AF53 /* RevealViewController.swift */,
-				1580DE3E2882FC1500D4AF53 /* ViewController.swift */,
 				1580DE602882FCC600D4AF53 /* FrontViewController.swift */,
 				1580DE622882FCD200D4AF53 /* SideBarViewController.swift */,
 			);
@@ -203,7 +200,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1580DE3F2882FC1500D4AF53 /* ViewController.swift in Sources */,
 				1580DE632882FCD200D4AF53 /* SideBarViewController.swift in Sources */,
 				1580DE3B2882FC1500D4AF53 /* AppDelegate.swift in Sources */,
 				1580DE612882FCC600D4AF53 /* FrontViewController.swift in Sources */,
