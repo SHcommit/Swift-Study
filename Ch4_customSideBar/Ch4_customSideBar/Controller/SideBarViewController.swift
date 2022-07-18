@@ -18,12 +18,34 @@ import UIKit
  */
 class SideBarViewController : UITableViewController
 {
+    let accountLabel = UILabel()
+    
     var menuInfo = MenuDTO()
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        setAcountLabelUI()
     }
-    
+    func setAcountLabelUI()
+    {
+        accountLabel.frame     = CGRect(x: 10, y: 30, width: self.view.frame.width, height: 30)
+        accountLabel.text      = "happysh_s2@naver.com"
+        accountLabel.textColor = .white
+        accountLabel.font      = UIFont.systemFont(ofSize: 15)
+        
+        let containerView      = UIView()
+        containerView.frame    = CGRect(x:0, y: 0, width: self.view.frame.width, height: 70)
+        
+        containerView.backgroundColor = .brown
+        containerView.addSubview(accountLabel)
+        
+        self.tableView.tableHeaderView = containerView
+    }
+}
+
+//MARK: - add TableView
+extension SideBarViewController
+{
     override func tableView(_ tableView : UITableView, numberOfRowsInSection section : Int)-> Int
     {
         return menuInfo.titles.count
@@ -32,11 +54,7 @@ class SideBarViewController : UITableViewController
     override func tableView(_ tableView : UITableView, cellForRowAt indexPath : IndexPath)-> UITableViewCell
     {
         let id   = "menucell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .default, reuseIdentifier: id)
-//        if cell == nil
-//        {
-//            cell = UITableViewCell(style: .default, reuseIdentifier: id)
-//        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .default, reuseIdentifier: id)
         
         cell.textLabel?.text  = self.menuInfo.titles[indexPath.row]
         cell.imageView?.image = self.menuInfo.icons[indexPath.row]
