@@ -9,3 +9,5 @@ required가 붙은 초기화 메서드는 항상 오버라이딩 되기 때문�
 init?() failure 실패할 가능성이있는 초기화 메소드입니다. 할당 실패시 nil 반환
 
 부모 클래스에는 init( v :)가있고 자식클래스에서는 convenience init만 있을때 자식클래스에선 반드시 delegation init을 호출해야하는데. 이때는 delegateion을 정의하지 않았기에 부모 초기화 메소드를 자동 상속 받는다. 따라서 self.init(v : )를 해줘야한다.
+
+<a href="https://dev-with-precious-dreams.tistory.com/entry/SwiftUIkit-dequeueReusableCellwithIdentifier-in-TableView%EA%B3%BC-%EB%AC%B8%EC%A0%9C%EC%A0%90">dequeueReusable(withIdentifier:)를 왜 사용하는가?</a>
