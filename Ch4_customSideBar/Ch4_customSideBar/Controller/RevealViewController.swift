@@ -68,18 +68,85 @@ class RevealViewController : UIViewController
             NSLog("rearVC nil처리됨 확인 바람")
             return
         }
+        //contentVC는 항상 나와있어야해 side는 특수 이벤트시만 보여지는 View니까
         self.view.bringSubviewToFront((contentView))
     }
+    
+    //sideBar의 layout에 shadow만 적용
     func setShadowEffect(_ shadow: Bool, offset: CGFloat)
     {
-        
+        if shadow
+        {
+            self.contentVC?.view.layer.masksToBounds = false
+            self.contentVC?.view.layer.cornerRadius  = 10
+            self.contentVC?.view.layer.shadowOpacity = 0.8
+            self.contentVC?.view.layer.shadowColor   = UIColor.black.cgColor
+            self.contentVC?.view.layer.shadowOffset  = CGSize(width: offset, height: offset)
+        }
+        else
+        {
+            self.contentVC?.view.layer.cornerRadius = 0.0
+            self.contentVC?.view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        }
     }
+    
+    /**
+     사용자의 제스쳐가 주어지면 해당 함수를 실행함으로 써 sideBar를 보여줍니다.
+     
+     - parameter complete: 애니메이션 동작 후 해야 할 것은 없는지?.
+     - returns: <#Return values#>
+     
+     - Param options: 애니메이션 옵션 2개.
+            아 참고로 아래서 UIView.animate의 3번째 인자값으로 넣어주는데 왜 배열이냐?!!
+            그야 set 타입을 쓸 수 있으니깨
+     - Param UIView.animate: 애니메이션 실행.
+     
+     # Notes: #
+     1. About UIView.animate(withDuration:delay:options:animations:completion:)
+        # Document: #
+            인자값으로 주어진 값들에 의해 한개 또는 여러개의 뷰의 애니메이션을 바꿔준다.
+        - parameter withDuration: 애니메이션의 전체 기간.
+        - parameter delay: 애니메이션 시작 전 대기 타임.
+        - parameter options: 어떻게 애니메이션을 보여줄건지 효과들 설정.
+        - parameter animations: 실행 애니메이션 내용.
+        - parameter complete: 애니메이션을 동작한 후에 실행해야 할 추가사항이 있는가?.
+                아 참고로 5번째 매개변수는 인자값으로 Bool타입 받는다. 근데 반환값은 없어.
+                nil값 넣어도 되고. 옵셔널로 선언된 클로저 타입을 인자값으로 받으니까.
+     */
     func openSideBar(_ complete: (() -> Void)?)
     {
+        self.getSideView()
+        self.setShadowEffect(true, offset: -2)
         
+        let options = UIView.AnimationOptions([.curveEaseInOut, .beginFromCurrentState])
+        
+        UIView.animate(
+            withDuration : TimeInterval(self.SLIDE_TIME),
+            delay: TimeInterval(0),
+            options: options,
+            animations:
+            {
+                //애니에메이션 실행하면 음 table's View를 SIDEBAR_WIDTH만큼 옮겨주세욤 근데 크기 는 그냥 현재 뷰 frame 크기로 해주세요.
+                self.contentVC?.view.frame = CGRect(x: self.SIDEBAR_WIDTH,y : 0, width: self.view.frame.width, height: self.view.frame.height)
+            },
+            completion:
+            {
+                //애니메이션 동작했는가?
+            if $0
+            {
+                //와우 다섯번째 매개변수로 사이드 바가 보여지고 있다는걸 true체크후~ 추가 view의 상태 업데이트 할 내용이 있는가?
+                //있다면 complete()로 실행할겜,, 크오오..
+                self.isSideBarShowing = true
+                complete?()
+            }
+        })
     }
     func closeSideBar(_ complete : (() -> Void)?)
     {
         
+    }
+    func afterComplete()
+    {
+        // TODO : sideBarView가 보여진 후에, 또는 가려진 후에 view의 업뎃 내용을 쓰면 됨
     }
 }
