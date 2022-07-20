@@ -28,18 +28,37 @@ class FrontViewController : UIViewController
             UIBarButtonItem(image:UIImage(named:"sidemenu.png"),style: UIBarButtonItem.Style.plain, target: self,action:#selector(self.moveSide(_:)))
         }()
         self.navigationItem.leftBarButtonItem = btnSideBar
+        
+        let panningDrag = UIScreenEdgePanGestureRecognizer(target: self ,action:#selector(moveSide(_:)))
+        panningDrag.edges = UIRectEdge.left
+        self.view.addGestureRecognizer(panningDrag)
+        
+        let SwipeDrag = UISwipeGestureRecognizer(target: self, action: #selector(moveSide(_:)))
+        SwipeDrag.direction = .left
+        self.view.addGestureRecognizer(SwipeDrag)
     }
     
     //액션에 따라 델리게이트 메소드 호출
     @objc func moveSide(_ sender: Any)
     {
-        if self.delegate?.isSideBarShowing == false
+        if sender is UIScreenEdgePanGestureRecognizer
         {
             self.delegate?.openSideBar(nil)
         }
-        else
+        else if sender is UISwipeGestureRecognizer
         {
             self.delegate?.closeSideBar(nil)
+        }
+        else if sender is UIBarButtonItem
+        {
+            if self.delegate?.isSideBarShowing == false
+            {
+                self.delegate?.openSideBar(nil)
+            }
+            else
+            {
+                self.delegate?.closeSideBar(nil)
+            }
         }
     }
 }
