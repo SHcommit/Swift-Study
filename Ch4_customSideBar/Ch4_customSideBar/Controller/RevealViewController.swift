@@ -46,7 +46,12 @@ class RevealViewController : UIViewController
             self.addChild(vc)
             self.view.addSubview(vc.view)
             vc.didMove(toParent: self)
+            
+            //요고 통해서 splitView 관리 가능 지금 근데 contentVC를 추가한 상태인데 이게 FrontView니까
+            let frontVC = vc.viewControllers[0] as? FrontViewController
+            frontVC?.delegate = self
         }
+
     }
     func getSideView()
     {
@@ -143,7 +148,29 @@ class RevealViewController : UIViewController
     }
     func closeSideBar(_ complete : (() -> Void)?)
     {
+        // .beginFromCurrentState : 지금 바로 진행 명령이다!!
+        let options = UIView.AnimationOptions([.curveEaseInOut, .beginFromCurrentState])
         
+        UIView.animate(
+            withDuration: TimeInterval(SLIDE_TIME),
+            delay: TimeInterval(0),
+            options:options,
+            animations:
+                {
+                    self.contentVC?.view.frame = CGRect(x:0,y:0,width:self.view.frame.width,height:self.view.frame.height)
+                },
+            completion:
+                {
+                    if $0
+                    {
+                        self.isSideBarShowing = false
+                        self.sideVC?.view.removeFromSuperview()
+                        self.sideVC = nil
+                        self.setShadowEffect(false, offset: 0)
+                        complete?()
+                    }
+                }
+        )
     }
     func afterComplete()
     {
