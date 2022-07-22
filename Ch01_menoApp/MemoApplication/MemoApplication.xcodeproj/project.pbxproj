@@ -55,14 +55,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150772CB288ACF3E008AE1F1 /* SideBarController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SideBarController;
+			sourceTree = "<group>";
+		};
+		150772CD288AD00A008AE1F1 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				152D874B284DB25E0079EE20 /* MemoData.swift */,
+				152D8747284DB1500079EE20 /* MemoCell.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		150772CE288AD02F008AE1F1 /* customAlert */ = {
+			isa = PBXGroup;
+			children = (
+				153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */,
+			);
+			path = customAlert;
+			sourceTree = "<group>";
+		};
+		150772CF288AD04D008AE1F1 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				152D8745284DB0C70079EE20 /* MemoListVC.swift */,
+				152D873E284DAF7E0079EE20 /* MemoFormVC.swift */,
+				152D8740284DAF970079EE20 /* MemoReadVC.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
 		152D8742284DB0130079EE20 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				150772CF288AD04D008AE1F1 /* Memo */,
+				150772CB288ACF3E008AE1F1 /* SideBarController */,
 				15D0CDA2284CE63800333FFF /* SceneDelegate.swift */,
 				15D0CDA0284CE63800333FFF /* AppDelegate.swift */,
-				152D8740284DAF970079EE20 /* MemoReadVC.swift */,
-				152D873E284DAF7E0079EE20 /* MemoFormVC.swift */,
-				152D8745284DB0C70079EE20 /* MemoListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -79,10 +112,9 @@
 		152D8744284DB0570079EE20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				150772CE288AD02F008AE1F1 /* customAlert */,
+				150772CD288AD00A008AE1F1 /* Memo */,
 				15C68476287D9A5600935EB4 /* MemoListScene */,
-				152D874B284DB25E0079EE20 /* MemoData.swift */,
-				152D8747284DB1500079EE20 /* MemoCell.swift */,
-				153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
