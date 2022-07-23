@@ -1,25 +1,37 @@
 import UIKit
 
+/**
+ TODO : sideBarProfile에 필요한 위젯 프로파일
+ 
+ - Param headerView : 테이블 뷰의 상단 뷰 영역 instance
+ - Param nameLabel : user's name
+ - Param emailLabel : user's email
+ - Param profileImage : user's proflie
+ 
+ # Notes: #
+ 1. SideBarProfileVO를 사용할 때는 해당 tableView를 인자값으로 주어야 한다.
+ 
+ */
 class SideBarProfileVO
 {
+    let headerView   : UIView
     let nameLabel    : UILabel
     let emailLabel   : UILabel
     let profileImage : UIImageView
-    let headerView   : UITableViewHeaderFooterView
     
-    init(_ headerView : inout UITableViewHeaderFooterView, _ userName : String, _ userEmail : String,_ userImage : String)
+    init()
     {
+        headerView   = UIView()
         nameLabel    = UILabel()
         emailLabel   = UILabel()
         profileImage = UIImageView()
-        
-        self.headerView = headerView
-        
-        nameLabelSetup(userName)
-        emailLabelSetup(userEmail)
-        profileImageSetup(userImage)
     }
-    
+    func headerViewSetup(_ tableView : UITableView)
+    {
+        headerView.frame           = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 70)
+        headerView.backgroundColor = .brown
+        tableView.tableHeaderView  = headerView
+    }
     func nameLabelSetup(_ name: String)
     {
         nameLabel.frame           = CGRect(x:70,y:15,width:100,height:30)
@@ -28,7 +40,7 @@ class SideBarProfileVO
         nameLabel.font            = UIFont.boldSystemFont(ofSize: 15)
         nameLabel.backgroundColor = .clear
         
-        self.headerView.addSubview(nameLabel)
+        headerView.addSubview(nameLabel)
     }
     func emailLabelSetup(_ email : String)
     {
@@ -38,7 +50,7 @@ class SideBarProfileVO
         emailLabel.font            = UIFont.systemFont(ofSize:11)
         emailLabel.backgroundColor = .clear
         
-        self.headerView.addSubview(emailLabel)
+        headerView.addSubview(emailLabel)
     }
     func profileImageSetup(_ image : String)
     {
@@ -48,6 +60,6 @@ class SideBarProfileVO
         profileImage.layer.borderWidth   = 0
         profileImage.layer.masksToBounds = true
         
-        self.headerView.addSubview(profileImage)
+        headerView.addSubview(profileImage)
     }
 }
