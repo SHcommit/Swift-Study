@@ -11,12 +11,18 @@ import UIKit
  
  */
 class MemoListVC: UITableViewController {
+    //MARK: - property
     var appDelegate : AppDelegate {
         UIApplication.shared.delegate as! AppDelegate
     }
     
+    var sideBarDelegate : RevealViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let btnSideBar = UIBarButtonItem(image:UIImage(named:"sidemenu.png"),style:UIBarButtonItem.Style.plain, target: self, action: #selector(moveSide(_:)))
+        self.navigationItem.leftBarButtonItem = btnSideBar
+        openSideBarByGuesturing()
     }
     
     override func viewWillAppear(_ animated : Bool){
@@ -70,6 +76,14 @@ class MemoListVC: UITableViewController {
         vc.data = rowData
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-
+    //MARK: - PANNING, SWIPE GESTURE
+    func openSideBarByGuesturing()
+    {
+        let dragLeft = UIScreenEdgePanGestureRecognizer(target:self, action: #selector(moveSide(_:)))
+        dragLeft.edges = UIRectEdge.left
+        self.view.addGestureRecognizer(dragLeft)
+        let dragRight = UISwipeGestureRecognizer(target: self, action: #selector(moveSide(_:)))
+        dragRight.direction = .left
+        self.view.addGestureRecognizer(dragRight)
+    }
 }
