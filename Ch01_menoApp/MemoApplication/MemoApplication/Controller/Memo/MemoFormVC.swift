@@ -31,8 +31,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
      *  3. Navigation을 이용해 이전 화면으로 되돌아간다.
      */
     @IBAction func save(_ sender: Any) {
-        guard self.contents.text?.isEmpty == true else {
-            
+        guard self.contents.text?.count != 1 else {
             self.present(WarningAlert.alert,animated: true)
             return
         }
