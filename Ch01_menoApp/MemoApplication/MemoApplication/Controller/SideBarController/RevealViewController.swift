@@ -28,6 +28,9 @@ import UIKit
     사용자의 barButton클릭이나 panning제스쳐 동작 시 SideVC의 인스턴스를 생성하고 animation을 통해 보여진다.
  5. closeSideBar(_:)
     사용자의 barBtn 클릭이나 swipe 제스쳐 동작 시 SideVC의 인스턴스 해제랑 frontVC의 layer shadow를 해제한다.
+ Date 22.07.30
+ 6. SideBarViewController에게 이 인스턴스 넘겨줌.
+    cell num zero 클릭시 memoFormVC 호출하기 위해.
  */
 class RevealViewController : UIViewController
 {
@@ -68,21 +71,21 @@ class RevealViewController : UIViewController
             NSLog("Reveal's SideVC == nil")
             return
         }
-        self.sideVC = vc
-        self.addChild(vc)
-        self.view.addSubview(vc.view)
-        vc.didMove(toParent:self)
         guard let sideVC = vc as? SideBarViewController else
         {
             NSLog("SideVC == nil")
             return
         }
-        sideVC.revealVC = self
         guard let frontViewController = self.frontVC else
         {
             NSLog("Reveal's FrontVC == nil.\n check setUpFrontView()")
             return
         }
+        self.sideVC = vc
+        self.addChild(vc)
+        self.view.addSubview(vc.view)
+        vc.didMove(toParent:self)
+        sideVC.revealVC = self
         self.view.bringSubviewToFront(frontViewController.view)
     }
     //MARK: - setFrontView's layer's shadow style :)
