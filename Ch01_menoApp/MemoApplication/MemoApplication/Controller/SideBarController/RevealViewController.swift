@@ -39,6 +39,7 @@ class RevealViewController : UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpFrontView()
+        
     }
     //MARK: - selected frontVC, sideVC from RevealVC
     func setUpFrontView()
@@ -71,7 +72,12 @@ class RevealViewController : UIViewController
         self.addChild(vc)
         self.view.addSubview(vc.view)
         vc.didMove(toParent:self)
-        
+        guard let sideVC = vc as? SideBarViewController else
+        {
+            NSLog("SideVC == nil")
+            return
+        }
+        sideVC.revealVC = self
         guard let frontViewController = self.frontVC else
         {
             NSLog("Reveal's FrontVC == nil.\n check setUpFrontView()")
