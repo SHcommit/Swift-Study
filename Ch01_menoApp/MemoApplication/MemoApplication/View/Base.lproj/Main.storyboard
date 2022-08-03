@@ -345,10 +345,10 @@
             </objects>
             <point key="canvasLocation" x="-715" y="-1050"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile Navigation Controller-->
         <scene sceneID="QQQ-Yu-x8e">
             <objects>
-                <navigationController id="M1O-Ua-8y6" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="_profile" id="M1O-Ua-8y6" customClass="ProfileNavigationController" customModule="MemoApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OEz-si-ZvF">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
