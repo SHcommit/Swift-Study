@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   User.plist
-   pLIst
-
-   Created by 양승현 on 2022/08/03.
-   Copyright (c) 2022 ___ORGANIZATIONNAME___. All rights reserved.
--->
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>소원</key>
+	<string>부모님께 효도하기</string>
+	<key>직업</key>
+	<string>ios앱 개발자?!</string>
+	<key>성별</key>
+	<integer>24</integer>
+	<key>국적</key>
+	<array>
+		<string>대한민국</string>
+		<string>프랑스</string>
+	</array>
+	<key>나이</key>
+	<integer>24</integer>
+	<key>이름</key>
+	<string>양승현</string>
+</dict>
 </plist>
