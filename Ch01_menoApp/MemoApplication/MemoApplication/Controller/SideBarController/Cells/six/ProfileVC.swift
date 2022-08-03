@@ -27,7 +27,7 @@ class ProfileVC : UIViewController, UITableViewDelegate, UITableViewDataSource
         self.view.bringSubviewToFront(self.tableView)
         self.view.bringSubviewToFront(self.profileImage)
 
-        self.navigationController.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     //MARK: - UITableViewDataSource implement
