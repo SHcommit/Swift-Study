@@ -131,14 +131,18 @@ class UserInfoViewController : UITableViewController
             }
             //let cv = UIView()
 
-            let tf           = UITextField()
-            tf.frame         = CGRect(x: 0, y: 0, width: alert.view.frame.width / 2, height: 30)
-            tf.text          = self.name.text
-            tf.textAlignment = .center
-            tf.backgroundColor    = .white
-            tf.layer.cornerRadius = 3
-            tf.layer.borderColor  = UIColor.lightGray.cgColor
-            tf.layer.borderWidth  = 0.3
+            let tf      : UITextField =
+            {
+                let myTf   = UITextField()
+                myTf.frame = CGRect(x: 0 ,y:0,width:alert.view.frame.width/2 , height: 30)
+                myTf.text  = self.name.text
+                myTf.textAlignment      = NSTextAlignment.center
+                myTf.backgroundColor = .white
+                myTf.layer.cornerRadius = 3
+                myTf.layer.borderColor  = UIColor.lightGray.cgColor
+                myTf.layer.borderWidth  = 0.3
+                return myTf
+            }()
             centerVC.view.addSubview(tf)
             centerVC.preferredContentSize = CGSize(width: tf.frame.width, height: tf.frame.height)
             alert.view.addSubview(centerVC.view)
