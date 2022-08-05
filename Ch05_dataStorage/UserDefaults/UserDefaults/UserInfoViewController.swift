@@ -129,19 +129,41 @@ class UserInfoViewController : UITableViewController
             {
                 return NSLog("contents instance is nil in UserInfoViewController.swift")
             }
-            let tf           = UITextField()
-            tf.frame         = CGRect(x: 0, y: 0, width: alert.view.frame.width / 2, height: 30)
-            tf.text          = self.name.text
-            tf.textAlignment = .center
-            tf.backgroundColor    = .white
-            tf.layer.cornerRadius = 3
-            tf.layer.borderColor  = UIColor.lightGray.cgColor
-            tf.layer.borderWidth  = 0.3
-            centerVC.view.addSubview(tf)
-            centerVC.preferredContentSize = CGSize(width: tf.frame.width, height: tf.frame.height)
-            alert.view.addSubview(centerVC.view)
+//            let tf           = UITextField()
+//            tf.frame         = CGRect(x: 0, y: 0, width: alert.view.frame.width / 2, height: 30)
+//            tf.text          = self.name.text
+//            tf.textAlignment = .center
+//            tf.backgroundColor    = .white
+//            tf.layer.cornerRadius = 3
+//            tf.layer.borderColor  = UIColor.lightGray.cgColor
+//            tf.layer.borderWidth  = 0.3
+//            centerVC.view.addSubview(tf)
+//            centerVC.preferredContentSize = CGSize(width: tf.frame.width, height: tf.frame.height)
+//            alert.view.addSubview(centerVC.view)
             
-            alert.setValue(centerVC, forKey: "contentViewController")
+//            alert.setValue(centerVC, forKey: "contentViewController")
+            let centerView = UIView()
+            let tf = UITextField()
+            tf.frame = CGRect(x:0,y:0,width:alert.view.frame.width/2,height:30)
+           
+            tf.text          = self.name.text
+            centerView.addSubview(tf)
+            centerView.leftAnchor.constraint(equalTo: alert.view.leftAnchor).isActive = true
+            centerView.rightAnchor.constraint(equalTo: alert.view.rightAnchor).isActive = true
+            centerView.heightAnchor.constraint(equalTo: alert.view.heightAnchor).isActive = true
+            
+            centerView.bottomAnchor.constraint(equalTo:alert.view.bottomAnchor).isActive = true
+            NSLayoutConstraint.activate(
+                [
+                    centerView.leftAnchor.constraint(equalTo: alert.view.leftAnchor),
+                    centerView.rightAnchor.constraint(equalTo: alert.view.rightAnchor),
+                    centerView.heightAnchor.constraint(equalTo: alert.view.heightAnchor),
+                    
+                    centerView.bottomAnchor.constraint(equalTo:alert.view.bottomAnchor)])
+            
+            
+            
+            alert.view.addSubview(centerView)
             alert.addAction(
                 UIAlertAction(title: "OK", style: .default)
                 { (_) in
