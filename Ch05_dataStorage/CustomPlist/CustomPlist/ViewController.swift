@@ -55,21 +55,12 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
         addPickerViewInTextField()
         setToolBar()
         setupCellsValue()
-        
+        setupNavigationBarButton()
         let accountList = pL.array(forKey:"accountList") as? [String] ?? [String]()
         self.accountList = accountList
         if let account = pL.string(forKey:"selectedAccount")
         {
-            self.account.text = account
-            let customPlist = "\(account).plist"
-            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask,true)
-            let path  = paths[0] as NSString
-            let clist = path.strings(byAppendingPaths:[customPlist]).first!
-            //초기 커스텀 plist에서 데이터를가져올때는 Mutable을 할 필요가 없다.
-            let data  = NSDictionary(contentsOfFile:clist)
-            self.name.text = data?["userName"] as? String
-            self.gender.selectedSegmentIndex = data?["userGender"] as? Int ?? 0
-            self.married.isOn = data?["userMarried"] as? Bool ?? false
+            setupUserInfo(account)
         }
         if (self.account.text?.isEmpty)!
         {
@@ -78,7 +69,24 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
             self.married.isEnabled   = false
         }
     }
-    
+    func setupNavigationBarButton()
+    {
+        let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newAccount(_:)))
+        self.navigationItem.rightBarButtonItems = [addBtn]
+    }
+    func setupUserInfo(_ account : String)
+    {
+        self.account.text = account
+        let customPlist = "\(account).plist"
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask,true)
+        let path  = paths[0] as NSString
+        let clist = path.strings(byAppendingPaths:[customPlist]).first!
+        //초기 커스텀 plist에서 데이터를가져올때는 Mutable을 할 필요가 없다.
+        let data  = NSDictionary(contentsOfFile:clist)
+        self.name.text = data?["userName"] as? String
+        self.gender.selectedSegmentIndex = data?["userGender"] as? Int ?? 0
+        self.married.isOn = data?["userMarried"] as? Bool ?? false
+    }
     func addPickerViewInTextField()
     {
         let picker = UIPickerView()
@@ -113,65 +121,6 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
         toolbar.setItems([new,space,done], animated: true)
         
     }
-    //MARK: - TableViewDelegate
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        switch indexPath.row
-        {
-        case 1:
-            let alert = UIAlertController(title:nil,message:"이름 입력하세요.",preferredStyle: .alert)
-            alert.addTextField()
-            {
-                $0.text = self.name.text
-            }
-            alert.addAction(UIAlertAction(title:"OK",style:.default)
-                            {
-                (_) in
-                let value       = alert.textFields?[0].text
-                //use custom pList
-                let customPList = "\(self.account.text!).plist"
-                let paths       = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-                let path        = paths[0] as NSString
-                let plist       = path.strings(byAppendingPaths: [customPList]).first!
-                let data        = NSMutableDictionary(contentsOfFile: plist) ?? NSMutableDictionary()
-                data.setValue(value, forKey: "userName")
-                data.write(toFile: plist, atomically: true)
-                
-                self.name.text  = value
-            })
-            present(alert,animated: true)
-            break;
-        default:
-            break;
-        }
-    }
-    //MARK: - PickerViewDelegate
-    
-    //피커뷰 몇개의 컴포넌트로 구성될건가?!
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
-    
-    //몇개의 list로 구성될 것인가?
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component : Int)->Int
-    {
-        
-        return accountList.count
-    }
-    //특정 피커뷰의 컴포넌트 주제는 String으로
-    func pickerView(_ pickerView: UIPickerView, titleForRow row : Int, forComponent component : Int)-> String?
-    {
-        return accountList[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView,didSelectRow row : Int, inComponent component : Int)
-    {
-        let list          = self.accountList[row]
-        self.account.text = list
-        pL.set(account.text,forKey:"selectedAccount")
-        pL.synchronize()
-    }
-    
     //MARK: - eventHandler
     @objc func pickerDone(_ sender: Any)
     {
@@ -221,6 +170,82 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
             self.gender.selectedSegmentIndex = 0
         })
         present(alert,animated: true)
+        self.gender.isEnabled  = true
+        self.married.isEnabled  = true
     }
 }
 
+//MARK: - PickerViewDelegate
+extension ViewController
+{
+    //피커뷰 몇개의 컴포넌트로 구성될건가?!
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    //몇개의 list로 구성될 것인가?
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component : Int)->Int
+    {
+        
+        return accountList.count
+    }
+    //특정 피커뷰의 컴포넌트 주제는 String으로
+    func pickerView(_ pickerView: UIPickerView, titleForRow row : Int, forComponent component : Int)-> String?
+    {
+        return accountList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView,didSelectRow row : Int, inComponent component : Int)
+    {
+        let list          = self.accountList[row]
+        self.account.text = list
+        pL.set(account.text,forKey:"selectedAccount")
+        pL.synchronize()
+    }
+    
+}
+
+//MARK: - TableViewDelegate
+extension ViewController
+{
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        switch indexPath.row
+        {
+        case 1:
+            if !(self.account.text?.isEmpty)!
+            {
+                let alert = UIAlertController(title:nil,message:"이름 입력하세요.",preferredStyle: .alert)
+                alert.addTextField()
+                {
+                    $0.text = self.name.text
+                }
+                alert.addAction(UIAlertAction(title:"OK",style:.default)
+                                {
+                    (_) in
+                    let value       = alert.textFields?[0].text
+                    //use custom pList
+                    let customPList = "\(self.account.text!).plist"
+                    let paths       = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+                    let path        = paths[0] as NSString
+                    let plist       = path.strings(byAppendingPaths: [customPList]).first!
+                    let data        = NSMutableDictionary(contentsOfFile: plist) ?? NSMutableDictionary()
+                    data.setValue(value, forKey: "userName")
+                    data.write(toFile: plist, atomically: true)
+                    
+                    self.name.text  = value
+                })
+                present(alert,animated: true)
+            }else
+            {
+                let alert = UIAlertController(title: nil, message: "계정 이메일부터 입력해주세요", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                present(alert, animated: true)
+            }
+            
+            break;
+        default:
+            break;
+        }
+    }
+}
