@@ -57,6 +57,15 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
         if let account = pL.string(forKey:"selectedAccount")
         {
             self.account.text = account
+            let customPlist = "\(account).plist"
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask,true)
+            let path  = paths[0] as NSString
+            let clist = path.strings(byAppendingPaths:[customPlist]).first!
+            //초기 커스텀 plist에서 데이터를가져올때는 Mutable을 할 필요가 없다.
+            let data  = NSDictionary(contentsOfFile:clist)
+            self.name.text = data?["userName"] as? String
+            self.gender.selectedSegmentIndex = data?["userGender"] as? Int ?? 0
+            self.married.isOn = data?["userMarried"] as? Bool ?? false
         }
     }
     
