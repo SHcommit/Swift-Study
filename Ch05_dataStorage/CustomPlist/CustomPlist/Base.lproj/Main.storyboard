@@ -98,12 +98,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-f2-xLB">
-                                                    <rect key="frame" x="277" y="6" width="131" height="31"/>
+                                                    <rect key="frame" x="347" y="6" width="61" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
-                                                        <segment title="First"/>
-                                                        <segment title="Second"/>
+                                                        <segment title="남"/>
+                                                        <segment title="여"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="changeGender:" destination="xMh-Io-kb7" eventType="valueChanged" id="YNJ-uO-oDx"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -125,6 +128,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VL4-em-YFR">
                                                     <rect key="frame" x="359" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="changeMarried:" destination="xMh-Io-kb7" eventType="valueChanged" id="Rrv-v1-8e3"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -140,6 +146,9 @@
                     <navigationItem key="navigationItem" title="사용자 정보" id="Rfx-OU-8e0"/>
                     <connections>
                         <outlet property="account" destination="THL-b2-Vgs" id="uxF-fB-hym"/>
+                        <outlet property="gender" destination="Luu-f2-xLB" id="duV-66-Y1X"/>
+                        <outlet property="married" destination="VL4-em-YFR" id="uNs-rf-Aca"/>
+                        <outlet property="name" destination="0a6-zU-08B" id="ksP-Mb-Kfk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5z-GK-bOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
