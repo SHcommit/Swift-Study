@@ -1,5 +1,9 @@
 import UIKit
-
+/*
+ Date : 20.08.10
+ 오늘도 마주한 오류..ㅋㅋ 커스텀 plist나 UserDefaults.standard에 account 변수 type : UITextField를 저장할 때
+ text를 저장해야한느데 텍스트 필드 인스턴스 자체를 저장해버려서 오류가 발생함. (Attempt to insert non-property list object < UITextField ...
+ */
 class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     //MARK: - IB variables
@@ -67,6 +71,12 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
             self.gender.selectedSegmentIndex = data?["userGender"] as? Int ?? 0
             self.married.isOn = data?["userMarried"] as? Bool ?? false
         }
+        if (self.account.text?.isEmpty)!
+        {
+            self.account.placeholder = "등록된 계정이 없습니다."
+            self.gender.isEnabled    = false
+            self.married.isEnabled   = false
+        }
     }
     
     func addPickerViewInTextField()
@@ -84,7 +94,7 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
     func setToolBar()
     {
         let toolbar = UIToolbar()
-        toolbar.frame = CGRect(x:0,y:0,width:0,height:34)
+        toolbar.frame = CGRect(x:0,y:0,width:0,height:32)
         toolbar.barTintColor = .lightGray
         self.account.inputAccessoryView = toolbar
         
@@ -102,11 +112,6 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
         
         toolbar.setItems([new,space,done], animated: true)
         
-    }
-    func addNewestAccount()
-    {
-        pL.set(account,forKey:"selectedAccount")
-        pL.synchronize()
     }
     //MARK: - TableViewDelegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -134,6 +139,7 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
                 
                 self.name.text  = value
             })
+            present(alert,animated: true)
             break;
         default:
             break;
@@ -157,29 +163,35 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
     {
         return accountList[row]
     }
-
+    
     func pickerView(_ pickerView: UIPickerView,didSelectRow row : Int, inComponent component : Int)
     {
         let list          = self.accountList[row]
         self.account.text = list
-        addNewestAccount()
+        pL.set(account.text,forKey:"selectedAccount")
+        pL.synchronize()
     }
     
     //MARK: - eventHandler
     @objc func pickerDone(_ sender: Any)
     {
+
+        if let _account = self.account.text
+        {
+            let customPlist = "\(_account).plist"
+            let paths       = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask,true)
+            let path        = paths[0] as NSString
+            let cList       = path.strings(byAppendingPaths: [customPlist]).first!
+            let data        = NSMutableDictionary(contentsOfFile: cList)
+            
+            self.name.text                   = data?["userName"] as? String ?? ""
+            self.married.isOn                = data?["userMarried"] as? Bool ?? false
+            self.gender.selectedSegmentIndex = data?["userGender"] as? Int ?? 0
+        }
         self.view.endEditing(true)
     }
     @objc func newAccount(_ sender: Any)
     {
-        self.name.text    = ""
-        self.married.isOn = false
-        self.gender.selectedSegmentIndex = 0
-        //계정 목록과 마지막으로 선택한 계정 정보를 저장한다
-        pL.set(self.accountList,forKey:"accountList")
-        pL.set(account,forKey: "selectedAccount")
-        pL.synchronize()
-        
         let alert = UIAlertController(title:nil,message:"새 계정을 입력하세요",preferredStyle: .alert)
         let center = UIViewController()
         let tf     = UITextField()
@@ -197,11 +209,18 @@ class ViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewD
         alert.addAction(UIAlertAction(title: "OK", style: .default)
                         {
             (_) in
+            
             self.accountList.append(tf.text!)
             self.account.text = tf.text
-            self.account.endEditing(true)
+            //계정 목록과 마지막으로 선택한 계정 정보를 저장한다
+            self.pL.set(self.accountList,forKey:"accountList")
+            self.pL.set(self.account.text,forKey: "selectedAccount")
+            self.pL.synchronize()
+            self.name.text    = ""
+            self.married.isOn = false
+            self.gender.selectedSegmentIndex = 0
         })
-        present(alert, animated: true)
+        present(alert,animated: true)
     }
 }
 
