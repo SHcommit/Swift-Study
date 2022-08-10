@@ -27,6 +27,7 @@ class ProfileVC : UIViewController
         setupProfileUI()
         setupTableViewUI()
         drawBtn()
+        addTapGestrueInProfileImage()
         self.navigationController?.navigationBar.isHidden = true
     }
     //MARK: - setupUI
