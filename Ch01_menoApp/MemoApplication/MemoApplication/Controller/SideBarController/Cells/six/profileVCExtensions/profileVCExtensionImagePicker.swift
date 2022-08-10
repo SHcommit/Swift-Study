@@ -7,11 +7,17 @@ import UIKit
  - Param <#ParamNames#> : <#Discription#>
  
  # Notes: #
- 1. <#Notes if any#>
+ 1. Date : 22.08.11
+    -- 문제 --
+    지금 Alert를 통해 특정 cell 클릭시 해당 type로 이미지 피커를 통해 불러오는데 Done버튼을 하면 튕긴다.
+    에러 사유는 UIImage가 잘못된 타입으로 저장된다고 한다.
+    --해결--
+    UserInfoManager의 profile 연산프로퍼티 set을 통해 UserDefaults.standard에 값을 넣을 때 value를 .pngData()로 바꾸지 않아서 오류남 Data타입으로 바꿨어야 했어,,
  
  */
 extension ProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         {
@@ -41,7 +47,7 @@ extension ProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDel
             return
         }
         
-        let alertVO = customAlertVO(title: nil, message: "사진을 가졍로 곳을 선택해 주세요", style: .actionSheet)
+        let alertVO = customAlertVO(title: nil, message: "사진을 가져올 곳을 선택해 주세요", style: .actionSheet)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera)
         {
