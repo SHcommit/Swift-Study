@@ -40,6 +40,7 @@
 		15D0CDAD284CE63900333FFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D0CDAB284CE63900333FFF /* LaunchScreen.storyboard */; };
 		15D8912428A3E9BF0034CFEF /* UserInfoKeyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912328A3E9BF0034CFEF /* UserInfoKeyDTO.swift */; };
 		15D8912628A3EA490034CFEF /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912528A3EA490034CFEF /* UserInfoManager.swift */; };
+		15D8912828A3F49F0034CFEF /* defaultAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912728A3F49F0034CFEF /* defaultAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		15D0CDAE284CE63900333FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15D8912328A3E9BF0034CFEF /* UserInfoKeyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoKeyDTO.swift; sourceTree = "<group>"; };
 		15D8912528A3EA490034CFEF /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		15D8912728A3F49F0034CFEF /* defaultAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,10 +150,10 @@
 		152D8742284DB0130079EE20 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				15D0CDA0284CE63800333FFF /* AppDelegate.swift */,
+				15D0CDA2284CE63800333FFF /* SceneDelegate.swift */,
 				150772CF288AD04D008AE1F1 /* Memo */,
 				150772CB288ACF3E008AE1F1 /* SideBarController */,
-				15D0CDA2284CE63800333FFF /* SceneDelegate.swift */,
-				15D0CDA0284CE63800333FFF /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 		152D8744284DB0570079EE20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15D8912728A3F49F0034CFEF /* defaultAlert.swift */,
 				15528DBE288C559F00268E67 /* SideBar */,
 				150772CE288AD02F008AE1F1 /* customAlert */,
 				150772CD288AD00A008AE1F1 /* Memo */,
@@ -256,10 +259,10 @@
 		15D0CD9F284CE63800333FFF /* MemoApplication */ = {
 			isa = PBXGroup;
 			children = (
-				15D8912228A3E98D0034CFEF /* UserInfo */,
 				15C68479287D9CB200935EB4 /* Resources */,
 				15D0CDAE284CE63900333FFF /* Info.plist */,
 				15D0CDA9284CE63900333FFF /* Assets.xcassets */,
+				15D8912228A3E98D0034CFEF /* UserInfo */,
 				152D8744284DB0570079EE20 /* Model */,
 				152D8743284DB03A0079EE20 /* View */,
 				152D8742284DB0130079EE20 /* Controller */,
@@ -372,6 +375,7 @@
 				152D874C284DB25E0079EE20 /* MemoData.swift in Sources */,
 				152D873F284DAF7E0079EE20 /* MemoFormVC.swift in Sources */,
 				15C68478287D9A8000935EB4 /* CSLogBtn.swift in Sources */,
+				15D8912828A3F49F0034CFEF /* defaultAlert.swift in Sources */,
 				15528DCE288C5B6900268E67 /* SideBarProfileVO.swift in Sources */,
 				15D8912428A3E9BF0034CFEF /* UserInfoKeyDTO.swift in Sources */,
 				150772D1288AD5B7008AE1F1 /* RevealViewController.swift in Sources */,
