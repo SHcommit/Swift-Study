@@ -8,25 +8,25 @@ import UIKit
  - Param <#ParamNames#> : <#Discription#>
  
  # Notes: #
- 1. <#Notes if any#>
+ 1. ProfileVC는 ViewCotnroller이다.
+    ProfileVC안에 구현된 TableView의 인스턴스를 얻는 방법은
+    tableView 인스턴스를 생성하고 dataSource, delegate를 self로 하면 된다.
+    //참고로 테이블 뷰를 갱신하고 싶을 때는 reloadData( )
+ 
  
  */
 class ProfileVC : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     let profileImage = UIImageView()
     let tableView    = UITableView()
+    let userInfo     = UserInfoManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationUI()
         setupProfileUI()
-        self.profileImage.center = CGPoint(x:self.view.frame.width / 2, y : 270)
-        self.tableView.frame = CGRect(x: 0, y: self.profileImage.frame.origin.y+self.profileImage.frame.size.height + 20, width: self.view.frame.width, height: 100)
-        self.tableView.dataSource = self
-        self.tableView.delegate   = self
-        self.view.addSubview(tableView)
-        self.view.bringSubviewToFront(self.tableView)
-        self.view.bringSubviewToFront(self.profileImage)
-
+        setupTableViewUI()
+        drawBtn()
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -47,33 +47,22 @@ class ProfileVC : UIViewController, UITableViewDelegate, UITableViewDataSource
         {
         case 0:
             cell.textLabel?.text       = "이름"
-            cell.detailTextLabel?.text = "승현이"
+            cell.detailTextLabel?.text = self.userInfo.name ?? "Login please"
         case 1:
             cell.textLabel?.text       = "계정"
-            cell.detailTextLabel?.text = "happysh_s2@naver.com"
+            cell.detailTextLabel?.text = self.userInfo.account ?? "LoginPlease"
         default:
             ()
         }
         return cell
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath)
-//        let detail = cell?.detailTextLabel
-//        switch indexPath.row
-//        {
-//        case 0:
-//            NotificationCenter.default.addObserver(cell,selector: #selector(keyboardWillShow(notification:)),name: UIResponder.keyboardWillShowNotification,object: nil)
-//            NotificationCenter.default.addObserver(cell,selector:#selector(keyboardWillHide(notification:)),name: UIResponder.keyboardWillShowNotification,object: nil)
-//            break;
-//        case 1:
-//            NotificationCenter.default.addObserver(cell,selector: #selector(keyboardWillShow(notification:)),name: UIResponder.keyboardWillShowNotification,object: nil)
-//            NotificationCenter.default.addObserver(cell,selector:#selector(keyboardWillHide(notification:)),name: UIResponder.keyboardWillShowNotification,object: nil)
-//            break;
-//        default:
-//            break;
-//        }
-//    }
-//
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if !(self.userInfo.isLogin)
+        {
+            self.doLogin(self.tableView)
+        }
+    }
+
     
     //MARK: - setupUI
     func setupNavigationUI()
@@ -86,10 +75,10 @@ class ProfileVC : UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func setupProfileUI()
     {
-        let img = UIImage(named:"account.jpg")
+        let img = self.userInfo.profile
         self.profileImage.image      = img
         self.profileImage.frame.size = CGSize(width: 100, height: 100)
-        self.profileImage.center     = CGPoint(x: self.view.frame.width/2 , y:130)
+        self.profileImage.center     = CGPoint(x:self.view.frame.width / 2, y : 270)
         
         self.profileImage.layer.cornerRadius  = self.profileImage.frame.width / 2
         self.profileImage.layer.borderWidth   = 0
@@ -98,40 +87,125 @@ class ProfileVC : UIViewController, UITableViewDelegate, UITableViewDataSource
         {
             return NSLog("backgroundImg nil in ProfileVC.swift setupProfileUI()")
         }
-        let bgImageView   = UIImageView(image: backgroundImg)
-        
-        bgImageView.frame.size = CGSize(width:backgroundImg.size.width ,height: backgroundImg.size.height)
-        bgImageView.center = CGPoint(x:self.view.frame.width / 2, y : 40)
-        bgImageView.layer.cornerRadius = bgImageView.frame.size.width / 2
-        bgImageView.layer.borderWidth  = 0
+        let bgImageView                 = UIImageView(image: backgroundImg)
+        bgImageView.frame.size          = CGSize(width:backgroundImg.size.width ,height: backgroundImg.size.height)
+        bgImageView.center              = CGPoint(x:self.view.frame.width / 2, y : 40)
+        bgImageView.layer.cornerRadius  = bgImageView.frame.size.width / 2
+        bgImageView.layer.borderWidth   = 0
         bgImageView.layer.masksToBounds = true
         self.view.addSubview(profileImage)
         self.view.addSubview(bgImageView)
+    }
+    func setupTableViewUI()
+    {
+        self.tableView.frame      = CGRect(x: 0, y: self.profileImage.frame.origin.y+self.profileImage.frame.size.height + 20, width: self.view.frame.width, height: 100)
+        self.tableView.dataSource = self
+        self.tableView.delegate   = self
+        self.view.addSubview(tableView)
+        self.view.bringSubviewToFront(self.tableView)
+        self.view.bringSubviewToFront(self.profileImage)
+    }
+    
+    func drawBtn()
+    {
+        let v = UIView()
+        v.frame.size.width  = self.view.frame.width
+        v.frame.size.height = 40
+        v.frame.origin.x    = 0
+        v.frame.origin.y    = self.tableView.frame.origin.y + self.tableView.frame.height + 10
+        v.backgroundColor   = UIColor(red:0.98,green:0.98,blue:0.98,alpha:1.0)
+        self.view.addSubview(v)
+        
+        let btn        = UIButton(type: .system)
+        btn.frame.size = CGSize(width: 100, height: 30)
+        btn.center     = CGPoint(x: v.frame.size.width/2, y: v.frame.size.height/2)
+        
+        if self.userInfo.isLogin
+        {
+            btn.setTitle("로그아웃", for: .normal)
+            btn.addTarget(self, action: #selector(doLogout(_:)), for: .touchUpInside)
+        }
+        else
+        {
+            btn.setTitle("로그인", for: .normal)
+            btn.addTarget(self, action: #selector(doLogin(_:)), for: .touchUpInside)
+        }
+        v.addSubview(btn)
     }
     //MARK: - event Handler
     @objc func close(_ sender: Any)
     {
         self.presentingViewController?.dismiss(animated: true)
     }
-    @objc func keyboardWillShow(notification: NSNotification)
+    @objc func doLogin(_ sender: Any)
     {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue     )?.cgRectValue else
+        let alertVO = customAlertVO(title: "LOGIN", message: nil, style: .alert)
+        alertVO.alert.addTextField()
         {
-            return
+            $0.placeholder = "Your Account : )"
         }
-        UIView.animate(withDuration: TimeInterval(0.3),delay:TimeInterval(0),options:[.curveEaseInOut, .beginFromCurrentState],animations:{
-            self.view.frame.origin.y = 0 - keyboardSize.height
+        alertVO.alert.addTextField()
+        {
+            $0.placeholder = "Password"
+        }
+        alertVO.addBtn(title: "cancel", style: .cancel, completion: nil)
+        alertVO.addBtn(title:"OK",style:.destructive)
+        {
+            (_) in
+            let account  = alertVO.alert.textFields?[0].text ?? ""
+            let password = alertVO.alert.textFields?[1].text ?? ""
             
-        },completion: nil)
+            if self.userInfo.login(account, password)
+            {
+                self.tableView.reloadData()
+                self.profileImage.image = self.userInfo.profile
+                self.drawBtn()
+            }
+            else
+            {
+                let alert = UIAlertController(title: nil, message: "로그인에 실패하셨습니다.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:"OK",style:.default))
+                self.present(alert,animated: true)
+            }
+        }
+        present(alertVO.alert,animated: true)
+        
     }
-    @objc func keyboardWillHide(notification: NSNotification)
+    @objc func doLogout(_ sender: Any)
     {
-        UIView.animate(withDuration: TimeInterval(0.3), delay: TimeInterval(0),options:[.curveEaseInOut , .beginFromCurrentState],animations: {
-            self.view.frame.origin.y = 0
-        },completion: nil)
+        let alertVO = customAlertVO(title: nil, message: "로그아웃하시겠습니까?", style: .alert)
+        alertVO.addBtn(title: "cancel", style: .cancel, completion: nil)
+        alertVO.addBtn(title: "OK",style: .destructive)
+        {
+            (_) in
+            if self.userInfo.logout()
+            {
+                self.tableView.reloadData()
+                self.profileImage.image = self.userInfo.profile
+                self.drawBtn()
+            }
+        }
+        self.present(alertVO.alert,animated:false)
     }
-    override func touchesBegan(_ touches : Set<UITouch>, with event: UIEvent?)
-    {
-        self.view.endEditing(true)
-    }
+//    @objc func keyboardWillShow(notification: NSNotification)
+//    {
+//        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue     )?.cgRectValue else
+//        {
+//            return
+//        }
+//        UIView.animate(withDuration: TimeInterval(0.3),delay:TimeInterval(0),options:[.curveEaseInOut, .beginFromCurrentState],animations:{
+//            self.view.frame.origin.y = 0 - keyboardSize.height
+//
+//        },completion: nil)
+//    }
+//    @objc func keyboardWillHide(notification: NSNotification)
+//    {
+//        UIView.animate(withDuration: TimeInterval(0.3), delay: TimeInterval(0),options:[.curveEaseInOut , .beginFromCurrentState],animations: {
+//            self.view.frame.origin.y = 0
+//        },completion: nil)
+//    }
+//    override func touchesBegan(_ touches : Set<UITouch>, with event: UIEvent?)
+//    {
+//        self.view.endEditing(true)
+//    }
 }
