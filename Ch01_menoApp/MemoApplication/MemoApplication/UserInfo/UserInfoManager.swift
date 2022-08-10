@@ -71,7 +71,7 @@ class UserInfoManager
         {
             if value != nil
             {
-                plist.set(value,forKey: UserInfoKeyDTO.profile)
+                plist.set(value?.pngData(),forKey: UserInfoKeyDTO.profile)
                 plist.synchronize()
             }
         }
