@@ -42,7 +42,7 @@
 		15D8912628A3EA490034CFEF /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912528A3EA490034CFEF /* UserInfoManager.swift */; };
 		15D8912828A3F49F0034CFEF /* defaultAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912728A3F49F0034CFEF /* defaultAlert.swift */; };
 		15D8912B28A411290034CFEF /* ProfileVCExtensionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912A28A411290034CFEF /* ProfileVCExtensionTableView.swift */; };
-		15D8912D28A412C80034CFEF /* profileVCExtensionImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912C28A412C80034CFEF /* profileVCExtensionImagePicker.swift */; };
+		15D8912D28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912C28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +83,7 @@
 		15D8912528A3EA490034CFEF /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		15D8912728A3F49F0034CFEF /* defaultAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultAlert.swift; sourceTree = "<group>"; };
 		15D8912A28A411290034CFEF /* ProfileVCExtensionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCExtensionTableView.swift; sourceTree = "<group>"; };
-		15D8912C28A412C80034CFEF /* profileVCExtensionImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileVCExtensionImagePicker.swift; sourceTree = "<group>"; };
+		15D8912C28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCExtensionImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +100,11 @@
 		150772CB288ACF3E008AE1F1 /* SideBarController */ = {
 			isa = PBXGroup;
 			children = (
-				157628C42894677200ABEC3C /* Cells */,
 				150772D0288AD5B7008AE1F1 /* RevealViewController.swift */,
 				150772D2288AD5C9008AE1F1 /* SideBarViewContorller.swift */,
 				152D8745284DB0C70079EE20 /* MemoListVC.swift */,
 				150772D4288AEC60008AE1F1 /* MemoListVCEvent.swift */,
+				157628C42894677200ABEC3C /* Cells */,
 			);
 			path = SideBarController;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				15D8912A28A411290034CFEF /* ProfileVCExtensionTableView.swift */,
-				15D8912C28A412C80034CFEF /* profileVCExtensionImagePicker.swift */,
+				15D8912C28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift */,
 			);
 			path = profileVCExtensions;
 			sourceTree = "<group>";
@@ -378,7 +378,7 @@
 			files = (
 				157628C72894682100ABEC3C /* ProfileVC.swift in Sources */,
 				152D8741284DAF970079EE20 /* MemoReadVC.swift in Sources */,
-				15D8912D28A412C80034CFEF /* profileVCExtensionImagePicker.swift in Sources */,
+				15D8912D28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift in Sources */,
 				152D8746284DB0C70079EE20 /* MemoListVC.swift in Sources */,
 				157628C928946AD900ABEC3C /* ProfileNavigationController.swift in Sources */,
 				153B5EB2287DE06D00DE4BC6 /* WarningAlert.swift in Sources */,
