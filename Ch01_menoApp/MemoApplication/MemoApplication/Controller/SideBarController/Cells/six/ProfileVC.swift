@@ -15,7 +15,7 @@ import UIKit
  
  
  */
-class ProfileVC : UIViewController, UITableViewDelegate, UITableViewDataSource
+class ProfileVC : UIViewController
 {
     let profileImage = UIImageView()
     let tableView    = UITableView()
@@ -29,41 +29,6 @@ class ProfileVC : UIViewController, UITableViewDelegate, UITableViewDataSource
         drawBtn()
         self.navigationController?.navigationBar.isHidden = true
     }
-    
-    //MARK: - UITableViewDataSource implement
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section : Int)-> Int
-    {
-        return 2
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath : IndexPath)-> UITableViewCell
-    {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "profileCell")
-        
-        cell.textLabel?.font       = UIFont.systemFont(ofSize:14)
-        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 13)
-        cell.accessoryType = .disclosureIndicator
-        
-        switch indexPath.row
-        {
-        case 0:
-            cell.textLabel?.text       = "이름"
-            cell.detailTextLabel?.text = self.userInfo.name ?? "Login please"
-        case 1:
-            cell.textLabel?.text       = "계정"
-            cell.detailTextLabel?.text = self.userInfo.account ?? "LoginPlease"
-        default:
-            ()
-        }
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !(self.userInfo.isLogin)
-        {
-            self.doLogin(self.tableView)
-        }
-    }
-
-    
     //MARK: - setupUI
     func setupNavigationUI()
     {
@@ -95,15 +60,6 @@ class ProfileVC : UIViewController, UITableViewDelegate, UITableViewDataSource
         bgImageView.layer.masksToBounds = true
         self.view.addSubview(profileImage)
         self.view.addSubview(bgImageView)
-    }
-    func setupTableViewUI()
-    {
-        self.tableView.frame      = CGRect(x: 0, y: self.profileImage.frame.origin.y+self.profileImage.frame.size.height + 20, width: self.view.frame.width, height: 100)
-        self.tableView.dataSource = self
-        self.tableView.delegate   = self
-        self.view.addSubview(tableView)
-        self.view.bringSubviewToFront(self.tableView)
-        self.view.bringSubviewToFront(self.profileImage)
     }
     
     func drawBtn()
