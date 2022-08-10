@@ -38,6 +38,8 @@
 		15D0CDA8284CE63800333FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D0CDA6284CE63800333FFF /* Main.storyboard */; };
 		15D0CDAA284CE63900333FFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D0CDA9284CE63900333FFF /* Assets.xcassets */; };
 		15D0CDAD284CE63900333FFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D0CDAB284CE63900333FFF /* LaunchScreen.storyboard */; };
+		15D8912428A3E9BF0034CFEF /* UserInfoKeyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912328A3E9BF0034CFEF /* UserInfoKeyDTO.swift */; };
+		15D8912628A3EA490034CFEF /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912528A3EA490034CFEF /* UserInfoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		15D0CDA9284CE63900333FFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15D0CDAC284CE63900333FFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15D0CDAE284CE63900333FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15D8912328A3E9BF0034CFEF /* UserInfoKeyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoKeyDTO.swift; sourceTree = "<group>"; };
+		15D8912528A3EA490034CFEF /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +256,7 @@
 		15D0CD9F284CE63800333FFF /* MemoApplication */ = {
 			isa = PBXGroup;
 			children = (
+				15D8912228A3E98D0034CFEF /* UserInfo */,
 				15C68479287D9CB200935EB4 /* Resources */,
 				15D0CDAE284CE63900333FFF /* Info.plist */,
 				15D0CDA9284CE63900333FFF /* Assets.xcassets */,
@@ -260,6 +265,15 @@
 				152D8742284DB0130079EE20 /* Controller */,
 			);
 			path = MemoApplication;
+			sourceTree = "<group>";
+		};
+		15D8912228A3E98D0034CFEF /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				15D8912328A3E9BF0034CFEF /* UserInfoKeyDTO.swift */,
+				15D8912528A3EA490034CFEF /* UserInfoManager.swift */,
+			);
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,11 +367,13 @@
 				15D0CDA1284CE63800333FFF /* AppDelegate.swift in Sources */,
 				150772D5288AEC60008AE1F1 /* MemoListVCEvent.swift in Sources */,
 				150772D3288AD5C9008AE1F1 /* SideBarViewContorller.swift in Sources */,
+				15D8912628A3EA490034CFEF /* UserInfoManager.swift in Sources */,
 				15528DC0288C565A00268E67 /* SideBarListDTO.swift in Sources */,
 				152D874C284DB25E0079EE20 /* MemoData.swift in Sources */,
 				152D873F284DAF7E0079EE20 /* MemoFormVC.swift in Sources */,
 				15C68478287D9A8000935EB4 /* CSLogBtn.swift in Sources */,
 				15528DCE288C5B6900268E67 /* SideBarProfileVO.swift in Sources */,
+				15D8912428A3E9BF0034CFEF /* UserInfoKeyDTO.swift in Sources */,
 				150772D1288AD5B7008AE1F1 /* RevealViewController.swift in Sources */,
 				15D0CDA3284CE63800333FFF /* SceneDelegate.swift in Sources */,
 				152D8748284DB1500079EE20 /* MemoCell.swift in Sources */,
