@@ -12,6 +12,7 @@ import UIKit
         
  - Param list : 사이드 바 목록
  - Param profile : 사이드 바에서 정의된 user's profile
+ - Param revealVC : FrontVC, SideBarVC를 갖는 컨테이너 컨트롤러 인스턴스
  
  # Notes: #
  1. Date : 22.07.30

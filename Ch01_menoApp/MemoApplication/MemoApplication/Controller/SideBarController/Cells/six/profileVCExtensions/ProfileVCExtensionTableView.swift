@@ -1,5 +1,7 @@
 import UIKit
-
+/*
+    TODO : 화면에 사용자의 데이터 tableView로 나타냄. 이벤트 헨들러도 부여
+ */
 extension ProfileVC : UITableViewDataSource, UITableViewDelegate
 {
     //MARK: - UITableViewDataSource implement
