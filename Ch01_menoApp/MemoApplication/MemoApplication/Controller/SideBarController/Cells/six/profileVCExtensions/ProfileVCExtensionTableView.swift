@@ -15,7 +15,7 @@ extension ProfileVC : UITableViewDataSource, UITableViewDelegate
         
         cell.textLabel?.font       = UIFont.systemFont(ofSize:14)
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 13)
-        cell.accessoryType = .disclosureIndicator
+        cell.accessoryType         = .disclosureIndicator
         
         switch indexPath.row
         {

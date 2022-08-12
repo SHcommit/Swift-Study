@@ -31,7 +31,7 @@ extension ProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDel
     //사용자의 선택에 맞는 UIImagePicker가 실행되도록 하는 함수
     func imgPicker(_ source: UIImagePickerController.SourceType)
     {
-        let picker = UIImagePickerController()
+        let picker           = UIImagePickerController()
         picker.sourceType    = source
         picker.delegate      = self
         picker.allowsEditing = true
