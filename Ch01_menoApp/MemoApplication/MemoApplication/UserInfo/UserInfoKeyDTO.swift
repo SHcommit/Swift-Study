@@ -5,5 +5,5 @@ import UIKit
  */
 struct UserInfoKeyDTO
 {
-    static let loginID = "LOGINID" , account = "ACCOUNT" , name = "NAME" , profile = "PROFILE"
+    static let loginID = "LOGINID" , account = "ACCOUNT" , name = "NAME" , profile = "PROFILE" , tutorial = "TUTORIAL"
 }
