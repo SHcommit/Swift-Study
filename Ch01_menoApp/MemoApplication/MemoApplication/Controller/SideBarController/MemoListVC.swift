@@ -24,9 +24,19 @@ class MemoListVC: UITableViewController {
         self.navigationItem.leftBarButtonItem = btnSideBar
         openSideBarByGuesturing()
     }
-    
     override func viewWillAppear(_ animated : Bool){
         self.tableView.reloadData()
+        let ud = UserDefaults.standard
+        if ud.bool(forKey: UserInfoKeyDTO.tutorial) == false
+        {
+            guard let vc = self.instanceTutorialVC(name:"MasterVC") else
+            {
+                return
+            }
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc,animated: false)
+            return
+        }
     }
 
     // MARK: - Table view data source
