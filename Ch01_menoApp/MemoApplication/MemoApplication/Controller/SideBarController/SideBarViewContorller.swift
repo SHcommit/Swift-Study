@@ -9,6 +9,7 @@ import UIKit
 
 /**
  TODO : 사용자의 panning 제스쳐나 메뉴 클릭 시 SideVC의 view에 테이블 뷰가 호출되야함.
+       ProfileVC에서 입력한 사용자의 정보를 SideBar에 동기화 하기.
         
  - Param list : 사이드 바 목록
  - Param profile : 사이드 바에서 정의된 user's profile
@@ -27,18 +28,24 @@ import UIKit
     ----해결----
     rootViewController(navigaitonController)는 독립적으로 뭔가 표시할 수없기에 profileVC를 루트뷰로 등록한것.
     따라서 rootViewController의 스토리보드id를 인스턴스로 생성한 후 호출하면 성공적으로 navigationController 까지 적용이 된다.
+ 3. Date : 22.08.12
+    --기능 추가--
+    ProfileVC에서 사용자의 정보가 입력되면 UserDefaults Manager를 통해 사용자 정보가 SideBarVC에도 갱신된다.
  */
 class SideBarViewController : UITableViewController
 {
-    let list    = SideBarListDTO()
-    var profile = SideBarProfileVO()
+    let list     = SideBarListDTO()
+    var profile  = SideBarProfileVO()
     var revealVC : RevealViewController?
+    let userInfo = UserInfoManager()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
         tableHeaderSetup()
     }
-    
     override func tableView(_ tableView : UITableView, numberOfRowsInSection section : Int) -> Int
     {
         return list.titles.count
@@ -93,10 +100,14 @@ class SideBarViewController : UITableViewController
     
     func tableHeaderSetup()
     {
+//        profile.headerViewSetup(self.tableView)
+//        profile.nameLabelSetup( "ios새싹 승현이")
+//        profile.emailLabelSetup( "happysh_s2@naver.com")
+//        profile.profileImageSetup( "account.jpg")
         profile.headerViewSetup(self.tableView)
-        profile.nameLabelSetup( "ios새싹 승현이")
-        profile.emailLabelSetup( "happysh_s2@naver.com")
-        profile.profileImageSetup( "account.jpg")
+        profile.nameLabel.text = self.userInfo.name ?? "Guest"
+        profile.emailLabel.text = self.userInfo.account ?? ""
+        profile.profileImage.image = self.userInfo.profile
     }
 }
 
