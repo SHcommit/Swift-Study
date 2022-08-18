@@ -13,8 +13,8 @@
 		158F094428ACD5600006E183 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158F094228ACD5600006E183 /* Main.storyboard */; };
 		158F094628ACD5620006E183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158F094528ACD5620006E183 /* Assets.xcassets */; };
 		158F094928ACD5620006E183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158F094728ACD5620006E183 /* LaunchScreen.storyboard */; };
-		158F095228ACD59E0006E183 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 158F095128ACD59E0006E183 /* libsqlite3.tbd */; };
 		158F095628ACD85E0006E183 /* SQLite3Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158F095528ACD85E0006E183 /* SQLite3Database.swift */; };
+		158F097C28ADFE330006E183 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 158F095128ACD59E0006E183 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,16 +27,16 @@
 		158F094828ACD5620006E183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		158F094A28ACD5620006E183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		158F095128ACD59E0006E183 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		158F095328ACD6360006E183 /* SQLite3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SQLite3-Bridging-Header.h"; sourceTree = "<group>"; };
 		158F095528ACD85E0006E183 /* SQLite3Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite3Database.swift; sourceTree = "<group>"; };
+		158F097D28ADFE520006E183 /* Ch06-SQLite3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ch06-SQLite3-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		158F093628ACD5600006E183 /* Frameworks */ = {
+		158F097B28ADFE2A0006E183 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				158F095228ACD59E0006E183 /* libsqlite3.tbd in Frameworks */,
+				158F097C28ADFE330006E183 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				158F093C28ACD5600006E183 /* AppDelegate.swift */,
-				158F095328ACD6360006E183 /* SQLite3-Bridging-Header.h */,
 				158F095528ACD85E0006E183 /* SQLite3Database.swift */,
 				158F093E28ACD5600006E183 /* SceneDelegate.swift */,
 				158F094028ACD5600006E183 /* ViewController.swift */,
@@ -72,6 +71,7 @@
 				158F094528ACD5620006E183 /* Assets.xcassets */,
 				158F094728ACD5620006E183 /* LaunchScreen.storyboard */,
 				158F094A28ACD5620006E183 /* Info.plist */,
+				158F097D28ADFE520006E183 /* Ch06-SQLite3-Bridging-Header.h */,
 			);
 			path = SQLite3;
 			sourceTree = "<group>";
@@ -92,8 +92,8 @@
 			buildConfigurationList = 158F094D28ACD5620006E183 /* Build configuration list for PBXNativeTarget "SQLite3" */;
 			buildPhases = (
 				158F093528ACD5600006E183 /* Sources */,
-				158F093628ACD5600006E183 /* Frameworks */,
 				158F093728ACD5600006E183 /* Resources */,
+				158F097B28ADFE2A0006E183 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,7 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SH.SQLite3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SQLite3/SQLite3-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SQLite3/Ch06-SQLite3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -348,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SH.SQLite3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SQLite3/SQLite3-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SQLite3/Ch06-SQLite3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -40,6 +40,8 @@ class SQLiteDatabase
         let manager    = FileManager()
         let docPathURL = manager.urls(for: .documentDirectory, in: .userDomainMask).first
         dbPath = docPathURL?.appendingPathComponent("db.sqlite").path
+        //와 신기 ㅋㅋㅋ 경로를 홈으로 하니까 db 생성됨 ㅋㅋㅋㅋ
+        //dbPath = "/Users/yangseunghyeon/db.sqlite"
     }
     func openDatabase() -> OpaquePointer?
     {
