@@ -32,7 +32,6 @@ class SQLiteDatabase
         sqlStr = "CREATE TABLE IF NOT EXISTS squqence (num INTEGER)"
         db = openDatabase()
         createTable()
-        deleteTable()
     }
     
     func addDbPath()
@@ -69,25 +68,29 @@ class SQLiteDatabase
     }
     func createTable()
     {
-        if sqlite3_prepare(db,sqlStr, -1, &stmt,nil) == SQLITE_OK
+        guard sqlite3_prepare(db, sqlStr, -1, &stmt, nil) == SQLITE_OK else
         {
-            if sqlite3_step(stmt) == SQLITE_DONE
-            {
-                NSLog("create table")
-            }
-            else
-            {
-                NSLog("not create table db")
-            }
+            return NSLog("Wrong create table db string")
+        }
+        
+        defer
+        {
+            NSLog("close db connection")
+            sqlite3_close(stmt)
+        }
+        
+        if sqlite3_step(stmt) == SQLITE_DONE
+        {
+            NSLog("create table")
         }
         else
         {
-            NSLog("Wrong create table db string")
+            NSLog("not create table db")
         }
-    }
-    func deleteTable()
-    {
-        sqlite3_finalize(stmt)
-        sqlite3_close(db)
+        defer
+        {
+            NSLog("Finalize stmt")
+            sqlite3_finalize(stmt)
+        }
     }
 }
