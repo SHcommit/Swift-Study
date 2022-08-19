@@ -14,6 +14,8 @@
 		15638BC928B01D0900ECC898 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BC128B01D0900ECC898 /* FMDatabaseQueue.m */; };
 		15638BCA28B01D0900ECC898 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BC328B01D0900ECC898 /* FMDatabaseAdditions.m */; };
 		15638BCB28B01D0900ECC898 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BC428B01D0900ECC898 /* FMResultSet.m */; };
+		15638BD128B020D400ECC898 /* DepartTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15638BD028B020D400ECC898 /* DepartTabBarItem.swift */; };
+		15638BD328B0232000ECC898 /* EmpBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15638BD228B0232000ECC898 /* EmpBarItem.swift */; };
 		15778F9128AE317C00AA41B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9028AE317C00AA41B8 /* AppDelegate.swift */; };
 		15778F9328AE317C00AA41B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9228AE317C00AA41B8 /* SceneDelegate.swift */; };
 		15778F9828AE317C00AA41B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15778F9628AE317C00AA41B8 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		15638BC428B01D0900ECC898 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = HRApp/fmdbClone/src/fmdb/FMResultSet.m; sourceTree = SOURCE_ROOT; };
 		15638BC528B01D0900ECC898 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = HRApp/fmdbClone/src/fmdb/FMDatabaseAdditions.h; sourceTree = SOURCE_ROOT; };
 		15638BC628B01D0900ECC898 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = HRApp/fmdbClone/src/fmdb/FMDatabasePool.h; sourceTree = SOURCE_ROOT; };
+		15638BD028B020D400ECC898 /* DepartTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartTabBarItem.swift; sourceTree = "<group>"; };
+		15638BD228B0232000ECC898 /* EmpBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpBarItem.swift; sourceTree = "<group>"; };
 		15778F8D28AE317C00AA41B8 /* HRApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15778F9028AE317C00AA41B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15778F9228AE317C00AA41B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		15638BCC28B0206600ECC898 /* Employee */ = {
 			isa = PBXGroup;
 			children = (
+				15638BD228B0232000ECC898 /* EmpBarItem.swift */,
+				15778FA628AE328500AA41B8 /* EmployeeViewController.swift */,
 			);
 			path = Employee;
 			sourceTree = "<group>";
@@ -102,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				15778FA428AE327300AA41B8 /* DepartmentViewController.swift */,
+				15638BD028B020D400ECC898 /* DepartTabBarItem.swift */,
 			);
 			path = Department;
 			sourceTree = "<group>";
@@ -146,7 +153,6 @@
 			children = (
 				15638BCD28B0207100ECC898 /* Department */,
 				15638BCC28B0206600ECC898 /* Employee */,
-				15778FA628AE328500AA41B8 /* EmployeeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15638BD128B020D400ECC898 /* DepartTabBarItem.swift in Sources */,
 				15778FAB28AE353200AA41B8 /* NaviBtnVO.swift in Sources */,
 				15778FC028AF5A9400AA41B8 /* CustomAlert.swift in Sources */,
 				15778FA728AE328500AA41B8 /* EmployeeViewController.swift in Sources */,
@@ -243,6 +250,7 @@
 				15638BCB28B01D0900ECC898 /* FMResultSet.m in Sources */,
 				15638BC928B01D0900ECC898 /* FMDatabaseQueue.m in Sources */,
 				15638BCA28B01D0900ECC898 /* FMDatabaseAdditions.m in Sources */,
+				15638BD328B0232000ECC898 /* EmpBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -55,11 +55,11 @@
             </objects>
             <point key="canvasLocation" x="-247" y="97"/>
         </scene>
-        <!--부서목록-->
+        <!--Navigation Controller-->
         <scene sceneID="OUq-kg-dVc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCr-9m-qtk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="부서목록" id="yoS-tE-CdP" userLabel="부서목록"/>
+                    <tabBarItem key="tabBarItem" title="" id="yoS-tE-CdP" userLabel="부서목록" customClass="DepartTabBarItem" customModule="HRApp" customModuleProvider="target"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1KT-8N-YKj">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
@@ -74,11 +74,11 @@
             </objects>
             <point key="canvasLocation" x="1123" y="-194"/>
         </scene>
-        <!--사원목록-->
+        <!--Navigation Controller-->
         <scene sceneID="IQz-Bk-LCN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LZu-FV-ixl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="사원목록" id="0Qc-5V-GXz"/>
+                    <tabBarItem key="tabBarItem" title="" id="0Qc-5V-GXz" customClass="EmpBarItem" customModule="HRApp" customModuleProvider="target"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="puN-Wy-6ev">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
