@@ -18,9 +18,11 @@ class DepartmentViewController : UITableViewController
         
         naviBtnVO.setupEditBtn(self, #selector(editDepartInfo(_:)))
         self.navigationItem.leftBarButtonItem = naviBtnVO.EditBtn
-        
+        naviBtnVO.setupAddBtn(self, #selector(addDepartInfo(_:)))
+        self.navigationItem.rightBarButtonItem = naviBtnVO.AddBtn
     }
     
+    //MARK: - tableViewDelegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section : Int) -> Int
     {
         return arr.count
@@ -35,12 +37,17 @@ class DepartmentViewController : UITableViewController
     
 }
 
-//EventHandler
+//MARK: - EventHandler
 extension DepartmentViewController
 {
     @objc func editDepartInfo(_ sender: Any?)
     {
-        self.navigationController?.setEditing(true, animated: true)
+        guard self.tableView.isEditing else
+        {
+            self.tableView.setEditing(true, animated: true)
+            return
+        }
+        self.tableView.setEditing(false, animated: true)
     }
     @objc func addDepartInfo(_ sender: Any?)
     {
@@ -54,8 +61,8 @@ extension DepartmentViewController
         alert.setupBtn("확인", .default,.right)
         {
             _ in
-            //여기에 이제 부소를 거기따주는거지 디비에따가 
+            //여기에 이제 부소를 거기따주는거지 디비에따가
         }
-        
+        self.present(alert.alert, animated: true )
     }
 }
