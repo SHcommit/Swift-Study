@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		155D663928B0094500818DB9 /* FMDBClone */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FMDBClone; path = HRApp/FMDBClone; sourceTree = "<group>"; };
 		15778F8D28AE317C00AA41B8 /* HRApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15778F9028AE317C00AA41B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15778F9228AE317C00AA41B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		15778F8428AE317C00AA41B8 = {
 			isa = PBXGroup;
 			children = (
+				155D663928B0094500818DB9 /* FMDBClone */,
 				15778F8F28AE317C00AA41B8 /* HRApp */,
 				15778F8E28AE317C00AA41B8 /* Products */,
 			);
