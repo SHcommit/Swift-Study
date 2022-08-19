@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		155D663C28B009DA00818DB9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 155D663B28B009DA00818DB9 /* libsqlite3.tbd */; };
 		15778F9128AE317C00AA41B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9028AE317C00AA41B8 /* AppDelegate.swift */; };
 		15778F9328AE317C00AA41B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9228AE317C00AA41B8 /* SceneDelegate.swift */; };
 		15778F9828AE317C00AA41B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15778F9628AE317C00AA41B8 /* Main.storyboard */; };
@@ -19,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		155D663928B0094500818DB9 /* FMDBClone */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FMDBClone; path = HRApp/FMDBClone; sourceTree = "<group>"; };
+		155D663B28B009DA00818DB9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1571982F28B00E060082B59A /* HR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HR-Bridging-Header.h"; path = "../HR-Bridging-Header.h"; sourceTree = "<group>"; };
 		15778F8D28AE317C00AA41B8 /* HRApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15778F9028AE317C00AA41B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15778F9228AE317C00AA41B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,18 +40,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				155D663C28B009DA00818DB9 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		155D663A28B009DA00818DB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				155D663B28B009DA00818DB9 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		15778F8428AE317C00AA41B8 = {
 			isa = PBXGroup;
 			children = (
-				155D663928B0094500818DB9 /* FMDBClone */,
 				15778F8F28AE317C00AA41B8 /* HRApp */,
 				15778F8E28AE317C00AA41B8 /* Products */,
+				155D663A28B009DA00818DB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +78,7 @@
 				15778FA928AE349200AA41B8 /* Model */,
 				15778FA828AE328B00AA41B8 /* Controller */,
 				15778F9028AE317C00AA41B8 /* AppDelegate.swift */,
+				1571982F28B00E060082B59A /* HR-Bridging-Header.h */,
 				15778F9228AE317C00AA41B8 /* SceneDelegate.swift */,
 				15778F9628AE317C00AA41B8 /* Main.storyboard */,
 				15778F9928AE317C00AA41B8 /* Assets.xcassets */,
@@ -332,6 +344,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SH.HRApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HRApp/HR-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,6 +373,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SH.HRApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HRApp/HR-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
