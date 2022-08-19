@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		155D663C28B009DA00818DB9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 155D663B28B009DA00818DB9 /* libsqlite3.tbd */; };
+		15638BB528B0109500ECC898 /* fmdbClone in Resources */ = {isa = PBXBuildFile; fileRef = 15638BB428B0109500ECC898 /* fmdbClone */; };
 		15778F9128AE317C00AA41B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9028AE317C00AA41B8 /* AppDelegate.swift */; };
 		15778F9328AE317C00AA41B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9228AE317C00AA41B8 /* SceneDelegate.swift */; };
 		15778F9828AE317C00AA41B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15778F9628AE317C00AA41B8 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		155D663B28B009DA00818DB9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		15638BB428B0109500ECC898 /* fmdbClone */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = fmdbClone; path = HRApp/fmdbClone; sourceTree = "<group>"; };
 		15778F8D28AE317C00AA41B8 /* HRApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15778F9028AE317C00AA41B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15778F9228AE317C00AA41B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		15778F8428AE317C00AA41B8 = {
 			isa = PBXGroup;
 			children = (
+				15638BB428B0109500ECC898 /* fmdbClone */,
 				15778F8F28AE317C00AA41B8 /* HRApp */,
 				15778F8E28AE317C00AA41B8 /* Products */,
 				155D663A28B009DA00818DB9 /* Frameworks */,
@@ -165,6 +168,7 @@
 				15778F9D28AE317C00AA41B8 /* LaunchScreen.storyboard in Resources */,
 				15778F9A28AE317C00AA41B8 /* Assets.xcassets in Resources */,
 				15778F9828AE317C00AA41B8 /* Main.storyboard in Resources */,
+				15638BB528B0109500ECC898 /* fmdbClone in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
