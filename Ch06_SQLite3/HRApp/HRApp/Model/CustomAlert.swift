@@ -6,9 +6,9 @@ class CustomAlert
     {
         case left , right
     }
-    var alert    : UIAlertController?
-    var leftBtn  : UIAlertAction?
-    var rightBtn : UIAlertAction?
+    var alert    : UIAlertController!
+    var leftBtn  : UIAlertAction!
+    var rightBtn : UIAlertAction!
     var contentVC : UIViewController?
     func setupAlert(_ title : String?, _ message: String? , _ style : UIAlertController.Style)
     {
@@ -27,9 +27,11 @@ class CustomAlert
         {
         case .left:
             leftBtn = UIAlertAction(title: title, style: style, handler: handler)
+            self.alert.addAction(leftBtn)
             break;
         case .right:
             rightBtn = UIAlertAction(title: title, style: style, handler: handler)
+            self.alert.addAction(rightBtn)
             break;
         default:
             ()

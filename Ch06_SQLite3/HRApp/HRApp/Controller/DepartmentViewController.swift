@@ -34,7 +34,21 @@ class DepartmentViewController : UITableViewController
         //cell.detailTextLabel?.text // aanj2
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard tableView.isEditing else
+        {
+            return
+        }
+        //에디팅일때
+        
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete
+        {
+            arr.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 //MARK: - EventHandler
@@ -62,6 +76,8 @@ extension DepartmentViewController
         {
             _ in
             //여기에 이제 부소를 거기따주는거지 디비에따가
+            self.arr.append((alert.alert?.textFields?[0].text)! )
+            self.tableView.reloadData()
         }
         self.present(alert.alert, animated: true )
     }
