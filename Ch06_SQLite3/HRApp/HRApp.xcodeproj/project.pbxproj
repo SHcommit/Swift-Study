@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		155D663C28B009DA00818DB9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 155D663B28B009DA00818DB9 /* libsqlite3.tbd */; };
 		15638BB528B0109500ECC898 /* fmdbClone in Resources */ = {isa = PBXBuildFile; fileRef = 15638BB428B0109500ECC898 /* fmdbClone */; };
+		15638BC728B01D0900ECC898 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BBD28B01D0900ECC898 /* FMDatabasePool.m */; };
+		15638BC828B01D0900ECC898 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BBE28B01D0900ECC898 /* FMDatabase.m */; };
+		15638BC928B01D0900ECC898 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BC128B01D0900ECC898 /* FMDatabaseQueue.m */; };
+		15638BCA28B01D0900ECC898 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BC328B01D0900ECC898 /* FMDatabaseAdditions.m */; };
+		15638BCB28B01D0900ECC898 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BC428B01D0900ECC898 /* FMResultSet.m */; };
 		15778F9128AE317C00AA41B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9028AE317C00AA41B8 /* AppDelegate.swift */; };
 		15778F9328AE317C00AA41B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9228AE317C00AA41B8 /* SceneDelegate.swift */; };
 		15778F9828AE317C00AA41B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15778F9628AE317C00AA41B8 /* Main.storyboard */; };
@@ -23,6 +28,18 @@
 /* Begin PBXFileReference section */
 		155D663B28B009DA00818DB9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		15638BB428B0109500ECC898 /* fmdbClone */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = fmdbClone; path = HRApp/fmdbClone; sourceTree = "<group>"; };
+		15638BBA28B01C5200ECC898 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "HRApp/Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		15638BBC28B01D0900ECC898 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = HRApp/fmdbClone/src/fmdb/FMResultSet.h; sourceTree = SOURCE_ROOT; };
+		15638BBD28B01D0900ECC898 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = HRApp/fmdbClone/src/fmdb/FMDatabasePool.m; sourceTree = SOURCE_ROOT; };
+		15638BBE28B01D0900ECC898 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = HRApp/fmdbClone/src/fmdb/FMDatabase.m; sourceTree = SOURCE_ROOT; };
+		15638BBF28B01D0900ECC898 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = HRApp/fmdbClone/src/fmdb/FMDatabaseQueue.h; sourceTree = SOURCE_ROOT; };
+		15638BC028B01D0900ECC898 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = HRApp/fmdbClone/src/fmdb/FMDB.h; sourceTree = SOURCE_ROOT; };
+		15638BC128B01D0900ECC898 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = HRApp/fmdbClone/src/fmdb/FMDatabaseQueue.m; sourceTree = SOURCE_ROOT; };
+		15638BC228B01D0900ECC898 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = HRApp/fmdbClone/src/fmdb/FMDatabase.h; sourceTree = SOURCE_ROOT; };
+		15638BC328B01D0900ECC898 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = HRApp/fmdbClone/src/fmdb/FMDatabaseAdditions.m; sourceTree = SOURCE_ROOT; };
+		15638BC428B01D0900ECC898 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = HRApp/fmdbClone/src/fmdb/FMResultSet.m; sourceTree = SOURCE_ROOT; };
+		15638BC528B01D0900ECC898 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = HRApp/fmdbClone/src/fmdb/FMDatabaseAdditions.h; sourceTree = SOURCE_ROOT; };
+		15638BC628B01D0900ECC898 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = HRApp/fmdbClone/src/fmdb/FMDatabasePool.h; sourceTree = SOURCE_ROOT; };
 		15778F8D28AE317C00AA41B8 /* HRApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15778F9028AE317C00AA41B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15778F9228AE317C00AA41B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +73,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		15638BBB28B01CEB00ECC898 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				15638BC228B01D0900ECC898 /* FMDatabase.h */,
+				15638BBE28B01D0900ECC898 /* FMDatabase.m */,
+				15638BC528B01D0900ECC898 /* FMDatabaseAdditions.h */,
+				15638BC328B01D0900ECC898 /* FMDatabaseAdditions.m */,
+				15638BC628B01D0900ECC898 /* FMDatabasePool.h */,
+				15638BBD28B01D0900ECC898 /* FMDatabasePool.m */,
+				15638BBF28B01D0900ECC898 /* FMDatabaseQueue.h */,
+				15638BC128B01D0900ECC898 /* FMDatabaseQueue.m */,
+				15638BC028B01D0900ECC898 /* FMDB.h */,
+				15638BBC28B01D0900ECC898 /* FMResultSet.h */,
+				15638BC428B01D0900ECC898 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		15778F8428AE317C00AA41B8 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +112,8 @@
 		15778F8F28AE317C00AA41B8 /* HRApp */ = {
 			isa = PBXGroup;
 			children = (
+				15638BBB28B01CEB00ECC898 /* FMDB */,
+				15638BBA28B01C5200ECC898 /* Bridging-Header.h */,
 				15778FA928AE349200AA41B8 /* Model */,
 				15778FA828AE328B00AA41B8 /* Controller */,
 				15778F9028AE317C00AA41B8 /* AppDelegate.swift */,
@@ -183,8 +220,13 @@
 				15778FC028AF5A9400AA41B8 /* CustomAlert.swift in Sources */,
 				15778FA728AE328500AA41B8 /* EmployeeViewController.swift in Sources */,
 				15778FA528AE327300AA41B8 /* DepartmentViewController.swift in Sources */,
+				15638BC728B01D0900ECC898 /* FMDatabasePool.m in Sources */,
 				15778F9128AE317C00AA41B8 /* AppDelegate.swift in Sources */,
 				15778F9328AE317C00AA41B8 /* SceneDelegate.swift in Sources */,
+				15638BC828B01D0900ECC898 /* FMDatabase.m in Sources */,
+				15638BCB28B01D0900ECC898 /* FMResultSet.m in Sources */,
+				15638BC928B01D0900ECC898 /* FMDatabaseQueue.m in Sources */,
+				15638BCA28B01D0900ECC898 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +389,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "HRApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -376,7 +418,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "HRApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
