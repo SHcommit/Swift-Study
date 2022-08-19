@@ -21,7 +21,6 @@
 
 /* Begin PBXFileReference section */
 		155D663B28B009DA00818DB9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		1571982F28B00E060082B59A /* HR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HR-Bridging-Header.h"; path = "../HR-Bridging-Header.h"; sourceTree = "<group>"; };
 		15778F8D28AE317C00AA41B8 /* HRApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15778F9028AE317C00AA41B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15778F9228AE317C00AA41B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +77,6 @@
 				15778FA928AE349200AA41B8 /* Model */,
 				15778FA828AE328B00AA41B8 /* Controller */,
 				15778F9028AE317C00AA41B8 /* AppDelegate.swift */,
-				1571982F28B00E060082B59A /* HR-Bridging-Header.h */,
 				15778F9228AE317C00AA41B8 /* SceneDelegate.swift */,
 				15778F9628AE317C00AA41B8 /* Main.storyboard */,
 				15778F9928AE317C00AA41B8 /* Assets.xcassets */,
