@@ -91,6 +91,21 @@
 			path = FMDB;
 			sourceTree = "<group>";
 		};
+		15638BCC28B0206600ECC898 /* Employee */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Employee;
+			sourceTree = "<group>";
+		};
+		15638BCD28B0207100ECC898 /* Department */ = {
+			isa = PBXGroup;
+			children = (
+				15778FA428AE327300AA41B8 /* DepartmentViewController.swift */,
+			);
+			path = Department;
+			sourceTree = "<group>";
+		};
 		15778F8428AE317C00AA41B8 = {
 			isa = PBXGroup;
 			children = (
@@ -129,8 +144,9 @@
 		15778FA828AE328B00AA41B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				15638BCD28B0207100ECC898 /* Department */,
+				15638BCC28B0206600ECC898 /* Employee */,
 				15778FA628AE328500AA41B8 /* EmployeeViewController.swift */,
-				15778FA428AE327300AA41B8 /* DepartmentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
