@@ -37,11 +37,11 @@ class EmployeeDAO
             NSLog("filemanager path nil")
             return nil
         }
-        let dbPath = _path.appendingPathComponent("hr.sqlite").path
+        let dbPath = _path.appendingPathComponent("hrDb.sqlite").path
         
         if mgr.fileExists(atPath: dbPath) == false
         {
-            let dbSource = Bundle.main.path(forResource: "hr",ofType: "sqlite")
+            let dbSource = Bundle.main.path(forResource: "hrDb",ofType: "sqlite")
             try! mgr.copyItem(atPath: dbSource!, toPath: dbPath)
         }
         return FMDatabase(path: dbPath)

@@ -8,12 +8,22 @@ class DepartmentDAO
     {
         let manager = FileManager.default
         let docPath = manager.urls(for:.documentDirectory,in: .userDomainMask).first
-        let dbPath  = docPath!.appendingPathComponent("hrDb.sqlite").path
+        guard let _docPath = docPath else
+        {
+            NSLog("도큐멘터리 경로가 잘못되었습니다.")
+            return nil
+        }
+        let dbPath  = _docPath.appendingPathComponent("hrDb.sqlite").path
         
         if manager.fileExists(atPath: dbPath) == false
         {
             let dbSource = Bundle.main.path(forResource: "hrDb", ofType: "sqlite")
-            try! manager.copyItem(atPath: dbSource!, toPath: dbPath)
+            guard let _dbSource = dbSource else
+            {
+                NSLog("dbPath -> dbSource 가 만들어지지 않았습니다.")
+                return nil
+            }
+            try! manager.copyItem(atPath: _dbSource, toPath: dbPath)
         }
         let db = FMDatabase(path:dbPath)
         return db
@@ -28,7 +38,7 @@ class DepartmentDAO
         self.fmdb.close()
     }
     
-    //테이블 전부 읽어들임.
+    //테이블 SELECT한 레코드 전부 읽어들임.
     func find() -> [DepartRecord]
     {
         var list = [DepartRecord]()
@@ -38,7 +48,8 @@ class DepartmentDAO
                 FROM department
                 ORDER BY depart_cd ASC
             """
-            
+            //쿼리 실행 성공한다면 db에서 RMResultSet객체 반환
+            // set이지만 디스크 arm 처럼 커서를 통해 순서대로 다음 레코드를 읽어들인다..크으..
             let rs = try self.fmdb.executeQuery(sql, values: nil)
             
             while rs.next()
@@ -54,7 +65,7 @@ class DepartmentDAO
         return list
     }
     
-    // 특정 레코드만 읽어들일 경우
+    // 특정 레코드만 읽어들일 경우 WHERE구문에서 cd값을 넣어주면 된다.
     func getDepart(_ cd : Int) -> DepartRecord?
     {
         //1. 질의 실행
