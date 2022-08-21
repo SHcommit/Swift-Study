@@ -16,6 +16,10 @@
 		15638BCB28B01D0900ECC898 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 15638BC428B01D0900ECC898 /* FMResultSet.m */; };
 		15638BD128B020D400ECC898 /* DepartTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15638BD028B020D400ECC898 /* DepartTabBarItem.swift */; };
 		15638BD328B0232000ECC898 /* EmpBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15638BD228B0232000ECC898 /* EmpBarItem.swift */; };
+		15638BD528B0252900ECC898 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 15638BD428B0252900ECC898 /* hr.sqlite */; };
+		15638BD728B0254200ECC898 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15638BD628B0254200ECC898 /* DepartmentDAO.swift */; };
+		15638BD828B026B800ECC898 /* NaviBtnVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778FAA28AE353200AA41B8 /* NaviBtnVO.swift */; };
+		15638BDB28B0BFF800ECC898 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15638BDA28B0BFF800ECC898 /* EmployeeDAO.swift */; };
 		15778F9128AE317C00AA41B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9028AE317C00AA41B8 /* AppDelegate.swift */; };
 		15778F9328AE317C00AA41B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778F9228AE317C00AA41B8 /* SceneDelegate.swift */; };
 		15778F9828AE317C00AA41B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15778F9628AE317C00AA41B8 /* Main.storyboard */; };
@@ -23,14 +27,12 @@
 		15778F9D28AE317C00AA41B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15778F9B28AE317C00AA41B8 /* LaunchScreen.storyboard */; };
 		15778FA528AE327300AA41B8 /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778FA428AE327300AA41B8 /* DepartmentViewController.swift */; };
 		15778FA728AE328500AA41B8 /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778FA628AE328500AA41B8 /* EmployeeViewController.swift */; };
-		15778FAB28AE353200AA41B8 /* NaviBtnVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778FAA28AE353200AA41B8 /* NaviBtnVO.swift */; };
 		15778FC028AF5A9400AA41B8 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15778FBF28AF5A9400AA41B8 /* CustomAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		155D663B28B009DA00818DB9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		15638BB428B0109500ECC898 /* fmdbClone */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = fmdbClone; path = HRApp/fmdbClone; sourceTree = "<group>"; };
-		15638BBA28B01C5200ECC898 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "HRApp/Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		15638BBC28B01D0900ECC898 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = HRApp/fmdbClone/src/fmdb/FMResultSet.h; sourceTree = SOURCE_ROOT; };
 		15638BBD28B01D0900ECC898 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = HRApp/fmdbClone/src/fmdb/FMDatabasePool.m; sourceTree = SOURCE_ROOT; };
 		15638BBE28B01D0900ECC898 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = HRApp/fmdbClone/src/fmdb/FMDatabase.m; sourceTree = SOURCE_ROOT; };
@@ -44,6 +46,10 @@
 		15638BC628B01D0900ECC898 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = HRApp/fmdbClone/src/fmdb/FMDatabasePool.h; sourceTree = SOURCE_ROOT; };
 		15638BD028B020D400ECC898 /* DepartTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartTabBarItem.swift; sourceTree = "<group>"; };
 		15638BD228B0232000ECC898 /* EmpBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpBarItem.swift; sourceTree = "<group>"; };
+		15638BD428B0252900ECC898 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = hr.sqlite; sourceTree = SOURCE_ROOT; };
+		15638BD628B0254200ECC898 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
+		15638BD928B09F5100ECC898 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		15638BDA28B0BFF800ECC898 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
 		15778F8D28AE317C00AA41B8 /* HRApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15778F9028AE317C00AA41B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15778F9228AE317C00AA41B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 		15778F8428AE317C00AA41B8 = {
 			isa = PBXGroup;
 			children = (
+				15638BD928B09F5100ECC898 /* Bridging-Header.h */,
 				15638BB428B0109500ECC898 /* fmdbClone */,
 				15778F8F28AE317C00AA41B8 /* HRApp */,
 				15778F8E28AE317C00AA41B8 /* Products */,
@@ -135,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				15638BBB28B01CEB00ECC898 /* FMDB */,
-				15638BBA28B01C5200ECC898 /* Bridging-Header.h */,
 				15778FA928AE349200AA41B8 /* Model */,
 				15778FA828AE328B00AA41B8 /* Controller */,
 				15778F9028AE317C00AA41B8 /* AppDelegate.swift */,
@@ -160,8 +166,11 @@
 		15778FA928AE349200AA41B8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15638BD428B0252900ECC898 /* hr.sqlite */,
 				15778FAA28AE353200AA41B8 /* NaviBtnVO.swift */,
 				15778FBF28AF5A9400AA41B8 /* CustomAlert.swift */,
+				15638BD628B0254200ECC898 /* DepartmentDAO.swift */,
+				15638BDA28B0BFF800ECC898 /* EmployeeDAO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +235,7 @@
 			files = (
 				15778F9D28AE317C00AA41B8 /* LaunchScreen.storyboard in Resources */,
 				15778F9A28AE317C00AA41B8 /* Assets.xcassets in Resources */,
+				15638BD528B0252900ECC898 /* hr.sqlite in Resources */,
 				15778F9828AE317C00AA41B8 /* Main.storyboard in Resources */,
 				15638BB528B0109500ECC898 /* fmdbClone in Resources */,
 			);
@@ -239,16 +249,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				15638BD128B020D400ECC898 /* DepartTabBarItem.swift in Sources */,
-				15778FAB28AE353200AA41B8 /* NaviBtnVO.swift in Sources */,
 				15778FC028AF5A9400AA41B8 /* CustomAlert.swift in Sources */,
 				15778FA728AE328500AA41B8 /* EmployeeViewController.swift in Sources */,
 				15778FA528AE327300AA41B8 /* DepartmentViewController.swift in Sources */,
 				15638BC728B01D0900ECC898 /* FMDatabasePool.m in Sources */,
 				15778F9128AE317C00AA41B8 /* AppDelegate.swift in Sources */,
 				15778F9328AE317C00AA41B8 /* SceneDelegate.swift in Sources */,
+				15638BD828B026B800ECC898 /* NaviBtnVO.swift in Sources */,
+				15638BD728B0254200ECC898 /* DepartmentDAO.swift in Sources */,
 				15638BC828B01D0900ECC898 /* FMDatabase.m in Sources */,
 				15638BCB28B01D0900ECC898 /* FMResultSet.m in Sources */,
 				15638BC928B01D0900ECC898 /* FMDatabaseQueue.m in Sources */,
+				15638BDB28B0BFF800ECC898 /* EmployeeDAO.swift in Sources */,
 				15638BCA28B01D0900ECC898 /* FMDatabaseAdditions.m in Sources */,
 				15638BD328B0232000ECC898 /* EmpBarItem.swift in Sources */,
 			);
@@ -280,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -340,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -393,6 +407,7 @@
 		15778FA228AE317C00AA41B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -413,7 +428,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "HRApp/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -422,6 +437,7 @@
 		15778FA328AE317C00AA41B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,7 +458,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "HRApp/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
