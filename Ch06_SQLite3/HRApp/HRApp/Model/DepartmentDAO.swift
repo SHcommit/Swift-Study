@@ -1,9 +1,9 @@
 import Darwin
 
+typealias DepartRecord = (departCd: Int,departTitle:String,departAddr:String)
+
 class DepartmentDAO
 {
-    typealias DepartRecord = (code: Int,depart:String,addr:String)
-    
     lazy var fmdb : FMDatabase! =
     {
         let manager = FileManager.default
@@ -13,11 +13,11 @@ class DepartmentDAO
             NSLog("도큐멘터리 경로가 잘못되었습니다.")
             return nil
         }
-        let dbPath  = _docPath.appendingPathComponent("hrDb.sqlite").path
+        let dbPath  = _docPath.appendingPathComponent("hr.sqlite").path
         
         if manager.fileExists(atPath: dbPath) == false
         {
-            let dbSource = Bundle.main.path(forResource: "hrDb", ofType: "sqlite")
+            let dbSource = Bundle.main.path(forResource: "hr", ofType: "sqlite")
             guard let _dbSource = dbSource else
             {
                 NSLog("dbPath -> dbSource 가 만들어지지 않았습니다.")
