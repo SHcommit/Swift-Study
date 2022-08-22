@@ -20,6 +20,7 @@ class DepartmentViewController : UITableViewController
         //db에서 정보 가져온다.
         self.departList = self.departDAO.find()
         initUI()
+        setupRefresh()
     }
     
     //MARK: - tableViewDelegate
@@ -68,6 +69,13 @@ class DepartmentViewController : UITableViewController
         //셀 스와이프 시 편집모드
         self.tableView.allowsSelectionDuringEditing = true
     }
+    func setupRefresh()
+    {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string:"당겨서 새로 고침")
+        self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+    }
+    
 }
 
 //MARK: - EventHandler
@@ -116,5 +124,13 @@ extension DepartmentViewController
             self.tableView.reloadData()
         }
         self.present(alert.alert, animated: true )
+    }
+    
+    @objc func pullToRefresh(_ sender: Any)
+    {
+        self.departList = self.departDAO.find()
+        self.tableView.reloadData()
+        
+        self.refreshControl?.endRefreshing()
     }
 }
