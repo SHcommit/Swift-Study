@@ -14,13 +14,15 @@ class DepartmentViewController : UITableViewController
     var departList : [DepartRecord]!
     let departDAO  = DepartmentDAO()
     var naviBtnVO  = NaviBtnVO()
-    
+    var loadingImg : UIImageView!
+    var bgCircle   : UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //db에서 정보 가져온다.
         self.departList = self.departDAO.find()
         initUI()
         setupRefresh()
+        initBgCircle()
     }
     
     //MARK: - tableViewDelegate
@@ -71,9 +73,34 @@ class DepartmentViewController : UITableViewController
     }
     func setupRefresh()
     {
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.attributedTitle = NSAttributedString(string:"당겨서 새로 고침")
+        self.refreshControl      = UIRefreshControl()
+        //self.refreshControl?.attributedTitle = NSAttributedString(string:"당겨서 새로 고침")
+        self.loadingImg          = UIImageView(image: UIImage(named:"refresh"))
+        self.loadingImg.center.x = (self.refreshControl?.frame.width)!/2
+        self.refreshControl?.tintColor = .clear
+        self.refreshControl?.addSubview(self.loadingImg)
         self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+    }
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let dist                  = max(0.0, -(self.refreshControl?.frame.origin.y)!)
+        let ts                    = CGAffineTransform(rotationAngle: dist/20)
+        self.loadingImg.center.y  = dist/2
+        self.loadingImg.transform = ts
+        
+        self.bgCircle.center.y = dist/2
+    }
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.bgCircle.frame.size.width  = 0
+        self.bgCircle.frame.size.height = 0
+    }
+    func initBgCircle()
+    {
+        self.bgCircle                 = UIView()
+        self.bgCircle.backgroundColor = .yellow
+        self.bgCircle.center.x        = (self.refreshControl?.frame.width)!/2
+        self.refreshControl?.addSubview(bgCircle)
+        //크... 배경설정하고 앞으로!!
+        self.refreshControl?.bringSubviewToFront(self.loadingImg)
     }
     
 }
@@ -132,5 +159,17 @@ extension DepartmentViewController
         self.tableView.reloadData()
         
         self.refreshControl?.endRefreshing()
+        
+        /* ******** 노란 원이 로딩 이미지 중심으로 커지는 애니메이션 ********* */
+        let dist = max(0.0, -(self.refreshControl?.frame.origin.y)!)
+        UIView.animate(withDuration: TimeInterval(0.5))
+        {
+            self.bgCircle.frame.size.width  = 80
+            self.bgCircle.frame.size.height = 80
+            
+            self.bgCircle.center.x = (self.refreshControl?.frame.width)! / 2
+            self.bgCircle.center.y = dist / 2
+            self.bgCircle.layer.cornerRadius = (self.bgCircle?.frame.size.width)! / 2
+        }
     }
 }
