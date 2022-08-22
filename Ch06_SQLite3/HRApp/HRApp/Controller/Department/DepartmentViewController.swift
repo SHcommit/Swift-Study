@@ -11,7 +11,6 @@ import UIKit
  */
 class DepartmentViewController : UITableViewController
 {
-    //var arr        = ["1","2","3","4"]
     var departList : [DepartRecord]!
     let departDAO  = DepartmentDAO()
     var naviBtnVO  = NaviBtnVO()
@@ -37,14 +36,6 @@ class DepartmentViewController : UITableViewController
         cell.detailTextLabel?.text = self.departList[indexPath.row].departAddr
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
         return cell
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard tableView.isEditing else
-        {
-            return
-        }
-        //에디팅일때
-        
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete
