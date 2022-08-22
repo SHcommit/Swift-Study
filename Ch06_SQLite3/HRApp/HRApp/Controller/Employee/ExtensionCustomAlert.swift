@@ -1,8 +1,24 @@
-//
-//  ExtensionCustomAlert.swift
-//  HRApp
-//
-//  Created by 양승현 on 2022/08/22.
-//
+import UIKit
 
-import Foundation
+extension CustomAlert
+{
+    func addPickerView(list : [DepartRecord]!)
+    {
+        self.setupContent()
+        guard self.alert != nil else
+        {
+            NSLog("alert 초기화해주세요.")
+            return
+        }
+        let picker = departPicker(list: list, frame: CGRect.zero)
+        do
+        {
+            try! self.contentVC?.view = picker
+        }
+        catch let err as NSError
+        {
+            NSLog("picker err : \(err.localizedDescription)")
+            return
+        }
+    }
+}
