@@ -31,17 +31,20 @@ class EmployeeDAO
     lazy var fmdb : FMDatabase! =
     {
         let mgr = FileManager.default
+        // 파일메니저를 통해 샌드박스 내 문서 경로
         let path = mgr.urls(for: .documentDirectory, in: .userDomainMask).first
         guard let _path = path else
         {
             NSLog("filemanager path nil")
             return nil
         }
-        let dbPath = _path.appendingPathComponent("hrDb.sqlite").path
+        // db 파일 경로추가
+        let dbPath = _path.appendingPathComponent("hr.sqlite").path
         
+        //파일 없다면 sqlite로 만든 db 추가
         if mgr.fileExists(atPath: dbPath) == false
         {
-            let dbSource = Bundle.main.path(forResource: "hrDb",ofType: "sqlite")
+            let dbSource = Bundle.main.path(forResource: "hr",ofType: "sqlite")
             try! mgr.copyItem(atPath: dbSource!, toPath: dbPath)
         }
         return FMDatabase(path: dbPath)

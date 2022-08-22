@@ -55,6 +55,8 @@ extension EmployeeViewController
         alert.setupBtn("확인", .default, .right)
         {
             (_) in
+            let tf = alert.alert.textFields?[0]
+            
         }
         alert.addPickerView(list:departList)
         alert.alert.addTextField() {$0.placeholder = "사원명"}
