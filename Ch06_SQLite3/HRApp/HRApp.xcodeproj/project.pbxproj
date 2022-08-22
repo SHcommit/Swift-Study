@@ -110,8 +110,8 @@
 		15638BCC28B0206600ECC898 /* Employee */ = {
 			isa = PBXGroup;
 			children = (
-				15638BD228B0232000ECC898 /* EmpBarItem.swift */,
 				15778FA628AE328500AA41B8 /* EmployeeViewController.swift */,
+				15638BD228B0232000ECC898 /* EmpBarItem.swift */,
 				15CBEB3128B34F3F00416FBA /* DepartAlertPicker.swift */,
 				15CBEB3328B35CCD00416FBA /* ExtensionCustomAlert.swift */,
 				15CBEB3528B3602900416FBA /* ExtensionSetupNavi.swift */,

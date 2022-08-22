@@ -2,6 +2,7 @@ import UIKit
 
 class CustomAlert
 {
+    var selected : Int?
     enum arrow
     {
         case left , right

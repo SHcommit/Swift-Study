@@ -80,7 +80,7 @@ class EmployeeDAO
                 record.joinDate    = rs.string(forColumn: "join_date")!
                 record.departTitle = rs.string(forColumn: "depart_title")!
                 
-                let cd = Int(rs.int(forColumn: "state_cd"))
+                let cd             = Int(rs.int(forColumn: "state_cd"))
                 record.stateCd = EmpStateType(rawValue: cd)!
                 list.append(record)
             }
@@ -131,7 +131,7 @@ class EmployeeDAO
             """
             
             var params = [Any]()
-            params.append(param.empCd)
+            params.append(param.empName)
             params.append(param.joinDate)
             params.append(param.stateCd.rawValue)
             params.append(param.departCd)

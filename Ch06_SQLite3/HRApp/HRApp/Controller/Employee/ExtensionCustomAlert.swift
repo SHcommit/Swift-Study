@@ -11,6 +11,7 @@ extension CustomAlert
             return
         }
         let picker = departPicker(list: list, frame: CGRect.zero)
+        selected = picker.selected
         do
         {
             try! self.contentVC?.view = picker
