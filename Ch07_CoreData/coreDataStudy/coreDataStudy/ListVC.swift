@@ -43,6 +43,8 @@ class ListVC : UITableViewController
         self.navigationItem.rightBarButtonItem = addBtn
         
     }
+    
+    //MARK: - tableView delegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -57,7 +59,22 @@ class ListVC : UITableViewController
         cell.detailTextLabel?.text = contents
         return cell
     }
+    override func tableView(_ tv: UITableView, editingStyleForRowAt indexPath : IndexPath) -> UITableViewCell.EditingStyle
+    {
+        return .delete
+    }
     
+    override func tableView(_ tv : UITableView, commit editingStyle : UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    {
+        let obj = self.list[indexPath.row]
+        if self.delete(object:obj)
+        {
+            self.list.remove(at:indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    //MARK: - barButton
     func save(title: String, contents: String) -> Bool
     {
         /*
@@ -89,6 +106,29 @@ class ListVC : UITableViewController
             return false
         }
     }
+    func delete(object : NSManagedObject) -> Bool
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
+        {
+            return false
+        }
+        //관리 객체 컨텍스트 참조
+        let context = appDelegate.persistentContainer.viewContext
+        
+        do
+        {
+            //저장이 아니라 영구 저장소와 동기화!!
+            try context.save()
+            return true
+        }
+        catch
+        {
+            context.rollback()
+            return false
+        }
+    }
+    
+    //MARK: - event Handler
     @objc func add(_ sender: Any)
     {
         let alert = UIAlertController(title: "게시글 등록", message: nil, preferredStyle: .alert)
