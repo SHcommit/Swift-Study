@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		159D7A5F28B6797600E09282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159D7A5E28B6797600E09282 /* AppDelegate.swift */; };
 		159D7A6128B6797600E09282 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159D7A6028B6797600E09282 /* SceneDelegate.swift */; };
-		159D7A6328B6797600E09282 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159D7A6228B6797600E09282 /* ViewController.swift */; };
 		159D7A6628B6797600E09282 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159D7A6428B6797600E09282 /* Main.storyboard */; };
 		159D7A6928B6797600E09282 /* CoreDataStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 159D7A6728B6797600E09282 /* CoreDataStudy.xcdatamodeld */; };
 		159D7A6B28B6797700E09282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159D7A6A28B6797700E09282 /* Assets.xcassets */; };
 		159D7A6E28B6797700E09282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159D7A6C28B6797700E09282 /* LaunchScreen.storyboard */; };
+		159D7A7628B67F5F00E09282 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159D7A7528B67F5F00E09282 /* ListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		159D7A5B28B6797600E09282 /* CoreDataStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		159D7A5E28B6797600E09282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		159D7A6028B6797600E09282 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		159D7A6228B6797600E09282 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		159D7A6528B6797600E09282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		159D7A6828B6797600E09282 /* CoreDataStudy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStudy.xcdatamodel; sourceTree = "<group>"; };
 		159D7A6A28B6797700E09282 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		159D7A6D28B6797700E09282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		159D7A6F28B6797700E09282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		159D7A7528B67F5F00E09282 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +60,12 @@
 			children = (
 				159D7A5E28B6797600E09282 /* AppDelegate.swift */,
 				159D7A6028B6797600E09282 /* SceneDelegate.swift */,
-				159D7A6228B6797600E09282 /* ViewController.swift */,
 				159D7A6428B6797600E09282 /* Main.storyboard */,
 				159D7A6A28B6797700E09282 /* Assets.xcassets */,
 				159D7A6C28B6797700E09282 /* LaunchScreen.storyboard */,
 				159D7A6F28B6797700E09282 /* Info.plist */,
 				159D7A6728B6797600E09282 /* CoreDataStudy.xcdatamodeld */,
+				159D7A7528B67F5F00E09282 /* ListVC.swift */,
 			);
 			path = CoreDataStudy;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				159D7A6328B6797600E09282 /* ViewController.swift in Sources */,
+				159D7A7628B67F5F00E09282 /* ListVC.swift in Sources */,
 				159D7A5F28B6797600E09282 /* AppDelegate.swift in Sources */,
 				159D7A6928B6797600E09282 /* CoreDataStudy.xcdatamodeld in Sources */,
 				159D7A6128B6797600E09282 /* SceneDelegate.swift in Sources */,
