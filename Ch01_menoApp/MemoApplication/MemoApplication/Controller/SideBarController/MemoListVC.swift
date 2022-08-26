@@ -17,6 +17,7 @@ class MemoListVC: UITableViewController {
     }
     
     var sideBarDelegate : RevealViewController?
+    lazy var dao = MemoDAO()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class MemoListVC: UITableViewController {
         openSideBarByGuesturing()
     }
     override func viewWillAppear(_ animated : Bool){
+        self.appDelegate.memoList = self.dao.fetch()
         self.tableView.reloadData()
         let ud = UserDefaults.standard
         if ud.bool(forKey: UserInfoKeyDTO.tutorial) == false
