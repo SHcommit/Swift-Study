@@ -13,12 +13,14 @@ import UIKit
     - Param subjecet : 제목 저장
     - Param contents : 사용자 글 작성 tevtView 객체
     - Param preview  : 이미지 미리보기
+    - Param dao        : 코어 데이터 Memo entity's dao
  */
 class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
     // MARK: - variable
     var subject      : String!
     let WarningAlert = warningAlert("내용을 입력해주세요", nil, .alert)
+    lazy var dao     = MemoDAO()
     @IBOutlet weak var contents: UITextView!
     @IBOutlet weak var preview : UIImageView!
     
@@ -29,6 +31,9 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
      *  1. 데이터 저장할 memoList 객체 생성.
      *  2. Appdelegate에 저장되어있는 배열에 append data
      *  3. Navigation을 이용해 이전 화면으로 되돌아간다.
+     *  Date : 22.08.26
+     *      코어데이터에 저장 이력 추가
+     *      AppDelegate에 추가한 memoList 배열 사용 x  (영구 저장소 활용)
      */
     @IBAction func save(_ sender: Any) {
         guard self.contents.text?.count != 1 else {
@@ -43,7 +48,18 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         data.image    = self.preview.image
         data.regdate  = Date()
         
-        (UIApplication.shared.delegate as! AppDelegate).memoList.append(data)
+        /*
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
+        {
+            NSLog("appDelegate error in MemoFormVC's save(_:)")
+            return
+        }
+        appDelegate.memoList.append(data)
+         */
+        
+        //영구 저장소에도 반영해준다.
+        self.dao.insert(data)
+        
         self.navigationController?.popViewController(animated: true)
     }
     
