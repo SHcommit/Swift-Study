@@ -15,7 +15,7 @@ class MemoDAO
         return appDelegate.persistentContainer.viewContext
     }()
     
-    func fetch()->[MemoData]
+    func fetch(keyword text : String? = nil)->[MemoData]
     {
         var memoList = [MemoData]()
         //MemoMO 요청 객체
@@ -25,6 +25,12 @@ class MemoDAO
         //MemoMO에서 regdate에 따라(최신 글) sort
         let regDateDesc  = NSSortDescriptor(key:"regdate",ascending: false)
         fetchRequest.sortDescriptors = [regDateDesc]
+        
+        //NSPredicate검색 조건 추가
+        if let t = text, t.isEmpty == false
+        {
+            fetchRequest.predicate = NSPredicate(format: "contents CONTAINS[c] %@", t)
+        }
         
         do
         {
@@ -73,9 +79,21 @@ class MemoDAO
             NSLog("An error has occured : %s", e.localizedDescription)
         }
     }
-    func delete(_ objectID : NSManagedObject) -> Bool
+    func delete(_ objectID : NSManagedObjectID) -> Bool
     {
-        return false
+        let obj = self.context.object(with: objectID)
+        self.context.delete(obj)
+        
+        do
+        {
+            try self.context.save()
+            return true
+        }
+        catch let e as NSError
+        {
+            NSLog("An error has occured : %s",e.localizedDescription)
+            return false
+        }
     }
     
 }
