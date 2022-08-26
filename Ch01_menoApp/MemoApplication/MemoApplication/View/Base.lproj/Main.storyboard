@@ -16,8 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="mzm-zY-kfP">
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="3SG-kZ-vCk" id="eYZ-tu-OxQ"/>
+                            </connections>
+                        </searchBar>
                         <view key="tableFooterView" contentMode="scaleToFill" id="29e-NI-BJF">
-                            <rect key="frame" x="0.0" y="227.33333206176758" width="428" height="44"/>
+                            <rect key="frame" x="0.0" y="954.33333206176758" width="428" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XT-ko-oT2" customClass="CSLogBtn" customModule="MemoApplication" customModuleProvider="target">
@@ -34,7 +42,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="AKj-aU-oxC" customClass="MemoCell" customModule="MemoApplication" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="80"/>
+                                <rect key="frame" x="0.0" y="88.666666030883789" width="428" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AKj-aU-oxC" id="b9k-Pv-64F">
                                     <rect key="frame" x="0.0" y="0.0" width="399.33333333333331" height="80"/>
@@ -88,7 +96,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" rowHeight="80" id="w3i-3F-Mg7" customClass="MemoCell" customModule="MemoApplication" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="124.66666603088379" width="428" height="80"/>
+                                <rect key="frame" x="0.0" y="168.66666603088379" width="428" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w3i-3F-Mg7" id="qeY-Mo-5yL">
                                     <rect key="frame" x="0.0" y="0.0" width="399.33333333333331" height="80"/>
@@ -165,6 +173,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="mzm-zY-kfP" id="o3U-n6-Gta"/>
                         <segue destination="z8L-c4-b0W" kind="show" identifier="read_sg" id="854-od-qO8"/>
                     </connections>
                 </tableViewController>
