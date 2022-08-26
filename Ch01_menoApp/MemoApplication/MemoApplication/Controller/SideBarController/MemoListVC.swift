@@ -9,6 +9,9 @@ import UIKit
  2. cellForRowAt로 Cell에 데이터 삽입
  3. didSelectRowAt로 특정 cell 클릭 시 pushView로 화면 전환 -> Detail show
  
+ 4. Date : 22.08.26
+    컨텍스트를 통해 메모장 delete 기능 추가
+    스와이프 delete 기능 추가
  */
 class MemoListVC: UITableViewController {
     //MARK: - property
@@ -87,6 +90,21 @@ class MemoListVC: UITableViewController {
         }
         vc.data = rowData
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func tableView(_ tv : UITableView, editingStyleForRowAt indexPath : IndexPath) -> UITableViewCell.EditingStyle
+    {
+        return .delete
+    }
+    override func tableView(_ tv: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath : IndexPath)
+    {
+        let data = self.appDelegate.memoList[indexPath.row]
+        guard let _objID = data.objectID else {NSLog("data.objID nil in MemoListVC's tableView(_:commit:forRowAt:)"); return}
+        if dao.delete(_objID)
+        {
+            self.appDelegate.memoList.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     //MARK: - PANNING, SWIPE GESTURE
     func openSideBarByGuesturing()
