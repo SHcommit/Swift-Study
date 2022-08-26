@@ -13,20 +13,23 @@ import UIKit
     컨텍스트를 통해 메모장 delete 기능 추가
     스와이프 delete 기능 추가
  */
-class MemoListVC: UITableViewController {
+class MemoListVC: UITableViewController ,UISearchBarDelegate{
     //MARK: - property
     var appDelegate : AppDelegate {
         UIApplication.shared.delegate as! AppDelegate
     }
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var sideBarDelegate : RevealViewController?
     lazy var dao = MemoDAO()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.searchBar.enablesReturnKeyAutomatically = false
         let btnSideBar = UIBarButtonItem(image:UIImage(named:"sidemenu.png"),style:UIBarButtonItem.Style.plain, target: self, action: #selector(moveSide(_:)))
         self.navigationItem.leftBarButtonItem = btnSideBar
         openSideBarByGuesturing()
+        
     }
     override func viewWillAppear(_ animated : Bool){
         self.appDelegate.memoList = self.dao.fetch()
@@ -116,4 +119,22 @@ class MemoListVC: UITableViewController {
         dragRight.direction = .left
         self.view.addGestureRecognizer(dragRight)
     }
+    
+    //MARK: - SearchBar Event Handler
+    
+    /**
+        특정 키워드에 맞는 entity 데이터를 tableview에 불러온다. (memoList 특정 NSPredicate 문자열로 갱신해서)
+        
+        이럴경우 문제는 이제 글자를 다 지우게 됬을때도 tableView는 특정 조건에 의해 cell이 구성된다.
+        그렇다면 다시 다 지우고 검색버튼을 누르면 되지 않을까?
+        검색 버튼을 강제로 활성화 시키면서 dao의 fetch에 다시 원래 memoList 를 불러올 수 있도록 추가 로직을 구현해야한다.
+     */
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        
+        let keyword = searchBar.text
+        self.appDelegate.memoList = self.dao.fetch(keyword : keyword)
+        self.tableView.reloadData()
+    }
+    
 }
