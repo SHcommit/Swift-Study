@@ -125,6 +125,7 @@ extension UserInfoManager
                         self.profile = UIImage(data: imageData)
                     }
                 }
+                success?()
             }else{
                 fail?((jsonObj["error_msg"] as? String) ?? "로그인 실패했습니다.")
             }

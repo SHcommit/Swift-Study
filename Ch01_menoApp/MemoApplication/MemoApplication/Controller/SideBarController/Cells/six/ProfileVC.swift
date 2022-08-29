@@ -20,6 +20,8 @@ class ProfileVC : UIViewController
     let profileImage = UIImageView()
     let tableView    = UITableView()
     let userInfo     = UserInfoManager()
+    var isCalling    = false
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     @IBAction func backProfile(_ sender: UIStoryboardSegue)
     {
@@ -36,6 +38,9 @@ class ProfileVC : UIViewController
         drawBtn()
         addTapGestrueInProfileImage()
         self.navigationController?.navigationBar.isHidden = true
+        self.view.bringSubviewToFront(indicatorView)
+        
+        
     }
     //MARK: - setupUI
     func setupNavigationUI()
@@ -112,6 +117,16 @@ class ProfileVC : UIViewController
     }
     @objc func doLogin(_ sender: Any)
     {
+        if self.isCalling
+        {
+            self.alertMainThread("응답 기다리는 중입니다.\n잠시만 기다려주세요")
+            return
+        }
+        else
+        {
+            self.isCalling = true
+        }
+        self.indicatorView.startAnimating()
         let alertVO = customAlertVO(title: "LOGIN", message: nil, style: .alert)
         alertVO.alert.addTextField()
         {
@@ -121,16 +136,28 @@ class ProfileVC : UIViewController
         {
             $0.placeholder = "Password"
         }
-        alertVO.addBtn(title: "cancel", style: .cancel, completion: nil)
+        alertVO.addBtn(title: "cancel", style: .cancel){ _ in
+            self.isCalling = false
+        }
         alertVO.addBtn(title:"OK",style:.destructive)
         {
             (_) in
             let account  = alertVO.alert.textFields?[0].text ?? ""
             let password = alertVO.alert.textFields?[1].text ?? ""
             
-            self.userInfo.login(account, password, success: {self.tableView.reloadData();self.profileImage.image = self.userInfo.profile; self.drawBtn()}){ msg in
+            self.userInfo.login(account, password, success: {
+                self.indicatorView.stopAnimating();
+                self.isCalling = false;
+                self.tableView.reloadData();
+                self.profileImage.image = self.userInfo.profile;
+                self.drawBtn()
+                
+            }){ msg in
+                self.indicatorView.stopAnimating()
+                self.isCalling = false
                 self.alertMainThread(msg)
             }
+            
         }
         present(alertVO.alert,animated: true)
         
@@ -153,3 +180,4 @@ class ProfileVC : UIViewController
     }
 
 }
+
