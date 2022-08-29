@@ -1,5 +1,5 @@
 import UIKit
-
+import Alamofire
 /**
  TODO : UserDefaults.standard를 통해 User의 정보를 관리하는 클래스.
  
@@ -89,17 +89,46 @@ class UserInfoManager
 
 extension UserInfoManager
 {
-    func login(_ account: String, _ password: String) -> Bool
+    /*
+        기존의 로그인 저장 처리 방식은 프로퍼티 리스트를 사용해 true, false 처리에 따른 동기 방식으로 사용했다.
+        이전에 NewEditingProfile에서 서버에 저장했던 계정 정보를 이용해
+        계정과 비번 입력받아 사용자 정보, 인증 토큰을 발급!!
+     */
+    func login(_ account: String, _ password: String, success: (()->Void)? = nil, fail : ((String)->Void)? = nil)
     {
-        if account == "happysh_s2@naver.com" && password == "1234"
-        {
-            plist.set(100,forKey: UserInfoKeyDTO.loginID)
-            plist.set(account, forKey: UserInfoKeyDTO.account)
-            plist.set("승현이",forKey: UserInfoKeyDTO.name)
-            plist.synchronize()
-            return true
+        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/login"
+        let param : Parameters = [
+            "account" : account,
+            "passwd"  : password
+        ]
+        
+        let afCall = AF.request(url,method: .post, parameters: param, encoding: JSONEncoding.default)
+        afCall.responseJSON { res in
+            let res = try! res.result.get()
+            guard let jsonObj = res as? NSDictionary else{
+                fail?("잘못된 응답 형식:\(res)")
+                return
+            }
+            
+            let resCode = jsonObj["result_code"] as! Int
+            if resCode == 0
+            {
+                //로그인 성공 -> 이제 userDefaults에도 저장해서 SideBarVC의 헤더뷰에도 출력되게 하자!!!
+                let user     = jsonObj["user_info"] as! NSDictionary
+                
+                self.loginID = user["user_id"] as! Int
+                self.account = user["account"] as? String
+                self.name    = user["name"] as? String
+                
+                if let path = user["profile_path"] as? String{
+                    if let imageData = try? Data(contentsOf: URL(string: path)!){
+                        self.profile = UIImage(data: imageData)
+                    }
+                }
+            }else{
+                fail?((jsonObj["error_msg"] as? String) ?? "로그인 실패했습니다.")
+            }
         }
-        return false
     }
     func logout() -> Bool
     {

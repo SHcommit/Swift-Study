@@ -18,7 +18,7 @@ class SideBarProfileVO
     let nameLabel    : UILabel
     let emailLabel   : UILabel
     let profileImage : UIImageView
-    
+    var profilePath  : String!
     init()
     {
         headerView   = UIView()
@@ -52,9 +52,16 @@ class SideBarProfileVO
         
         headerView.addSubview(emailLabel)
     }
-    func profileImageSetup(_ image : String)
+    func profileImageSetup(_ image : UIImage? = nil)
     {
-        profileImage.image               = UIImage(named:image)
+        if image == nil
+        {
+            profileImage.image = UIImage(named:"account.jpeg")
+        }
+        else
+        {
+            profileImage.image = image!
+        }
         profileImage.frame               = CGRect(x:10,y:10,width:50,height:50)
         profileImage.layer.cornerRadius  = self.profileImage.frame.width / 2
         profileImage.layer.borderWidth   = 0

@@ -42,6 +42,7 @@ class SideBarViewController : UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        tableHeaderSetup()
     }
     override func viewWillAppear(_ animated: Bool) {
         tableHeaderSetup()
@@ -96,7 +97,6 @@ class SideBarViewController : UITableViewController
             break;
         }
     }
-
     
     func tableHeaderSetup()
     {
@@ -104,10 +104,14 @@ class SideBarViewController : UITableViewController
 //        profile.nameLabelSetup( "ios새싹 승현이")
 //        profile.emailLabelSetup( "happysh_s2@naver.com")
 //        profile.profileImageSetup( "account.jpg")
+//        profile.headerViewSetup(self.tableView)
+//        profile.nameLabel.text = self.userInfo.name ?? "Guest"
+//        profile.emailLabel.text = self.userInfo.account ?? ""
+//        profile.profileImage.image = self.userInfo.profile
         profile.headerViewSetup(self.tableView)
-        profile.nameLabel.text = self.userInfo.name ?? "Guest"
-        profile.emailLabel.text = self.userInfo.account ?? ""
-        profile.profileImage.image = self.userInfo.profile
+        profile.nameLabelSetup(self.userInfo.name ?? "Guest")
+        profile.emailLabelSetup(self.userInfo.account ?? "")
+        profile.profileImageSetup(self.userInfo.profile)
     }
 }
 

@@ -128,17 +128,8 @@ class ProfileVC : UIViewController
             let account  = alertVO.alert.textFields?[0].text ?? ""
             let password = alertVO.alert.textFields?[1].text ?? ""
             
-            if self.userInfo.login(account, password)
-            {
-                self.tableView.reloadData()
-                self.profileImage.image = self.userInfo.profile
-                self.drawBtn()
-            }
-            else
-            {
-                let alert = UIAlertController(title: nil, message: "로그인에 실패하셨습니다.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title:"OK",style:.default))
-                self.present(alert,animated: true)
+            self.userInfo.login(account, password, success: {self.tableView.reloadData();self.profileImage.image = self.userInfo.profile; self.drawBtn()}){ msg in
+                self.alertMainThread(msg)
             }
         }
         present(alertVO.alert,animated: true)
