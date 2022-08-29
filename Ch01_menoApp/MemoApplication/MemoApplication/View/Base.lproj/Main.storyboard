@@ -392,7 +392,7 @@
         <!--신규계정 등록-->
         <scene sceneID="dXC-v6-5Sp">
             <objects>
-                <viewController id="5jb-jQ-QRS" customClass="newEditingProfile" customModule="MemoApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5jb-jQ-QRS" customClass="NewEditingProfile" customModule="MemoApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hao-yR-nxP">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,6 +416,11 @@
                                 <rect key="frame" x="20" y="103" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7Ye-F5-ET9">
+                                <rect key="frame" x="196" y="516" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7WX-aL-Srm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -428,11 +433,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="indicatorView" destination="7Ye-F5-ET9" id="v4z-8V-BIA"/>
                         <outlet property="profile" destination="f6J-DN-Cbb" id="skt-pt-duV"/>
                         <outlet property="tableView" destination="5ce-ip-0ir" id="slm-YU-h0v"/>
+                        <segue destination="1LC-UM-Hn2" kind="unwind" identifier="backProfileVC" unwindAction="backProfile:" id="17x-NX-fjG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZp-qv-eTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1LC-UM-Hn2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2112.6168224299063" y="-1256.3714902807776"/>
         </scene>

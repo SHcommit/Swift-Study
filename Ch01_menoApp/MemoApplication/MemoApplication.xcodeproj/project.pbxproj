@@ -32,7 +32,7 @@
 		15528DD0288C62FF00268E67 /* account@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15528DCF288C62FF00268E67 /* account@2x.jpg */; };
 		157628C72894682100ABEC3C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157628C62894682100ABEC3C /* ProfileVC.swift */; };
 		157628C928946AD900ABEC3C /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157628C828946AD900ABEC3C /* ProfileNavigationController.swift */; };
-		157F39AE28BC6F9E000218B0 /* newEditingProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157F39AD28BC6F9E000218B0 /* newEditingProfile.swift */; };
+		157F39AE28BC6F9E000218B0 /* NewEditingProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157F39AD28BC6F9E000218B0 /* NewEditingProfile.swift */; };
 		158B386528B87EC800997B55 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 158B386328B87EC800997B55 /* DataModel.xcdatamodeld */; };
 		158B386728B883A700997B55 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158B386628B883A700997B55 /* MemoDAO.swift */; };
 		15B0D91B28A62468003AE6AA /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B0D91A28A62468003AE6AA /* Tutorial.storyboard */; };
@@ -80,7 +80,7 @@
 		15528DCF288C62FF00268E67 /* account@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "account@2x.jpg"; sourceTree = "<group>"; };
 		157628C62894682100ABEC3C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		157628C828946AD900ABEC3C /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
-		157F39AD28BC6F9E000218B0 /* newEditingProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEditingProfile.swift; sourceTree = "<group>"; };
+		157F39AD28BC6F9E000218B0 /* NewEditingProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditingProfile.swift; sourceTree = "<group>"; };
 		158B386428B87EC800997B55 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		158B386628B883A700997B55 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
 		15B0D91A28A62468003AE6AA /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 				157628C828946AD900ABEC3C /* ProfileNavigationController.swift */,
 				157628C62894682100ABEC3C /* ProfileVC.swift */,
 				15D8912928A40EE10034CFEF /* profileVCExtensions */,
-				157F39AD28BC6F9E000218B0 /* newEditingProfile.swift */,
+				157F39AD28BC6F9E000218B0 /* NewEditingProfile.swift */,
 			);
 			path = six;
 			sourceTree = "<group>";
@@ -494,7 +494,7 @@
 				157628C928946AD900ABEC3C /* ProfileNavigationController.swift in Sources */,
 				153B5EB2287DE06D00DE4BC6 /* WarningAlert.swift in Sources */,
 				15D0CDA1284CE63800333FFF /* AppDelegate.swift in Sources */,
-				157F39AE28BC6F9E000218B0 /* newEditingProfile.swift in Sources */,
+				157F39AE28BC6F9E000218B0 /* NewEditingProfile.swift in Sources */,
 				158B386728B883A700997B55 /* MemoDAO.swift in Sources */,
 				15D8912B28A411290034CFEF /* ProfileVCExtensionTableView.swift in Sources */,
 				150772D5288AEC60008AE1F1 /* MemoListVCEvent.swift in Sources */,

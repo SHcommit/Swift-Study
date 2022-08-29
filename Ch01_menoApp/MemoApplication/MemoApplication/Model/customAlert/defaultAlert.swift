@@ -11,7 +11,7 @@ class customAlertVO
     }
     func addBtn(title : String, style : UIAlertAction.Style, completion : ((UIAlertAction) -> Void)? = nil)
     {
-        let btn = UIAlertAction(title: title, style: style, handler: completion)
+        let btn = UIAlertAction(title: title, style: style,handler: completion )
         alert.addAction(btn)
     }
     func addCenterVC()

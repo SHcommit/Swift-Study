@@ -99,7 +99,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let ts  = TimeInterval(0.3)
         UIView.animate(withDuration: ts)
         {
-            NSLog("\(bar?.alpha)")
+            NSLog("\(String(describing: bar?.alpha))")
             bar?.alpha = (bar?.alpha == 0 ? 1 : 0)
         }
     }

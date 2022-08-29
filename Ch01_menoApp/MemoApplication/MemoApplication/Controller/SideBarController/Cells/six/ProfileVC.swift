@@ -21,6 +21,13 @@ class ProfileVC : UIViewController
     let tableView    = UITableView()
     let userInfo     = UserInfoManager()
     
+    @IBAction func backProfile(_ sender: UIStoryboardSegue)
+    {
+        
+        //unwind segue 사용하기위해 예를들어 네비 -> scene1 -> scene2 ->scene3
+        //scene3에서 scene1가기위해서
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationUI()

@@ -18,7 +18,7 @@ class warningAlert
         let image = UIImageView(image: rawImg)
         let (width,height) = (rawImg.size.width, rawImg.size.height)
         
-        var content = UIViewController()
+        let content = UIViewController()
         content.view.addSubview(image)
         content.preferredContentSize = CGSize(width: width, height: height + 10)
         alert.setValue(content, forKey: "contentViewController")

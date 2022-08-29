@@ -1,24 +1,68 @@
 import UIKit
+import Alamofire
 
-class newEditingProfile : UIViewController
+class NewEditingProfile : UIViewController
 {
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func submit(_ Sender: Any?){
+        if self.isCalling
+        {
+            self.alertMainThread("진행중입니다. 잠시만 기다려주세요.")
+            return
+        }
+        else
+        {
+            self.isCalling = true
+        }
+        self.indicatorView.startAnimating()
+        let profile = self.profile.image!.pngData()?.base64EncodedString()
+        let param : Parameters = [
+            "account"       : self.fieldAccount.text!,
+            "passwd"        : self.fieldPassword.text!,
+            "name"          : self.fieldName.text!,
+            "profile_image" : profile!
+        ]
+        let url  = "http://swiftapi.rubypaper.co.kr:2029/userAccount/join"
+        let call = AF.request(url,method:HTTPMethod.post,parameters: param, encoding: JSONEncoding.default)
         
+        call.responseJSON { res in
+            self.indicatorView.stopAnimating()
+            guard let jsonObj = try! res.result.get() as? [String: Any] else {
+                self.isCalling = false
+                self.alertMainThread("서버 호출 과정에서 오류가 발생했습니다.")
+                return
+            }
+            let resCode = jsonObj["result_code"] as! Int
+            if resCode == 0
+            {
+
+                self.alertMainThread("가입 완료"){
+                    self.performSegue(withIdentifier: "backProfileVC", sender: self)
+                }
+            }else
+            {
+                self.isCalling = false
+                let errorMsg = jsonObj["error_msg"] as! String
+                self.alertMainThread("오류 : \(errorMsg)")
+            }
+        }
     }
     
     //tableView
     var fieldAccount: UITextField!
     var fieldPassword: UITextField!
     var fieldName: UITextField!
-    
+    var isCalling = false
     override func viewDidLoad() {
         self.tableView.delegate   = self
         self.tableView.dataSource = self
         
         setupProfileUI()
         addProfileGesture()
+        self.view.bringSubviewToFront(self.indicatorView)
+        
     }
     func addProfileGesture()
     {
@@ -31,7 +75,7 @@ class newEditingProfile : UIViewController
         self.profile.layer.masksToBounds = true
     }
 }
-extension newEditingProfile : UITableViewDelegate, UITableViewDataSource
+extension NewEditingProfile : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tv: UITableView, numberOfRowsInSection section : Int)->Int
     {
@@ -93,7 +137,7 @@ extension newEditingProfile : UITableViewDelegate, UITableViewDataSource
     }
 }
 
-extension newEditingProfile : UINavigationControllerDelegate, UIImagePickerControllerDelegate
+extension NewEditingProfile : UINavigationControllerDelegate, UIImagePickerControllerDelegate
 {
     @objc func tappedProfile(_ sender: Any)
     {
