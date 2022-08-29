@@ -17,6 +17,7 @@
 		152D8746284DB0C70079EE20 /* MemoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D8745284DB0C70079EE20 /* MemoListVC.swift */; };
 		152D8748284DB1500079EE20 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D8747284DB1500079EE20 /* MemoCell.swift */; };
 		152D874C284DB25E0079EE20 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D874B284DB25E0079EE20 /* MemoData.swift */; };
+		153B5E7428BA9840005287B2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153B5E7328BA9840005287B2 /* Utils.swift */; };
 		153B5EAF287DDA8B00DE4BC6 /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153B5EAD287DDA8B00DE4BC6 /* memo-background@2x.png */; };
 		153B5EB0287DDA8B00DE4BC6 /* warning-icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 153B5EAE287DDA8B00DE4BC6 /* warning-icon-60@2x.png */; };
 		153B5EB2287DE06D00DE4BC6 /* WarningAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */; };
@@ -31,6 +32,7 @@
 		15528DD0288C62FF00268E67 /* account@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15528DCF288C62FF00268E67 /* account@2x.jpg */; };
 		157628C72894682100ABEC3C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157628C62894682100ABEC3C /* ProfileVC.swift */; };
 		157628C928946AD900ABEC3C /* ProfileNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157628C828946AD900ABEC3C /* ProfileNavigationController.swift */; };
+		157F39AE28BC6F9E000218B0 /* newEditingProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157F39AD28BC6F9E000218B0 /* newEditingProfile.swift */; };
 		158B386528B87EC800997B55 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 158B386328B87EC800997B55 /* DataModel.xcdatamodeld */; };
 		158B386728B883A700997B55 /* MemoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158B386628B883A700997B55 /* MemoDAO.swift */; };
 		15B0D91B28A62468003AE6AA /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15B0D91A28A62468003AE6AA /* Tutorial.storyboard */; };
@@ -63,6 +65,7 @@
 		152D8745284DB0C70079EE20 /* MemoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListVC.swift; sourceTree = "<group>"; };
 		152D8747284DB1500079EE20 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		152D874B284DB25E0079EE20 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		153B5E7328BA9840005287B2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		153B5EAD287DDA8B00DE4BC6 /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
 		153B5EAE287DDA8B00DE4BC6 /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warning-icon-60@2x.png"; sourceTree = "<group>"; };
 		153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningAlert.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		15528DCF288C62FF00268E67 /* account@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "account@2x.jpg"; sourceTree = "<group>"; };
 		157628C62894682100ABEC3C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		157628C828946AD900ABEC3C /* ProfileNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationController.swift; sourceTree = "<group>"; };
+		157F39AD28BC6F9E000218B0 /* newEditingProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEditingProfile.swift; sourceTree = "<group>"; };
 		158B386428B87EC800997B55 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		158B386628B883A700997B55 /* MemoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDAO.swift; sourceTree = "<group>"; };
 		15B0D91A28A62468003AE6AA /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 			children = (
 				15D8912728A3F49F0034CFEF /* defaultAlert.swift */,
 				153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */,
+				153B5E7328BA9840005287B2 /* Utils.swift */,
 			);
 			path = customAlert;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				157628C828946AD900ABEC3C /* ProfileNavigationController.swift */,
 				157628C62894682100ABEC3C /* ProfileVC.swift */,
 				15D8912928A40EE10034CFEF /* profileVCExtensions */,
+				157F39AD28BC6F9E000218B0 /* newEditingProfile.swift */,
 			);
 			path = six;
 			sourceTree = "<group>";
@@ -340,7 +346,6 @@
 				A402F8C23F931140FD87F21F /* Pods-MemoApplication.debug.xcconfig */,
 				1B9DF8768F3270418EC3A89F /* Pods-MemoApplication.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -482,12 +487,14 @@
 			files = (
 				15B0D91F28A64B99003AE6AA /* ExtensionVC.swift in Sources */,
 				157628C72894682100ABEC3C /* ProfileVC.swift in Sources */,
+				153B5E7428BA9840005287B2 /* Utils.swift in Sources */,
 				152D8741284DAF970079EE20 /* MemoReadVC.swift in Sources */,
 				15D8912D28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift in Sources */,
 				152D8746284DB0C70079EE20 /* MemoListVC.swift in Sources */,
 				157628C928946AD900ABEC3C /* ProfileNavigationController.swift in Sources */,
 				153B5EB2287DE06D00DE4BC6 /* WarningAlert.swift in Sources */,
 				15D0CDA1284CE63800333FFF /* AppDelegate.swift in Sources */,
+				157F39AE28BC6F9E000218B0 /* newEditingProfile.swift in Sources */,
 				158B386728B883A700997B55 /* MemoDAO.swift in Sources */,
 				15D8912B28A411290034CFEF /* ProfileVCExtensionTableView.swift in Sources */,
 				150772D5288AEC60008AE1F1 /* MemoListVCEvent.swift in Sources */,

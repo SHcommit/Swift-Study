@@ -9,7 +9,7 @@ class customAlertVO
     {
         alert = UIAlertController(title: title, message: message, preferredStyle: style)
     }
-    func addBtn(title : String, style : UIAlertAction.Style, completion : ((UIAlertAction) -> Void)?)
+    func addBtn(title : String, style : UIAlertAction.Style, completion : ((UIAlertAction) -> Void)? = nil)
     {
         let btn = UIAlertAction(title: title, style: style, handler: completion)
         alert.addAction(btn)

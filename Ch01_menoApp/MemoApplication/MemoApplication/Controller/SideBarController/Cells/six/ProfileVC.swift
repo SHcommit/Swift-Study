@@ -36,7 +36,11 @@ class ProfileVC : UIViewController
         //뒤로가기
         let backBtn               = UIBarButtonItem(title : "닫기", style: .plain, target: self, action: #selector(close(_:)))
         self.navigationItem.title = "프로필"
-        self.navigationItem.leftBarButtonItem = backBtn
+        let newBtn                = UIBarButtonItem(title: "새 계정", style: .plain, target: self, action: #selector(new(_:)))
+        
+        self.navigationItem.rightBarButtonItem = newBtn
+        self.navigationItem.leftBarButtonItem  = backBtn
+        
     }
     
     func setupProfileUI()
@@ -94,6 +98,11 @@ class ProfileVC : UIViewController
     {
         self.presentingViewController?.dismiss(animated: true)
     }
+    @objc func new(_ sender: Any)
+    {
+        self.performSegue(withIdentifier: "editingProfile", sender: sender)
+        
+    }
     @objc func doLogin(_ sender: Any)
     {
         let alertVO = customAlertVO(title: "LOGIN", message: nil, style: .alert)
@@ -144,25 +153,5 @@ class ProfileVC : UIViewController
         }
         self.present(alertVO.alert,animated:false)
     }
-//    @objc func keyboardWillShow(notification: NSNotification)
-//    {
-//        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue     )?.cgRectValue else
-//        {
-//            return
-//        }
-//        UIView.animate(withDuration: TimeInterval(0.3),delay:TimeInterval(0),options:[.curveEaseInOut, .beginFromCurrentState],animations:{
-//            self.view.frame.origin.y = 0 - keyboardSize.height
-//
-//        },completion: nil)
-//    }
-//    @objc func keyboardWillHide(notification: NSNotification)
-//    {
-//        UIView.animate(withDuration: TimeInterval(0.3), delay: TimeInterval(0),options:[.curveEaseInOut , .beginFromCurrentState],animations: {
-//            self.view.frame.origin.y = 0
-//        },completion: nil)
-//    }
-//    override func touchesBegan(_ touches : Set<UITouch>, with event: UIEvent?)
-//    {
-//        self.view.endEditing(true)
-//    }
+
 }
