@@ -145,7 +145,6 @@
 			children = (
 				15D8912728A3F49F0034CFEF /* defaultAlert.swift */,
 				153B5EB1287DE06D00DE4BC6 /* WarningAlert.swift */,
-				153B5E7328BA9840005287B2 /* Utils.swift */,
 			);
 			path = customAlert;
 			sourceTree = "<group>";
@@ -200,6 +199,7 @@
 		152D8744284DB0570079EE20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				153B5E7328BA9840005287B2 /* Utils.swift */,
 				158B386328B87EC800997B55 /* DataModel.xcdatamodeld */,
 				15528DBE288C559F00268E67 /* SideBar */,
 				150772CE288AD02F008AE1F1 /* customAlert */,

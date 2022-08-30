@@ -84,6 +84,12 @@ class UserInfoManager
         }
         return true
     }
+    
+    func logout(completion:(()->Void)? = nil){
+        let url = "http://swiftpai.rubypaper.co.kr:2029/userAccount/logout"
+        let tokenUtils = TokenUtils()
+        let header = tokenUtils.getAutohrizationHeader()
+    }
 }
 
 
@@ -124,6 +130,24 @@ extension UserInfoManager
                     if let imageData = try? Data(contentsOf: URL(string: path)!){
                         self.profile = UIImage(data: imageData)
                     }
+                }
+                
+                
+                //로그인 토큰 추가
+                let accessToken = jsonObj["access_token"] as! String
+                let refreshToken = jsonObj["refresh_token"] as! String
+                
+                let tkUtils = TokenUtils()
+                if let accTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "accessToken")
+                {
+                    NSLog("accessToken=\(accTok)")
+                }else{
+                    NSLog("accessToken is nil")
+                }
+                if let refTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "refreshToken"){
+                    NSLog("refreshToken =\(refTok)")
+                }else{
+                    NSLog("refreshToken is nil")
                 }
                 success?()
             }else{
