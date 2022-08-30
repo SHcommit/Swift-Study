@@ -166,11 +166,12 @@ class ProfileVC : UIViewController
     {
         let alertVO = customAlertVO(title: nil, message: "로그아웃하시겠습니까?", style: .alert)
         alertVO.addBtn(title: "cancel", style: .cancel, completion: nil)
-        alertVO.addBtn(title: "OK",style: .destructive)
-        {
-            (_) in
-            if self.userInfo.logout()
+        alertVO.addBtn(title: "OK",style: .destructive){ _ in
+            self.indicatorView.startAnimating()
+            //와..비동기 잘만드네,,클로저로.. 아직 난. 짬이 안되나봄.
+            self.userInfo.logout()
             {
+                self.indicatorView.stopAnimating()
                 self.tableView.reloadData()
                 self.profileImage.image = self.userInfo.profile
                 self.drawBtn()

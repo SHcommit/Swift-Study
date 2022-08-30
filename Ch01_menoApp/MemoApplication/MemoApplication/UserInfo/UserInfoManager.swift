@@ -85,11 +85,6 @@ class UserInfoManager
         return true
     }
     
-    func logout(completion:(()->Void)? = nil){
-        let url = "http://swiftpai.rubypaper.co.kr:2029/userAccount/logout"
-        let tokenUtils = TokenUtils()
-        let header = tokenUtils.getAutohrizationHeader()
-    }
 }
 
 
@@ -99,6 +94,14 @@ extension UserInfoManager
         기존의 로그인 저장 처리 방식은 프로퍼티 리스트를 사용해 true, false 처리에 따른 동기 방식으로 사용했다.
         이전에 NewEditingProfile에서 서버에 저장했던 계정 정보를 이용해
         계정과 비번 입력받아 사용자 정보, 인증 토큰을 발급!!
+        ----
+        API에는 사용자 정보 데이터 등 다양한 정보가 있다.
+        그중에서 외부에서 로그인 처리 기능을 해주는 정보도 들어있다. accessToken과 refreshToken이다.
+        얘내는 OAuth 프로토콜을 통해서 받을 수 있다.
+        간략하게는 Authorization Server를 통해 Authorization Code를 부여 받고 Resource Server를 통해 토큰을 넘겨주면
+        Resource Server회사에 등록된 사용자의 정보를 클라이언트 단으로 받아올 수 있다.
+        ----
+        이때 URLRequest와 URLSession을 래핑한 오픈소스를 사용함 Alamofire.
      */
     func login(_ account: String, _ password: String, success: (()->Void)? = nil, fail : ((String)->Void)? = nil)
     {
@@ -155,13 +158,30 @@ extension UserInfoManager
             }
         }
     }
-    func logout() -> Bool
+    func logout(completion: (()->Void)? = nil)
     {
-        plist.removeObject(forKey: UserInfoKeyDTO.loginID)
-        plist.removeObject(forKey: UserInfoKeyDTO.account)
-        plist.removeObject(forKey: UserInfoKeyDTO.name)
-        plist.removeObject(forKey: UserInfoKeyDTO.profile)
-        plist.synchronize()
-        return true
+        
+        let url      = "http://swiftapi.rubypaper.co.kr:2029/userAccount/logout"
+        let tokUtils = TokenUtils()
+        let header   = tokUtils.getAutohrizationHeader()
+        let call     = AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil)
+        call.responseJSON(){ _ in
+            //서버로 응답 온 후 처리할 로그아웃 동작
+            self.deviceLogout()
+            completion?()
+        }
+    }
+    
+    func deviceLogout(){
+        let ud = UserDefaults.standard
+        ud.removeObject(forKey: UserInfoKeyDTO.loginID)
+        ud.removeObject(forKey: UserInfoKeyDTO.account)
+        ud.removeObject(forKey: UserInfoKeyDTO.name)
+        ud.removeObject(forKey: UserInfoKeyDTO.profile)
+        ud.synchronize()
+        
+        let tokenUtils = TokenUtils()
+        tokenUtils.delete("kr.co.rubypaper.MyMemory", account: "refreshToken")
+        tokenUtils.delete("kr.co.rubypaper.MyMemory", account: "accessToken")
     }
 }
