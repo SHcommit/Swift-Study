@@ -1,4 +1,6 @@
 import UIKit
+import Alamofire
+import LocalAuthentication
 
 /**
  TODO : 사이드 바 상단의 프로필 영역 detail Scene. 사이드 바 메뉴 6번째 Cell인 계정관리와 연결됨.
@@ -29,7 +31,9 @@ class ProfileVC : UIViewController
         //unwind segue 사용하기위해 예를들어 네비 -> scene1 -> scene2 ->scene3
         //scene3에서 scene1가기위해서
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tokenValidate()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationUI()
@@ -180,3 +184,141 @@ class ProfileVC : UIViewController
 
 }
 
+extension ProfileVC{
+    func tokenValidate() {
+        //응답 캐시 사용x
+        URLCache.shared.removeAllCachedResponses()
+        let tk = TokenUtils()
+        guard let header = tk.getAutohrizationHeader() else{
+            return
+        }
+        self.indicatorView.startAnimating()
+        
+        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/tokenValicate"
+        let validate = AF.request(url,method:.post,encoding: JSONEncoding.default,headers: header)
+        
+        validate.responseJSON{ res in
+            self.indicatorView.stopAnimating()
+            do
+            {
+                let responseBody = try res.result.get()
+                //응답확인
+                NSLog("responseBody")
+                guard let jsonObj = responseBody as? NSDictionary else{
+                    self.alertMainThread("잘못된 응답")
+                    return
+                }
+                guard let resCode = jsonObj["result_code"] as? Int else{
+                    NSLog("can't find result_code in jsonObj")
+                    return
+                }
+                if resCode != 0{
+                    //응다결과 실패일때
+                    self.touchID()
+                }
+            }
+            catch let e as NSError{
+                NSLog("Error occured tokenValidate()'s res.result.get() : \(e.localizedDescription)")
+            }
+        }
+    }
+    func touchID(){
+        let context    = LAContext()
+        var error      : NSError?
+        let msg        = "인증이 필요합니다."
+        //인증 정책
+        let deviceAuth = LAPolicy.deviceOwnerAuthenticationWithBiometrics
+        if context.canEvaluatePolicy(deviceAuth, error: &error){
+            context.evaluatePolicy(deviceAuth, localizedReason: msg){ succes,e in
+                if succes {
+                    self.refresh()
+                }else{
+                    NSLog((e?.localizedDescription)!)
+                    
+                    switch e!._code{
+                    case LAError.systemCancel.rawValue:
+                        self.alertMainThread("시스템에 의해 인증이 취소되었습니다.")
+                    case LAError.userCancel.rawValue:
+                        self.alertMainThread("사용자에 의해 인증이 취소되었습니다.")
+                    case LAError.userFallback.rawValue:
+                        OperationQueue.main.addOperation(){
+                            self.commonLogout(true)
+                        }
+                    default:
+                        OperationQueue.main.addOperation() {
+                            self.commonLogout(true)
+                        }
+                    }
+                }
+            }
+        }else{
+            //인증창 실행x경우
+            NSLog(error!.localizedDescription)
+            switch error!.code{
+            case LAError.biometryNotEnrolled.rawValue:
+                NSLog("터치 아이디가 등록되어 있지 않습니다.")
+            case LAError.passcodeNotSet.rawValue:
+                NSLog("패스 코드가 설정되어 있지 않습니다")
+            default:
+                //LAError.touchIDNotAvailable 포함
+                NSLog("터치 아이디 사용할 수 없어요 ㅠㅠ")
+            }
+            OperationQueue.main.addOperation {
+                self.commonLogout(true)
+            }
+        }
+    }
+    //new user's refreshToken
+    func refresh(){
+        self.indicatorView.startAnimating()
+        let tk               = TokenUtils()
+        let header           = tk.getAutohrizationHeader()
+        //서비스id, user's account
+        let refreshToken     = tk.load("kr.co.rubypaper.MyMemory", account: "refreshToken")
+        let param:Parameters = ["refresh_token": refreshToken!]
+        let url              = "http://swiftapi.rubypaper.co.kr:2029/userAccount/refresh"
+        let refresh          = AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: header)
+        refresh.responseJSON{ res in
+            self.indicatorView.stopAnimating()
+            do{
+                guard let jsonObj = try res.result.get() as? NSDictionary else{
+                    self.alertMainThread("잘못된 응답")
+                    return
+                }
+                guard let resCode = jsonObj["result_code"] as? Int else{
+                    NSLog("결과코드가 수상해!!")
+                    return
+                }
+                if resCode == 0{
+                    guard let accessToken = jsonObj["access_token"] as? String else{
+                        NSLog("can't find accessToken in jsonObj")
+                        return
+                    }
+                    tk.save("kr.co.rubypaper.MyMemory", account: "accessToken", value: accessToken)
+                }else{
+                    self.alertMainThread("인증이 잘못되었습니다.")
+                    OperationQueue.main.addOperation{
+                        self.commonLogout(true)
+                    }
+                }
+                
+            }
+            catch let e as NSError{
+                NSLog("jsonObj err :\(e.localizedDescription)")
+            }
+        }
+    }
+    
+    func commonLogout(_ isLogin: Bool){
+        let userInfo = UserInfoManager()
+        userInfo.deviceLogout()
+        
+        self.tableView.reloadData()
+        self.profileImage.image = userInfo.profile
+        self.drawBtn()
+        
+        if isLogin{
+            self.doLogin(self)
+        }
+    }
+}
