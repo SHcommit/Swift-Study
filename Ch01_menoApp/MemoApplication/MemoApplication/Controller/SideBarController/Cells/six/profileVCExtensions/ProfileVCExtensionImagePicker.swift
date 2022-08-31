@@ -19,12 +19,21 @@ extension ProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDel
 {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.indicatorView.startAnimating()
         if let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         {
             //이건 UserDefaults.standard에 저장하는거
-            self.userInfo.profile   = img
+            //self.userInfo.profile   = img
             //이건 profileVC에 저장하는거
-            self.profileImage.image = img
+            //self.profileImage.image = img
+            
+            self.userInfo.newProfile(img, success: {
+                self.indicatorView.stopAnimating()
+                self.profileImage.image = img
+            }, fail: { msg in
+                self.indicatorView.stopAnimating()
+                self.alertMainThread(msg)
+            })
         }
         picker.dismiss(animated: true)
     }

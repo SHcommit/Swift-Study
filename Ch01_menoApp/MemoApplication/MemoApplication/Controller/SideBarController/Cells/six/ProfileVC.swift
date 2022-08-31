@@ -39,8 +39,6 @@ class ProfileVC : UIViewController
         addTapGestrueInProfileImage()
         self.navigationController?.navigationBar.isHidden = true
         self.view.bringSubviewToFront(indicatorView)
-        
-        
     }
     //MARK: - setupUI
     func setupNavigationUI()

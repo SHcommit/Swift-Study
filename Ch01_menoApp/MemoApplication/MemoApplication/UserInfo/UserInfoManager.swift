@@ -184,4 +184,32 @@ extension UserInfoManager
         tokenUtils.delete("kr.co.rubypaper.MyMemory", account: "refreshToken")
         tokenUtils.delete("kr.co.rubypaper.MyMemory", account: "accessToken")
     }
+    
+    /*
+     서버에 프로필 정보도 전송
+     */
+    func newProfile(_ profile: UIImage?, success: (()->Void)? = nil, fail: ((String)->Void)?=nil){
+        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/profile"
+        let tk  = TokenUtils()
+        let header = tk.getAutohrizationHeader()
+        guard let profileData = profile!.pngData()?.base64EncodedString() else{ NSLog("프로필 nil임 in UserInfoManager");return}
+        let param: Parameters = ["profile_image":profileData]
+        let call = AF.request(url, method: .post,parameters: param, encoding: JSONEncoding.default, headers: header)
+        call.responseJSON{ res in
+            guard let jsonObj = try! res.result.get() as? NSDictionary else{
+                fail?("올바른 값이 아닙니다.")
+                return
+            }
+             
+            guard let resCode = jsonObj["result_code"] as? Int else {NSLog("result코드 잘못됨. 값이 잘 안받아져왔나?"); return }
+            if resCode == 0
+            {
+                self.profile = profile
+                success?()
+            }else{
+                let msg = (jsonObj["error_msg"] as? String) ?? "이미지 프로필 변경이 실패했습니다."
+                fail?(msg)
+            }
+        }
+    }
 }

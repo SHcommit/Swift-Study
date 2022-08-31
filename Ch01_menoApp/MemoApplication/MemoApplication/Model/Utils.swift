@@ -99,7 +99,8 @@ class TokenUtils{
             kSecAttrAccount : account
         ]
         let status = SecItemDelete(keyChainQuery)
-        assert(status==noErr, "토큰 값 삭제 실패")
+
+        assert(status == noErr, "토큰 값 삭제 실패")
         NSLog("status=\(status)")
     }
     /*
