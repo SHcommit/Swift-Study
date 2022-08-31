@@ -154,6 +154,14 @@ class ProfileVC : UIViewController
                 self.profileImage.image = self.userInfo.profile;
                 self.drawBtn()
                 
+                //서버와 데이터 동기화
+                let sync = DataSync()
+                DispatchQueue.global(qos: .background).async {
+                    sync.downloadBackupData()
+                }
+                DispatchQueue.global(qos: .background).async {
+                    sync.uploadData()
+                }
             }){ msg in
                 self.indicatorView.stopAnimating()
                 self.isCalling = false

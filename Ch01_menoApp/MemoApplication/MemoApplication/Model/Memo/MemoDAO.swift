@@ -73,6 +73,15 @@ class MemoDAO
         {
             //컨텍스트를 통해 영구 저장소에 반영
             try self.context.save()
+            //로그인 되어있을 경우 서버에 업로드 기기
+            let tk = TokenUtils()
+            if tk.getAutohrizationHeader() != nil{
+                // fore그라운드 작업 방해 x 하면서 백그라운드에서 실행할수있게해줌.
+                DispatchQueue.global(qos: .background).async {
+                    let sync = DataSync()
+                    sync.uploadDatum(obj)
+                }
+            }
         }
         catch let e as NSError
         {
