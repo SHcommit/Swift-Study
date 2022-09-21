@@ -1,4 +1,6 @@
-## Date 22.07.30 오늘의 돌발 문제 상황
+# MemoApp Refactor
+
+### Date 22.07.30 오늘의 돌발 문제 상황
 
 책에서 처럼 깃 오픈소스로 sideBar를 사용하지 않고 직접 만들었다.
 
@@ -14,9 +16,8 @@ TODO : SideBar의 firstCell을 클릭시 FrontVC(memoListVC)에서 memoFormVC(�
 
 <img src="https://user-images.githubusercontent.com/96910404/181827527-bd3a1c14-3d6e-4f23-986d-f16010284ce7.gif"  width="200" height="400"/>
 
-## Date 22.09.21 앞으로 해야 할 것
 
-# MemoApp Refactor
+## Date 22.09.21 앞으로 해야 할 것
 
 ### 리펙터링 목표
  
