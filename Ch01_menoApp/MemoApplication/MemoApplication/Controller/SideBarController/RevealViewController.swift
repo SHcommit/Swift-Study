@@ -32,8 +32,7 @@ import UIKit
  6. SideBarViewController에게 이 인스턴스 넘겨줌.
     cell num zero 클릭시 memoFormVC 호출하기 위해.
  */
-class RevealViewController : UIViewController
-{
+class RevealViewController : UIViewController {
     var frontVC : UIViewController?
     var sideVC  : UITableViewController?
     var isSideBarShowing = false
@@ -41,43 +40,67 @@ class RevealViewController : UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpFrontView()
+        setUpFrontView()
         
     }
-    //MARK: - selected frontVC, sideVC from RevealVC
-    func setUpFrontView()
-    {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier:"Reveal_FrontView") as? UINavigationController else
-        {
+}
+
+//MARK: - Setup FrontVC logic
+extension RevealViewController {
+    
+    func setUpFrontView() {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier:"Reveal_FrontView") as? UINavigationController else {
             NSLog("Reveal's FrontVC value == nil")
             return
         }
-        self.frontVC            = vc
-        let frontViewController = vc.viewControllers[0] as? MemoListVC
-        self.addChild(vc)
-        self.view.addSubview(vc.view)
-        vc.didMove(toParent: self)
-        
-        frontViewController?.sideBarDelegate = self
-    }
-    func getSideView()
-    {
-        guard self.sideVC == nil else
-        {
+        frontVC = vc
+        guard let frontViewController = vc.viewControllers[0] as? MemoListVC else {
+            NSLog("Failure find MemoListVC class type")
             return
         }
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier:"Reveal_SideView") as? UITableViewController else
-        {
+        addChild(vc)
+        view.addSubview(vc.view)
+        vc.didMove(toParent: self)
+        
+        frontViewController.sideBarDelegate = self
+    }
+    
+    // - layer shadow style
+    func setShadowEffect(_ shadow:Bool,offset:CGFloat) {
+        
+        guard let frontVC = frontVC else {
+            fatalError("Failure find frontVC instance")
+        }
+        
+        guard shadow else {
+            frontVC.view.layer.cornerRadius  = 0.0
+            frontVC.view.layer.shadowOffset  = CGSize(width:0,height:0)
+            return
+        }
+        frontVC.view.layer.masksToBounds = false
+        frontVC.view.layer.cornerRadius  = 10
+        frontVC.view.layer.shadowOpacity = 0.8
+        frontVC.view.layer.shadowColor   = UIColor.black.cgColor
+        frontVC.view.layer.shadowOffset  = CGSize(width:offset,height:offset)
+    }
+}
+
+//MARK: - Setup SideVC logic
+extension RevealViewController {
+    
+    func getSideView() {
+        guard sideVC == nil else {
+            return
+        }
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier:"Reveal_SideView") as? UITableViewController else {
             NSLog("Reveal's SideVC == nil")
             return
         }
-        guard let sideVC = vc as? SideBarViewController else
-        {
+        guard let sideVC = vc as? SideBarViewController else {
             NSLog("SideVC == nil")
             return
         }
-        guard let frontViewController = self.frontVC else
-        {
+        guard let frontViewController = self.frontVC else {
             NSLog("Reveal's FrontVC == nil.\n check setUpFrontView()")
             return
         }
@@ -88,25 +111,9 @@ class RevealViewController : UIViewController
         sideVC.revealVC = self
         self.view.bringSubviewToFront(frontViewController.view)
     }
-    //MARK: - setFrontView's layer's shadow style :)
-    func setShadowEffect(_ shadow:Bool,offset:CGFloat)
-    {
-        if shadow
-        {
-            self.frontVC?.view.layer.masksToBounds = false
-            self.frontVC?.view.layer.cornerRadius  = 10
-            self.frontVC?.view.layer.shadowOpacity = 0.8
-            self.frontVC?.view.layer.shadowColor   = UIColor.black.cgColor
-            self.frontVC?.view.layer.shadowOffset  = CGSize(width:offset,height:offset)
-        }
-        else
-        {
-            self.frontVC?.view.layer.cornerRadius  = 0.0
-            self.frontVC?.view.layer.shadowOffset  = CGSize(width:0,height:0)
-        }
-    }
-    func openSideBar(_ complete: (()->Void)?)
-    {
+
+    
+    func openSideBar(_ complete: (()->Void)?) {
         self.getSideView()
         self.setShadowEffect(true, offset: -0.2)
         let options = UIView.AnimationOptions([.curveEaseInOut, .beginFromCurrentState])
@@ -118,41 +125,35 @@ class RevealViewController : UIViewController
             animations:
             {
                 self.frontVC?.view.frame = CGRect(x: self.SIDEBAR_WIDTH, y: 0, width: Int(self.view.frame.width), height: Int(self.view.frame.height))
-            },
-            completion:
+            }) { completion in
+            //성공적으로 animation이 실행됬는가?
+            if completion
             {
-                //성공적으로 animation이 실행됬는가?
-                if $0
-                {
-                    self.isSideBarShowing = true
-                    complete?()
-                }
+                self.isSideBarShowing = true
+                complete?()
             }
-        )
+        }
     }
-    func closeSideBar(_ complete : (()->Void)?)
-    {
+    
+    func closeSideBar(_ complete : (()->Void)?) {
         let options = UIView.AnimationOptions([.curveEaseInOut,.beginFromCurrentState])
         UIView.animate(
             withDuration : TimeInterval(SLIDE_TIME),
             delay: TimeInterval(0),
             options: options,
-            animations:
-            {
+            animations: {
                 self.frontVC?.view.frame = CGRect(x: 0, y: 0, width: Int(self.view.frame.width), height: Int(self.view.frame.height))
-            },
-            completion:
+            }){ completion in
+            if completion
             {
-                if $0
-                {
-                    self.sideVC?.view.removeFromSuperview()
-                    self.sideVC = nil
-                    
-                    self.isSideBarShowing = false
-                    self.setShadowEffect(false, offset: 0)
-                    complete?()
-                }
+                self.sideVC?.view.removeFromSuperview()
+                self.sideVC = nil
+                
+                self.isSideBarShowing = false
+                self.setShadowEffect(false, offset: 0)
+                complete?()
             }
-        )
+        }
     }
+
 }
