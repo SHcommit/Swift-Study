@@ -26,6 +26,7 @@ class SideBarProfileVO
         emailLabel   = UILabel()
         profileImage = UIImageView()
     }
+    
     func headerViewSetup(_ tableView : UITableView)
     {
         headerView.frame           = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 70)

@@ -41,7 +41,6 @@
 		15B0D92128A64CD3003AE6AA /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0D92028A64CD3003AE6AA /* TutorialContentsVC.swift */; };
 		15B0D92328A6658E003AE6AA /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0D92228A6658E003AE6AA /* TutorialMasterVC.swift */; };
 		15C68478287D9A8000935EB4 /* CSLogBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C68477287D9A8000935EB4 /* CSLogBtn.swift */; };
-		15C6847E287DCE5A00935EB4 /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 15C6847D287DCE5A00935EB4 /* button-bg.png */; };
 		15D0CDA1284CE63800333FFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0CDA0284CE63800333FFF /* AppDelegate.swift */; };
 		15D0CDA3284CE63800333FFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0CDA2284CE63800333FFF /* SceneDelegate.swift */; };
 		15D0CDA8284CE63800333FFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D0CDA6284CE63800333FFF /* Main.storyboard */; };
@@ -52,6 +51,7 @@
 		15D8912828A3F49F0034CFEF /* defaultAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912728A3F49F0034CFEF /* defaultAlert.swift */; };
 		15D8912B28A411290034CFEF /* ProfileVCExtensionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912A28A411290034CFEF /* ProfileVCExtensionTableView.swift */; };
 		15D8912D28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8912C28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift */; };
+		15FF169F28DAA1EE008D87F4 /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 15FF169E28DAA1EE008D87F4 /* button-bg.png */; };
 		3DB1DE1B25D7D5DC12FE792E /* Pods_MemoApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC85D08FA0F56E15CC195563 /* Pods_MemoApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +90,6 @@
 		15B0D92028A64CD3003AE6AA /* TutorialContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
 		15B0D92228A6658E003AE6AA /* TutorialMasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
 		15C68477287D9A8000935EB4 /* CSLogBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogBtn.swift; sourceTree = "<group>"; };
-		15C6847D287DCE5A00935EB4 /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-bg.png"; path = "../../../../../../재은씨NO3/swift_practice/MyMemory-Chapter03/Resources/button-bg.png"; sourceTree = "<group>"; };
 		15D0CD9D284CE63800333FFF /* MemoApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D0CDA0284CE63800333FFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15D0CDA2284CE63800333FFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		15D8912728A3F49F0034CFEF /* defaultAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultAlert.swift; sourceTree = "<group>"; };
 		15D8912A28A411290034CFEF /* ProfileVCExtensionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCExtensionTableView.swift; sourceTree = "<group>"; };
 		15D8912C28A412C80034CFEF /* ProfileVCExtensionImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVCExtensionImagePicker.swift; sourceTree = "<group>"; };
+		15FF169E28DAA1EE008D87F4 /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-bg.png"; sourceTree = "<group>"; };
 		1B9DF8768F3270418EC3A89F /* Pods-MemoApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoApplication.release.xcconfig"; path = "Target Support Files/Pods-MemoApplication/Pods-MemoApplication.release.xcconfig"; sourceTree = "<group>"; };
 		A402F8C23F931140FD87F21F /* Pods-MemoApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoApplication.debug.xcconfig"; path = "Target Support Files/Pods-MemoApplication/Pods-MemoApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		FC85D08FA0F56E15CC195563 /* Pods_MemoApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,7 +288,7 @@
 		15C6847A287D9CBC00935EB4 /* CSLogBtn */ = {
 			isa = PBXGroup;
 			children = (
-				15C6847D287DCE5A00935EB4 /* button-bg.png */,
+				15FF169E28DAA1EE008D87F4 /* button-bg.png */,
 			);
 			path = CSLogBtn;
 			sourceTree = "<group>";
@@ -422,11 +422,11 @@
 			files = (
 				153B5EAF287DDA8B00DE4BC6 /* memo-background@2x.png in Resources */,
 				15D0CDAD284CE63900333FFF /* LaunchScreen.storyboard in Resources */,
+				15FF169F28DAA1EE008D87F4 /* button-bg.png in Resources */,
 				15D0CDAA284CE63900333FFF /* Assets.xcassets in Resources */,
 				15528DCA288C576D00268E67 /* icon05.png in Resources */,
 				15242F0528995A410063425C /* profile-bg.png in Resources */,
 				15528DCB288C576D00268E67 /* icon02.png in Resources */,
-				15C6847E287DCE5A00935EB4 /* button-bg.png in Resources */,
 				15528DC9288C576D00268E67 /* icon04.png in Resources */,
 				15528DCC288C576D00268E67 /* icon03.png in Resources */,
 				153B5EB0287DDA8B00DE4BC6 /* warning-icon-60@2x.png in Resources */,

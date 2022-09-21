@@ -102,6 +102,9 @@ extension UserInfoManager
         Resource Server회사에 등록된 사용자의 정보를 클라이언트 단으로 받아올 수 있다.
         ----
         이때 URLRequest와 URLSession을 래핑한 오픈소스를 사용함 Alamofire.
+        
+        Date: 22.09.21
+            Model Codable로 적용하기
      */
     func login(_ account: String, _ password: String, success: (()->Void)? = nil, fail : ((String)->Void)? = nil)
     {
