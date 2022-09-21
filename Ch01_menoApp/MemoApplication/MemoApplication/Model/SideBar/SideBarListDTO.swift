@@ -7,19 +7,18 @@ import UIKit
  */
 class SideBarListDTO
 {
-    var titles : [String]
-    var icons  : [UIImage]
-    init()
-    {
-        titles = [String]()
-        icons  = [UIImage]()
-        titles = ["새글 작성하기","친구 새글","달력으로 보기","공지사항","통계","계정 관리"]
+    var title = [String]()
+    var icons = [UIImage]()
+    init() {
+        setupData()
+    }
+    
+    func setupData() {
+        title = ["새글 작성하기","친구 새글","달력으로 보기","공지사항","통계","계정 관리"]
+        let iconPath = ["icon01.png","icon02.png","icon03.png","icon04.png","icon05.png","icon06.png"]
         
-        let iconPngNames = ["icon01.png","icon02.png","icon03.png","icon04.png","icon05.png","icon06.png"]
-        iconPngNames.forEach
-        {
-            guard let icon = UIImage(named:$0) else
-            {
+        iconPath.forEach {
+            guard let icon = UIImage(named:$0) else {
                 NSLog("sideBarList's img path wrong.")
                 return
             }
