@@ -44,10 +44,9 @@ extension MemoListVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Configure the cell...
         let rowData = self.appDelegate.memoList[indexPath.row]
-        let cellId  = rowData.image == nil ? "memoCell" : "memoCellWithImage"
-        let cell    = tableView.dequeueReusableCell(withIdentifier: cellId) ?? UITableViewCell(style: .default, reuseIdentifier: cellId)
+        let cell    = tableView.dequeueReusableCell(withIdentifier: MemoCell.cellId) ?? UITableViewCell(style: .default, reuseIdentifier: MemoCell.cellId)
         
-        guard let customCell = cell as? MemoCelll else {
+        guard let customCell = cell as? MemoCell else {
             fatalError("Failure cast cell as MemoCelll")
         }
             
