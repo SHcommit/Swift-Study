@@ -6,21 +6,179 @@
 //
 
 import UIKit
-/**
- * TODO :
- *   인터페이스에서 두 가지의 추가 기능이 있다.
- *   첫번째는 image 사용하지 않은 버전, 두번째는 사용한 버전.
- *   이에 따라서 image를 input 하지 않을 경우 nil 을 활용한다.
- *   Cell 인스턴스가 담긴 클래스다.
- *
- * Date : 22.07.12 왜 nil이 담길까?
- * 그 이유는 type이 ! 로 되어있기 때문이다 후훗..
- * 이게 컨텐츠가 불러와지면 그 해당 컨텐츠를 사용하는데 아닐경우 nil처리가 된다. 후훗...
- */
+
 class MemoCell: UITableViewCell {
-    @IBOutlet weak var subject: UILabel!
-    @IBOutlet weak var contents : UILabel!
-    @IBOutlet weak var regdate  : UILabel!
-    @IBOutlet weak var img: UIImageView!
+    
+    static let cellId = "memoCell"
+    var memoData: MemoData?
+    var subject: UILabel?
+    var contents: UILabel?
+    var regdate: UILabel?
+    var img: UIImageView?
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+}
+
+extension MemoCell {
+    
+    func setupSubviews(memoData: MemoData) {
+        self.memoData = memoData
+        initialImageView()
+        initialSubject()
+        initialContents()
+        initialRegdate()
+        setupImageViewConstraints()
+        setupSubjectConstraints()
+        setupContentsConstraints()
+        setupRegdateConstraints()
+        
+    }
+    
+}
+
+//MARK: - initial subviews
+extension MemoCell {
+    
+    func initialImageView() {
+        guard let image = memoData?.image else {
+            print("Failure title is nil")
+            return
+        }
+        img = UIImageView()
+        guard let img = img else {
+            return
+        }
+        img.image = image
+        img.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(img)
+    }
+    
+    func initialSubject() {
+        guard let text = memoData?.title else {
+            print("Failure title is nil")
+            return
+        }
+        subject = UILabel()
+        
+        guard let subject = subject else {
+            print("Failure binding subject instance")
+            return
+        }
+        subject.text = text
+        subject.font = UIFont.systemFont(ofSize: 20)
+        subject.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(subject)
+    }
+    
+    func initialContents() {
+        guard let text = memoData?.contents else {
+            print("Failure contents is nil")
+            return
+        }
+        contents = UILabel()
+        guard let contents = contents else {
+            print("Failure bind contents instance")
+            return
+        }
+        contents.text = text
+        contents.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(contents)
+    }
+    
+    func initialRegdate() {
+        guard let date = memoData?.regdate else {
+            print("Failure regdate is nil")
+            return
+        }
+        regdate = UILabel()
+        guard let regdate = regdate else {
+            print("Failure bind regdate instance")
+            return
+        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        regdate.text = formatter.string(from: date)
+        regdate.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(regdate)
+    }
+}
+
+//MARK: - setupSubview's constraint
+extension MemoCell {
+    func setupImageViewConstraints() {
+        guard let img = img else {
+            print("Failure bind img instacne")
+            return
+        }
+        NSLayoutConstraint.activate([
+            img.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            img.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            img.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            img.widthAnchor.constraint(equalToConstant: 80),
+            img.heightAnchor.constraint(equalToConstant: 104)])
+    }
+    
+    func setupSubjectConstraints() {
+        guard let subject = subject else {
+            print("Failure bind subject instance")
+            return
+        }
+        
+        guard let target = img else {
+            NSLayoutConstraint.activate([
+                subject.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+                subject.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)])
+            return
+        }
+        NSLayoutConstraint.activate([
+            subject.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            subject.leadingAnchor.constraint(equalTo: target.trailingAnchor, constant: 8)])
+    }
+    
+    func setupContentsConstraints() {
+        guard let contents = contents else {
+            print("Failure bind contents instance")
+            return
+        }
+        guard let subject = subject else {
+            return
+        }
+        contents.setContentCompressionResistancePriority(UILayoutPriority(999), for: .horizontal)
+        guard let target = img else {
+            NSLayoutConstraint.activate([
+                contents.topAnchor.constraint(equalTo: subject.topAnchor, constant: 8),
+                contents.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                contents.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)])
+            return
+        }
+        NSLayoutConstraint.activate([
+            contents.topAnchor.constraint(equalTo: subject.bottomAnchor, constant: 8),
+            contents.leadingAnchor.constraint(equalTo: target.trailingAnchor, constant: 8),
+            contents.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)])
+        
+    }
+    
+    func setupRegdateConstraints() {
+        guard let regdate = regdate else {
+            print("Failure bind regdate instance")
+            return
+        }
+        
+        guard let contents = contents else {
+            print("Failure bind contents instance")
+            return
+        }
+        regdate.setContentHuggingPriority(UILayoutPriority(998), for: .horizontal)
+        NSLayoutConstraint.activate([
+            regdate.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            regdate.leadingAnchor.constraint(equalTo: contents.trailingAnchor,constant: 8),
+            regdate.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -8)])
+    }
     
 }
