@@ -49,15 +49,8 @@ extension MemoListVC {
         guard let customCell = cell as? MemoCell else {
             fatalError("Failure cast cell as MemoCelll")
         }
-            
+
         customCell.setupSubviews(memoData: rowData)
-//        cell.subject?.text  = rowData.title
-//        cell.contents?.text = rowData.contents
-//        cell.img?.image     = rowData.image
-//
-//        let formatter       = DateFormatter()
-//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-//        cell.regdate?.text  = formatter.string(from: rowData.regdate!)
         return customCell
     }
 
