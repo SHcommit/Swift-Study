@@ -16,6 +16,7 @@ class MemoListVC: UITableViewController ,UISearchBarDelegate{
     override func viewWillAppear(_ animated : Bool){
         self.appDelegate.memoList = self.dao.fetch()
         self.tableView.reloadData()
+        setupSubviews()
         let ud = UserDefaults.standard
         if ud.bool(forKey: UserInfoKeyDTO.tutorial) == false
         {
