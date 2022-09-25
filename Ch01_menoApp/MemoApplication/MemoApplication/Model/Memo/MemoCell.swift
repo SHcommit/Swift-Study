@@ -10,7 +10,7 @@ import UIKit
 class MemoCell: UITableViewCell {
     
     static let cellId = "memoCell"
-    var memoData: MemoData?
+    var memoData: MemoDataViewModel?
     var subject: UILabel?
     var contents: UILabel?
     var regdate: UILabel?
@@ -23,12 +23,22 @@ class MemoCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
+    
+    func isCellDataImplementd() -> Bool {
+        guard let _ = subject else {
+            return false
+        }
+        return true
+    }
 }
 
 extension MemoCell {
     
-    func setupSubviews(memoData: MemoData) {
+    func setupSubviews(memoData: MemoDataViewModel) {
         self.memoData = memoData
+        guard !isCellDataImplementd() else{
+            return
+        }
         initialImageView()
         initialSubject()
         initialContents()
@@ -47,7 +57,7 @@ extension MemoCell {
     
     func initialImageView() {
         guard let image = memoData?.image else {
-            print("Failure title is nil")
+            print("Failure image is nil")
             return
         }
         img = UIImageView()
@@ -102,7 +112,7 @@ extension MemoCell {
             return
         }
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:SS"
         regdate.text = formatter.string(from: date)
         regdate.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(regdate)
