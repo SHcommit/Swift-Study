@@ -23,7 +23,7 @@ class MemoDAO
         let fetchRequest : NSFetchRequest<MemoMO> = MemoMO.fetchRequest()
         
         //MemoMO에서 regdate에 따라(최신 글) sort
-        let regDateDesc  = NSSortDescriptor(key:"regdate",ascending: false)
+        let regDateDesc  = NSSortDescriptor(key:"regdate",ascending: true)
         fetchRequest.sortDescriptors = [regDateDesc]
         
         //NSPredicate검색 조건 추가
@@ -68,7 +68,6 @@ class MemoDAO
         {
             obj.image = _pngData
         }
-        
         do
         {
             //컨텍스트를 통해 영구 저장소에 반영
