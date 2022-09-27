@@ -9,74 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--목록-->
-        <scene sceneID="A1F-JT-KQp">
-            <objects>
-                <tableViewController storyboardIdentifier="MemoList" id="3SG-kZ-vCk" customClass="MemoListVC" customModule="MemoApplication" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-GF-f6a">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="29e-NI-BJF">
-                            <rect key="frame" x="0.0" y="158" width="428" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XT-ko-oT2" customClass="CSLogBtn" customModule="MemoApplication" customModuleProvider="target">
-                                    <rect key="frame" x="173" y="8" width="61" height="31"/>
-                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title="더보기"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstItem="9XT-ko-oT2" firstAttribute="centerX" secondItem="29e-NI-BJF" secondAttribute="centerX" id="CGs-hv-Myz"/>
-                                <constraint firstItem="9XT-ko-oT2" firstAttribute="centerY" secondItem="29e-NI-BJF" secondAttribute="centerY" id="izi-0z-E6z"/>
-                            </constraints>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="AKj-aU-oxC" customClass="MemoCell" customModule="MemoApplication" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="428" height="80"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AKj-aU-oxC" id="b9k-Pv-64F">
-                                    <rect key="frame" x="0.0" y="0.0" width="397.66666666666669" height="80"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="3SG-kZ-vCk" id="pnw-DW-Kgd"/>
-                            <outlet property="delegate" destination="3SG-kZ-vCk" id="vdc-Ve-otj"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="목록" id="lTb-E5-1ZE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8P2-zG-mzW">
-                            <connections>
-                                <segue destination="1nf-3p-JdM" kind="show" id="Kgd-Kb-YO2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="z8L-c4-b0W" kind="show" identifier="read_sg" id="854-od-qO8"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pcN-x0-F23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="142-KC-BJz" customClass="CSLogBtn" customModule="MemoApplication" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="428" height="610"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWS-Dc-LO8" customClass="CSLogBtn" customModule="MemoApplication" customModuleProvider="target">
-                            <rect key="frame" x="152" y="209" width="125" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="더보기"/>
-                        </button>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="18V-vT-aoa"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
-            </objects>
-            <point key="canvasLocation" x="259" y="66"/>
-        </scene>
         <!--상세 화면-->
         <scene sceneID="mkh-ke-DgW">
             <objects>
@@ -152,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHC-PO-ddh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093" y="66"/>
+            <point key="canvasLocation" x="1213" y="65"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="w33-ta-MGN">
@@ -304,12 +236,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3SG-kZ-vCk" kind="relationship" relationship="rootViewController" id="bcc-qT-g6g"/>
+                        <segue destination="r2i-TA-h58" kind="relationship" relationship="rootViewController" id="TmQ-xl-ovu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGD-gw-MUG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-695" y="66"/>
+        </scene>
+        <!--Memo ListVC-->
+        <scene sceneID="Ge2-3F-0ev">
+            <objects>
+                <viewController id="r2i-TA-h58" customClass="MemoListVC" customModule="MemoApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s3V-dn-119">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xpy-Vc-Oek"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="46E-9j-ECf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I04-qq-h6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="258" y="65"/>
         </scene>
     </scenes>
     <resources>
