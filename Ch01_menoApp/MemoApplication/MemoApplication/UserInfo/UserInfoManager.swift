@@ -1,21 +1,13 @@
 import UIKit
 import Alamofire
+
 /**
  TODO : UserDefaults.standard를 통해 User의 정보를 관리하는 클래스.
  
- - Param plist : UserDefaults.standard
- - Param loginID : UserDefaults.standard에 id값을 부여해서 저장하거나 꺼내옴
- - Param account : plist에 account를 저장하거나 꺼내옴
- - Param name : plist에 이름을 저장하거나 꺼내온다.
- - Param profile : plist에 data형식으로 UIImage를 저장하거나 꺼내온다.
  - Param isLogin : plist의 UserInfoKeyDTO.loginID 값이나 UserInfoKeyDTO.account값이 존재한다면 로그인됨.
  
  - login(_:_: ) func의 첫번째, 두번째 매개변수를 통해 사용자 기록한 로그인 정보가 맞는 정보인지 체크
  - logout() plist에 저장됬던 UserInfoKeyDTO 키값들 전부 삭제.
- 
- # Notes: #
- 1. <#Notes if any#>
- 
  */
 class UserInfoManager {
     
@@ -90,7 +82,7 @@ class UserInfoManager {
     이때 URLRequest와 URLSession을 래핑한 오픈소스를 사용함 Alamofire.
     
     Date: 22.09.21
-        Model Codable로 적용하기
+        Model Codable로 적용하기 -> 완료.
  */
 extension UserInfoManager {
     func login(_ account: String, _ password: String, success: (()->Void)? = nil, fail : ((String)->Void)? = nil) {
@@ -135,6 +127,7 @@ extension UserInfoManager {
         let tokUtils = TokenUtils()
         let header   = tokUtils.getAutohrizationHeader()
         let call     = AF.request(UserInfoPrivate().LogoutURL, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil)
+        
         call.responseJSON(){ _ in
             //서버로 응답 온 후 처리할 로그아웃 동작
             self.deviceLogout()
@@ -158,25 +151,31 @@ extension UserInfoManager {
     /*
      서버에 프로필 정보도 전송
      */
-    func newProfile(_ profile: UIImage?, success: (()->Void)? = nil, fail: ((String)->Void)?=nil){
+    func newProfile(_ profile: UIImage?, success: (()->Void)? = nil, fail: ((String)->Void)?=nil) {
 
         let tk  = TokenUtils()
         let header = tk.getAutohrizationHeader()
-        guard let profileData = profile!.pngData()?.base64EncodedString() else{ NSLog("프로필 nil임 in UserInfoManager");return}
+        guard let profileData = profile!.pngData()?.base64EncodedString() else{
+            NSLog("프로필 nil임 in UserInfoManager")
+            return
+        }
         let param: Parameters = ["profile_image":profileData]
         let call = AF.request(UserInfoPrivate().postProfileURL, method: .post,parameters: param, encoding: JSONEncoding.default, headers: header)
+        
         call.responseJSON{ res in
-            guard let jsonObj = try! res.result.get() as? NSDictionary else{
+            guard let jsonObj = try? res.result.get() as? NSDictionary else{
                 fail?("올바른 값이 아닙니다.")
                 return
             }
              
-            guard let resCode = jsonObj["result_code"] as? Int else {NSLog("result코드 잘못됨. 값이 잘 안받아져왔나?"); return }
-            if resCode == 0
-            {
+            guard let resCode = jsonObj["result_code"] as? Int else {
+                NSLog("result코드 잘못됨. 값이 잘 안받아져왔나?")
+                return
+            }
+            if resCode == 0 {
                 self.profile = profile
                 success?()
-            }else{
+            } else {
                 let msg = (jsonObj["error_msg"] as? String) ?? "이미지 프로필 변경이 실패했습니다."
                 fail?(msg)
             }
