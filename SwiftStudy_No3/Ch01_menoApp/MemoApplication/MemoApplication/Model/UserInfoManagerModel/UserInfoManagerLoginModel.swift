@@ -4,13 +4,15 @@ struct UserInfoManagerLoginModel: Codable {
     let resultCode: Int
     let accessToken: String
     let refreshToken: String
-    let userInfo: UserInfoModel
+    //let userInfo: UserInfoModel
+    let errorMessage: String
     
     enum CodingKeys: String, CodingKey {
         case resultCode = "result_code"
         case accessToken = "access_token"
         case refreshToken = "refresh_token"
-        case userInfo = "user_info"
+        
+        case errorMessage = "error_msg"
     }
 }
 
@@ -25,6 +27,16 @@ struct UserInfoModel: Codable {
         case account
         case name
         case profile = "profile_path"
+    }
+    
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.loginID = try container.decode(Int.self, forKey: .loginID)
+        self.account = try container.decode(String.self, forKey: .account)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.profile = try container.decodeIfPresent(profileImage.self, forKey: .profile) ?? profileImage(imgPath: nil)
+        
     }
 }
 
