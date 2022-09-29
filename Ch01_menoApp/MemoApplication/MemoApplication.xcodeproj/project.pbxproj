@@ -41,6 +41,8 @@
 		15B0D91F28A64B99003AE6AA /* ExtensionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0D91E28A64B99003AE6AA /* ExtensionVC.swift */; };
 		15B0D92128A64CD3003AE6AA /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0D92028A64CD3003AE6AA /* TutorialContentsVC.swift */; };
 		15B0D92328A6658E003AE6AA /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B0D92228A6658E003AE6AA /* TutorialMasterVC.swift */; };
+		15BF6C7628E52C21008EB9C5 /* UserInfoPrivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF6C7528E52C21008EB9C5 /* UserInfoPrivate.swift */; };
+		15BF6C7828E530A7008EB9C5 /* UserInfoManagerLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BF6C7728E530A7008EB9C5 /* UserInfoManagerLoginModel.swift */; };
 		15C68478287D9A8000935EB4 /* CSLogBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C68477287D9A8000935EB4 /* CSLogBtn.swift */; };
 		15D0CDA1284CE63800333FFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0CDA0284CE63800333FFF /* AppDelegate.swift */; };
 		15D0CDA3284CE63800333FFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0CDA2284CE63800333FFF /* SceneDelegate.swift */; };
@@ -92,6 +94,8 @@
 		15B0D91E28A64B99003AE6AA /* ExtensionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionVC.swift; sourceTree = "<group>"; };
 		15B0D92028A64CD3003AE6AA /* TutorialContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
 		15B0D92228A6658E003AE6AA /* TutorialMasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
+		15BF6C7528E52C21008EB9C5 /* UserInfoPrivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPrivate.swift; sourceTree = "<group>"; };
+		15BF6C7728E530A7008EB9C5 /* UserInfoManagerLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManagerLoginModel.swift; sourceTree = "<group>"; };
 		15C68477287D9A8000935EB4 /* CSLogBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogBtn.swift; sourceTree = "<group>"; };
 		15D0CD9D284CE63800333FFF /* MemoApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D0CDA0284CE63800333FFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 		152D8744284DB0570079EE20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15BF6C7928E54701008EB9C5 /* UserInfoManagerModel */,
 				158B386328B87EC800997B55 /* DataModel.xcdatamodeld */,
 				1542A21028BF2F65000C2C84 /* DataSync.swift */,
 				15528DBE288C559F00268E67 /* SideBar */,
@@ -286,6 +291,14 @@
 				15B0D91E28A64B99003AE6AA /* ExtensionVC.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		15BF6C7928E54701008EB9C5 /* UserInfoManagerModel */ = {
+			isa = PBXGroup;
+			children = (
+				15BF6C7728E530A7008EB9C5 /* UserInfoManagerLoginModel.swift */,
+			);
+			path = UserInfoManagerModel;
 			sourceTree = "<group>";
 		};
 		15C68476287D9A5600935EB4 /* MemoListScene */ = {
@@ -352,6 +365,7 @@
 			children = (
 				15D8912328A3E9BF0034CFEF /* UserInfoKeyDTO.swift */,
 				15D8912528A3EA490034CFEF /* UserInfoManager.swift */,
+				15BF6C7528E52C21008EB9C5 /* UserInfoPrivate.swift */,
 			);
 			path = UserInfo;
 			sourceTree = "<group>";
@@ -520,7 +534,9 @@
 				152D8746284DB0C70079EE20 /* MemoListVC.swift in Sources */,
 				157628C928946AD900ABEC3C /* ProfileNavigationController.swift in Sources */,
 				15FF16A128DAD447008D87F4 /* SideBarListViewModel.swift in Sources */,
+				15BF6C7628E52C21008EB9C5 /* UserInfoPrivate.swift in Sources */,
 				153B5EB2287DE06D00DE4BC6 /* WarningAlert.swift in Sources */,
+				15BF6C7828E530A7008EB9C5 /* UserInfoManagerLoginModel.swift in Sources */,
 				15D0CDA1284CE63800333FFF /* AppDelegate.swift in Sources */,
 				157F39AE28BC6F9E000218B0 /* NewEditingProfile.swift in Sources */,
 				158B386728B883A700997B55 /* MemoDAO.swift in Sources */,
