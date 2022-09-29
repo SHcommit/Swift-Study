@@ -6,6 +6,7 @@ class NewEditingProfile : UIViewController
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
     @IBAction func submit(_ Sender: Any?){
         if self.isCalling
         {
@@ -29,11 +30,12 @@ class NewEditingProfile : UIViewController
         
         call.responseJSON { res in
             self.indicatorView.stopAnimating()
-            guard let jsonObj = try! res.result.get() as? [String: Any] else {
+            guard let jsonObj = try? res.result.get() as? [String: Any] else {
                 self.isCalling = false
                 self.alertMainThread("서버 호출 과정에서 오류가 발생했습니다.")
                 return
             }
+            
             let resCode = jsonObj["result_code"] as! Int
             if resCode == 0
             {
