@@ -20,52 +20,29 @@ struct UserInfoModel: Codable {
     let loginID: Int
     let account: String
     let name: String
-    let profile: Data?
+    let profileData: Data?
     
     enum CodingKeys: String, CodingKey {
         case loginID = "user_id"
         case account
         case name
-        case profile = "profile_path"
+        case profileData = "profile_path"
     }
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        loginID = try container.decode(Int.self, forKey: .loginID)
-        account = try container.decode(String.self, forKey: .account)
-        name = try container.decode(String.self, forKey: .name)
-        
-        guard let imagePath = try? container.decode(String.self, forKey: .profile),
-            let imgURL = URL(string: imagePath),
-            let imgData = try? Data(contentsOf: imgURL) else {
-            profile = nil
-            return
+    
+    
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            loginID = try container.decode(Int.self, forKey: .loginID)
+            account = try container.decode(String.self, forKey: .account)
+            name = try container.decode(String.self, forKey: .name)
+            
+            guard let imagePath = try? container.decode(String.self, forKey: .profileData),
+                let imgURL = URL(string: imagePath),
+                let imgData = try? Data(contentsOf: imgURL) else {
+                profileData = nil
+                return
+            }
+            profileData = imgData
         }
-        
-        profile = imgData
-    }
 }
-
-//struct profileImage: Codable {
-//
-//    public let imgData: Data?
-//
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let imagePath = try container.decodeIfPresent(String.self, forKey: .imgData) ?? nil
-//        guard let imagePath = imagePath, let imgURL = URL(string: imagePath) else {
-//            imgData = nil
-//            return
-//        }
-//
-//        guard let imgData = try? Data(contentsOf: imgURL) else {
-//            self.imgData = nil
-//            return
-//        }
-//        self.imgData = imgData
-//    }
-//
-//    init() {
-//        imgData = nil
-//    }
-//}
