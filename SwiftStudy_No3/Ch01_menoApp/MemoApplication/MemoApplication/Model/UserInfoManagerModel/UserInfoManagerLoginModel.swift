@@ -1,6 +1,7 @@
 import UIKit
 
 struct UserInfoManagerLoginModel: Codable {
+    
     let resultCode: Int
     let accessToken: String
     let refreshToken: String
@@ -17,6 +18,7 @@ struct UserInfoManagerLoginModel: Codable {
 }
 
 struct UserInfoModel: Codable {
+    
     let loginID: Int
     let account: String
     let name: String
@@ -29,20 +31,18 @@ struct UserInfoModel: Codable {
         case profileData = "profile_path"
     }
     
-    
-    
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            loginID = try container.decode(Int.self, forKey: .loginID)
-            account = try container.decode(String.self, forKey: .account)
-            name = try container.decode(String.self, forKey: .name)
-            
-            guard let imagePath = try? container.decode(String.self, forKey: .profileData),
-                let imgURL = URL(string: imagePath),
-                let imgData = try? Data(contentsOf: imgURL) else {
-                profileData = nil
-                return
-            }
-            profileData = imgData
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        loginID = try container.decode(Int.self, forKey: .loginID)
+        account = try container.decode(String.self, forKey: .account)
+        name = try container.decode(String.self, forKey: .name)
+        
+        guard let imagePath = try? container.decode(String.self, forKey: .profileData),
+            let imgURL = URL(string: imagePath),
+            let imgData = try? Data(contentsOf: imgURL) else {
+            profileData = nil
+            return
         }
+        profileData = imgData
+    }
 }

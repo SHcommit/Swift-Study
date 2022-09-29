@@ -105,68 +105,30 @@ extension UserInfoManager {
                 print("Failure responseDecodable has error")
                 return
             }
-            
-            switch response.result {
-            case .success(_):
-                guard let data = response.value else {
-                    fatalError("Failed binding value")
-                }
-                print(data)
-                success?()
-                break
-            case .failure(_):
-                fail?("로그인 실패,,,")
-                break
-                
+            guard let data = response.value else {
+                fatalError("Failed binding value")
             }
             
+            guard data.resultCode == 0 else {
+                fail?(data.errorMessage)
+                return
+            }
+            
+            //로그인 토큰 추가
+            let tkUtils = TokenUtils()
+            if let accTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "accessToken") {
+                NSLog("accessToken=\(accTok)")
+            }else{
+                NSLog("accessToken is nil")
+            }
+            if let refTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "refreshToken") {
+                NSLog("refreshToken =\(refTok)")
+            }else {
+                NSLog("refreshToken is nil")
+            }
+            success?()
+            
         }
-//        afCall.responseJSON { res in
-//            guard let res = try? res.result.get() else {
-//                fatalError("파싱 형식 다시 확인해야함.")
-//            }
-//            guard let jsonObj = res as? NSDictionary else{
-//                fail?("잘못된 응답 형식:\(res)")
-//                return
-//            }
-//
-//            let resCode = jsonObj["result_code"] as! Int
-//            if resCode == 0
-//            {
-//                //로그인 성공 -> 이제 userDefaults에도 저장해서 SideBarVC의 헤더뷰에도 출력되게 하자!!!
-//                let user     = jsonObj["user_info"] as! NSDictionary
-//
-//                self.loginID = user["user_id"] as! Int
-//                self.account = user["account"] as? String
-//                self.name    = user["name"] as? String
-//
-//                if let path = user["profile_path"] as? String{
-//                    if let imageData = try? Data(contentsOf: URL(string: path)!){
-//                        self.profile = UIImage(data: imageData)
-//                    }
-//                }
-//
-//
-//                //로그인 토큰 추가
-//                let accessToken = jsonObj["access_token"] as! String
-//                let refreshToken = jsonObj["refresh_token"] as! String
-//
-//                let tkUtils = TokenUtils()
-//                if let accTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "accessToken") {
-//                    NSLog("accessToken=\(accTok)")
-//                }else{
-//                    NSLog("accessToken is nil")
-//                }
-//                if let refTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "refreshToken") {
-//                    NSLog("refreshToken =\(refTok)")
-//                }else {
-//                    NSLog("refreshToken is nil")
-//                }
-//                success?()
-//            }else {
-//                fail?((jsonObj["error_msg"] as? String) ?? "로그인 실패했습니다.")
-//            }
-//        }
     }
     
     func logout(completion: (()->Void)? = nil) {
