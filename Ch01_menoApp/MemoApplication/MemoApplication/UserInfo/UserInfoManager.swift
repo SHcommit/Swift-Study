@@ -17,69 +17,58 @@ import Alamofire
  1. <#Notes if any#>
  
  */
-class UserInfoManager
-{
-    var plist   = UserDefaults.standard
-    var loginID : Int
-    {
-        get
-        {
+class UserInfoManager {
+    
+    var plist = UserDefaults.standard
+    
+    var loginID: Int {
+        get {
             return plist.integer(forKey:UserInfoKeyDTO.loginID)
         }
-        set(value)
-        {
-            
+        set(value) {
             plist.set(value, forKey: UserInfoKeyDTO.loginID)
             plist.synchronize()
         }
     }
-    var account : String?
-    {
-        get { return plist.string(forKey:UserInfoKeyDTO.account)}
-        set(value)
-        {
+    
+    var account: String? {
+        get {
+            return plist.string(forKey:UserInfoKeyDTO.account)
+        }
+        set(value){
             plist.set(value, forKey:UserInfoKeyDTO.account)
             plist.synchronize()
         }
     }
-    var name : String?
-    {
-        get
-        {
+    
+    var name: String? {
+        get {
             return plist.string(forKey: UserInfoKeyDTO.name)
         }
-        set(value)
-        {
+        set(value) {
             plist.set(value,forKey: UserInfoKeyDTO.name)
             plist.synchronize()
         }
     }
-    var profile : UIImage?
-    {
-        get
-        {
-            if let _profile = plist.data(forKey: UserInfoKeyDTO.profile)
-            {
+    
+    var profile: UIImage? {
+        get {
+            if let _profile = plist.data(forKey: UserInfoKeyDTO.profile) {
                 return UIImage(data: _profile)
-            }
-            else
-            {
+            }else {
                 return UIImage(named:"account.jpg")
             }
         }
-        set(value)
-        {
-            if value != nil
-            {
+        set(value) {
+            if value != nil {
                 plist.set(value?.pngData(),forKey: UserInfoKeyDTO.profile)
                 plist.synchronize()
             }
         }
     }
-    var isLogin : Bool
-    {
-        if self.loginID == 0 || self.account == nil
-        {
+    
+    var isLogin: Bool {
+        if self.loginID == 0 || self.account == nil {
             return false
         }
         return true
@@ -87,36 +76,33 @@ class UserInfoManager
     
 }
 
-
-extension UserInfoManager
-{
-    /*
-        기존의 로그인 저장 처리 방식은 프로퍼티 리스트를 사용해 true, false 처리에 따른 동기 방식으로 사용했다.
-        이전에 NewEditingProfile에서 서버에 저장했던 계정 정보를 이용해
-        계정과 비번 입력받아 사용자 정보, 인증 토큰을 발급!!
-        ----
-        API에는 사용자 정보 데이터 등 다양한 정보가 있다.
-        그중에서 외부에서 로그인 처리 기능을 해주는 정보도 들어있다. accessToken과 refreshToken이다.
-        얘내는 OAuth 프로토콜을 통해서 받을 수 있다.
-        간략하게는 Authorization Server를 통해 Authorization Code를 부여 받고 Resource Server를 통해 토큰을 넘겨주면
-        Resource Server회사에 등록된 사용자의 정보를 클라이언트 단으로 받아올 수 있다.
-        ----
-        이때 URLRequest와 URLSession을 래핑한 오픈소스를 사용함 Alamofire.
-        
-        Date: 22.09.21
-            Model Codable로 적용하기
-     */
-    func login(_ account: String, _ password: String, success: (()->Void)? = nil, fail : ((String)->Void)? = nil)
-    {
-        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/login"
+/*
+    기존의 로그인 저장 처리 방식은 프로퍼티 리스트를 사용해 true, false 처리에 따른 동기 방식으로 사용했다.
+    이전에 NewEditingProfile에서 서버에 저장했던 계정 정보를 이용해
+    계정과 비번 입력받아 사용자 정보, 인증 토큰을 발급!!
+    ----
+    API에는 사용자 정보 데이터 등 다양한 정보가 있다.
+    그중에서 외부에서 로그인 처리 기능을 해주는 정보도 들어있다. accessToken과 refreshToken이다.
+    얘내는 OAuth 프로토콜을 통해서 받을 수 있다.
+    간략하게는 Authorization Server를 통해 Authorization Code를 부여 받고 Resource Server를 통해 토큰을 넘겨주면
+    Resource Server회사에 등록된 사용자의 정보를 클라이언트 단으로 받아올 수 있다.
+    ----
+    이때 URLRequest와 URLSession을 래핑한 오픈소스를 사용함 Alamofire.
+    
+    Date: 22.09.21
+        Model Codable로 적용하기
+ */
+extension UserInfoManager {
+    func login(_ account: String, _ password: String, success: (()->Void)? = nil, fail : ((String)->Void)? = nil) {
         let param : Parameters = [
             "account" : account,
-            "passwd"  : password
-        ]
+            "passwd"  : password]
         
-        let afCall = AF.request(url,method: .post, parameters: param, encoding: JSONEncoding.default)
+        let afCall = AF.request(UserInfoPrivate().LoginURL, method: .post, parameters: param, encoding: JSONEncoding.default)
         afCall.responseJSON { res in
-            let res = try! res.result.get()
+            guard let res = try? res.result.get() else {
+                fatalError("파싱 형식 다시 확인해야함.")
+            }
             guard let jsonObj = res as? NSDictionary else{
                 fail?("잘못된 응답 형식:\(res)")
                 return
@@ -144,30 +130,27 @@ extension UserInfoManager
                 let refreshToken = jsonObj["refresh_token"] as! String
                 
                 let tkUtils = TokenUtils()
-                if let accTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "accessToken")
-                {
+                if let accTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "accessToken") {
                     NSLog("accessToken=\(accTok)")
                 }else{
                     NSLog("accessToken is nil")
                 }
-                if let refTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "refreshToken"){
+                if let refTok = tkUtils.load("kr.co.rubypaper.MyMemory", account: "refreshToken") {
                     NSLog("refreshToken =\(refTok)")
-                }else{
+                }else {
                     NSLog("refreshToken is nil")
                 }
                 success?()
-            }else{
+            }else {
                 fail?((jsonObj["error_msg"] as? String) ?? "로그인 실패했습니다.")
             }
         }
     }
-    func logout(completion: (()->Void)? = nil)
-    {
-        
-        let url      = "http://swiftapi.rubypaper.co.kr:2029/userAccount/logout"
+    
+    func logout(completion: (()->Void)? = nil) {
         let tokUtils = TokenUtils()
         let header   = tokUtils.getAutohrizationHeader()
-        let call     = AF.request(url, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil)
+        let call     = AF.request(UserInfoPrivate().LogoutURL, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: header, interceptor: nil, requestModifier: nil)
         call.responseJSON(){ _ in
             //서버로 응답 온 후 처리할 로그아웃 동작
             self.deviceLogout()
@@ -192,12 +175,12 @@ extension UserInfoManager
      서버에 프로필 정보도 전송
      */
     func newProfile(_ profile: UIImage?, success: (()->Void)? = nil, fail: ((String)->Void)?=nil){
-        let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/profile"
+
         let tk  = TokenUtils()
         let header = tk.getAutohrizationHeader()
         guard let profileData = profile!.pngData()?.base64EncodedString() else{ NSLog("프로필 nil임 in UserInfoManager");return}
         let param: Parameters = ["profile_image":profileData]
-        let call = AF.request(url, method: .post,parameters: param, encoding: JSONEncoding.default, headers: header)
+        let call = AF.request(UserInfoPrivate().postProfileURL, method: .post,parameters: param, encoding: JSONEncoding.default, headers: header)
         call.responseJSON{ res in
             guard let jsonObj = try! res.result.get() as? NSDictionary else{
                 fail?("올바른 값이 아닙니다.")
