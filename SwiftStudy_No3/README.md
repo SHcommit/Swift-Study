@@ -20,7 +20,7 @@
 
 <div align=center><h2> 📇 Info </h2></div>
 
-### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No3/tree/master/Ch02_likeXML" target="_blank">chapter 2 </a>
+### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No3/Ch02_likeXML/README.md">chapter 2 </a>
 
  ◽ IB 없이 컨텐츠 구성
  
@@ -47,7 +47,20 @@
 :black_medium_square: <a href="https://github.com/SHcommit/SwiftStudy_No3/blob/master/Ch02_likeXML/custom_button/custom_button/Controller/SettingController.swift">이벤트 헨들러와 화면 전환(present, navigationBar)</a>
 
  ---
+ 
+ 
+ 
+ ### 💡 chapter 3
+ 
+ ## <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No3/Ch03_aboutCustomize/customButton/README.md">커스텀 버튼</a>
 
-🌱 Date : 22.09.21 ~
+ ◽ <a href="https://dev-with-precious-dreams.tistory.com/entry/Swift-class-%EC%B4%88%EA%B8%B0%ED%99%94-%EC%99%9C-superinit%EC%9D%84-%EC%93%B0%EB%8A%94%EA%B0%80-%EC%98%A4%EB%B2%84%EB%A1%9C%EB%94%A9-%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%94%A9">클래스의 초기화. why use super.init()</a>
+ 
 
-Todo : MVC 패턴 -> MVVM으로 적용, clean code 적용
+:black_medium_square: <a href="https://dev-with-precious-dreams.tistory.com/entry/Swift-%EC%9E%90%EB%8F%99-%EC%A7%80%EC%A0%95-%ED%8E%B8%EC%9D%98-%EC%B4%88%EA%B8%B0%ED%99%94in-class-%EC%97%B0%EC%87%84-%ED%98%B8%EC%B6%9C-%EA%B4%80%EA%B3%84-%EB%BF%8C%EC%88%98%EA%B8%B0">자동, 지정, 편의 초기화(in class). 연쇄 호출 관계 정리</a>
+
+:white_medium_square: <a href="https://dev-with-precious-dreams.tistory.com/entry/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-2%EB%8B%A8%EA%B3%84-%EC%B4%88%EA%B8%B0%ED%99%94%EC%99%80-%EC%95%88%EC%A0%84%EC%A0%90%EA%B2%80-%EC%99%84%EB%B2%BD-%EC%9D%B4%ED%95%B4">클래스 2단계 초기화와 안전 점검</a>
+
+ ## <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No3/Ch03_aboutCustomize/custom_Alert/README.md">custom alert</a>
+
+ 
