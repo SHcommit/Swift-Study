@@ -11,7 +11,7 @@
 - 각 챕터별 **README.md** 는 책의 내용을 요약하지 않고 코드를 구현하면서 마주친 문제들을 상세하게 기록해 나갈 것입니다.
 
 
-🌱 Date : 22.06.25 ~
+🌱 Date : 22.06.25 ~ 8월 초
 
 <div align=center><h2> 📗 Book cover </h2></div>
 
@@ -61,6 +61,8 @@
 
 :white_medium_square: <a href="https://dev-with-precious-dreams.tistory.com/entry/Swift-%ED%81%B4%EB%9E%98%EC%8A%A4-2%EB%8B%A8%EA%B3%84-%EC%B4%88%EA%B8%B0%ED%99%94%EC%99%80-%EC%95%88%EC%A0%84%EC%A0%90%EA%B2%80-%EC%99%84%EB%B2%BD-%EC%9D%B4%ED%95%B4">클래스 2단계 초기화와 안전 점검</a>
 
+
  ## <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No3/Ch03_aboutCustomize/custom_Alert/README.md">custom alert</a>
+
 
  
