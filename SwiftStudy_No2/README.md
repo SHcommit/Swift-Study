@@ -30,7 +30,7 @@
 
 <div align=center><h2> 📇 Info </h2></div>
 
-### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch1%22helloworld%22" target="_blank">chapter 1 </a>
+### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch1%22helloworld%22/README.md">chapter 1 </a>
 
  ◽ MVC 패턴
  
