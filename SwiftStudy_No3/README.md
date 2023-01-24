@@ -11,7 +11,9 @@
 - 각 챕터별 **README.md** 는 책의 내용을 요약하지 않고 코드를 구현하면서 마주친 문제들을 상세하게 기록해 나갈 것입니다.
 
 
-🌱 Date : 22.06.25 ~ 8월 초
+🌱 Date : 22.06.25 ~ 8월 초.
+
+최종 구현!! <a href="https://github.com/SHcommit/Swift-Study/tree/master/SwiftStudy_No3/Ch01_menoApp">메모 앱</a>
 
 <div align=center><h2> 📗 Book cover </h2></div>
 
