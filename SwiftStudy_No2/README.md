@@ -50,7 +50,7 @@
  
  ---
  
- ### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch3_outletVariable" target="_blank">chapter 3</a>
+ ### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch3_outletVariable/README.md">chapter 3</a>
   
  ◽ 어노테이션 ( @ )
  
@@ -60,7 +60,7 @@
  
  ---
  
- ### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch4_%ED%99%94%EB%A9%B4%EC%A0%84%ED%99%98" target="_blank">chapter4 화면을 전환하는 방법</a>
+ ### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch4_%ED%99%94%EB%A9%B4%EC%A0%84%ED%99%98/README.md">chapter4 화면을 전환하는 방법</a>
  ◼️ Segue, present(_:animated:)
 
  ◽ Navigation을통한 화면 전환
@@ -69,7 +69,7 @@
 
  ---
  
-  ### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch5_submitValue" target="_blank"> chapter5 다른 뷰 컨트롤러에 데이터 전달하는 방법</a>
+  ### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch5_submitValue/README.md"> chapter5 다른 뷰 컨트롤러에 데이터 전달하는 방법</a>
 
  ◼️ 동기, 비동기 방식
 
@@ -81,7 +81,7 @@
 
  ---
  
-  ### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch6_Alert" target="_blank">chapter6 사용자에게 메시지 전달 방법</a>
+  ### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch6_Alert/README.md">chapter6 사용자에게 메시지 전달 방법</a>
   
   ◼️ 싱글톤이란?
   
@@ -95,7 +95,7 @@
   
   ---
   
-   ### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch7_DelegatePattern" target="_blank"> chapter7 델리게이트 패턴의 사용</a>
+   ### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch7_DelegatePattern/README.md"> chapter7 델리게이트 패턴의 사용</a>
   
   ◼️ 델리게이트(delegate : 위임하다!!) 의미
   
@@ -109,7 +109,7 @@
   
   ---
   
-  ### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch8_TableView" target="_blank">chapter8 TableView</a>
+  ### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch8_TableView/README.md">chapter8 TableView</a>
   
   ◼️ 테이블 뷰 컨트롤러
   
@@ -127,7 +127,7 @@
   
   ---
 
-### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch9_RESTAPI" target="_blank">chapter9 OpenAPI를 통한 TableViewCell 구현</a>
+### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch9_RESTAPI/README.md">chapter9 OpenAPI를 통한 TableViewCell 구현</a>
   
   ◼️ CURD
   
@@ -139,7 +139,7 @@
 
   ---
  
-### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/blob/master/Ch10_TableViewAsync/README.md" target="_blank">chapter10 테이블 뷰 동작 원리</a>
+### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch10_TableViewAsync/README.md">chapter10 테이블 뷰 동작 원리</a>
   
   ◼️ 동기 방식
   
@@ -151,7 +151,7 @@
 
   ---
  
-### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch11_WebView" target="_blank">chapter11 웹 브라우저 호출 방법</a>
+### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch11_WebView/README.md">chapter11 웹 브라우저 호출 방법</a>
   
   ◼️ 웹 뷰( Web View)
   
@@ -163,7 +163,7 @@
   
   ---
   
-  ### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch12_TabBar" target="_blank">chapter12 탭 바 컨트롤러</a>
+  ### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch12_TabBar/README.md">chapter12 탭 바 컨트롤러</a>
   
   ◼️ 수평적 관계
   
@@ -175,7 +175,7 @@
   
   ---
   
-  ### 💡 <a href="https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch13_mapKit" target="_blank">chapter13 맵킷 프레임워크</a>
+  ### 💡 <a href="https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch13_mapKit/README.md">chapter13 맵킷 프레임워크</a>
   
   ◼️ 번들 프로그램
   
