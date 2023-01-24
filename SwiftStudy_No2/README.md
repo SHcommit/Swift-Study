@@ -40,7 +40,7 @@
  
  ---
  
- ### 💡 <a href="[https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch2%3CiOS%3EHierachy%2CLifeCycle](https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch2%3CiOS%3EHierachy%2CLifeCycle/README.md)" >chapter 2</a>
+ ### 💡 <a href="[https://github.com/SHcommit/SwiftStudy_No2/tree/master/Ch2%3CiOS%3EHierachy%2CLifeCycle](https://github.com/SHcommit/Swift-Study/blob/master/SwiftStudy_No2/Ch2%3CiOS%3EHierachy%2CLifeCycle/README.md" >chapter 2</a>
  
  ◼️ 사진 첨부된 MVC 패턴이란?!
  
